@@ -1,37 +1,36 @@
 ---
-title: "Takım: XXX"
+title: "Takım: What R We Doing?"
 sidebar: false 
 ---
 
-MUY660-İş Analitiği dersi takım sayfamıza hoş geldiniz.
+MUY665-İş Analitiği dersi takım sayfamıza hoş geldiniz.
 
-Bu analitik çalışmalarımızı paylaşıyoruz.
+Burada iş analitiği çalışmalarımızı paylaşıyoruz.
 
 Lütfen faaliyetlerimizi görmek için için bizi takipte kalın.
 
-
-
 ## Takım Üyeleri
 
-1.  [Edin_Džeko](/takim/edindzeko.qmd)
+1.  [Edin_DE\>eko](/takim/edindzeko.qmd)
 
-2.  [Dušan Tadić](/takim/dusantadic.qmd)
+2.  [DuE!an TadiD](/takim/dusantadic.qmd)
 
-3.  [Frederico Rodrigues de Paula Santos](/takim/fred.qmd)
+3.  [Muhammed Taha Günday](/takim/mtgunday.qmd)
 
-4.  [Sebastian Szymański](/takim/szymanski.qmd)
+4.  [Sebastian SzymaEski](/takim/szymanski.qmd)
 
+5.  
 
 ## Proje Adı
-MUY660-İş Analitiği iyileştirme çalışmaları (örnek)
+
+MUY665 Projesi
 
 ## Proje Konusu
-Örnek:
-Bu projede MUY660-İş Analitiği ders içeriğinin analitik yaklaşımlarla iyileştirilmesini hedefledik. Bu doğrultuda tüm üniversitelerdeki benzer derslerin verisini toplayarak bir veri seti oluşturduk Analiz için ........ yöntemleri kullanarak, ....... çalışmaları yaptık Sonuç olarak, MUY660-İş Analitiği dersinin dünyadaki tüm derslerden daha iyi olduğunu ve bu dersi aldığımız için çok mutlu olduğumuzu tespit ettik.
 
+Örnek: Bu projede MUY660-İş Analitiği ders içeriğinin analitik yaklaşımlarla iyileştirilmesini hedefledik. Bu doğrultuda tüm üniversitelerdeki benzer derslerin verisini toplayarak bir veri seti oluşturduk Analiz için …….. yöntemleri kullanarak, ……. çalışmaları yaptık Sonuç olarak, MUY660-İş Analitiği dersinin dünyadaki tüm derslerden daha iyi olduğunu ve bu dersi aldığımız için çok mutlu olduğumuzu tespit ettik.
 
 ## Veri Seti Hakkında Özet Bilgi
 
-
 ## Sonuçlar
+
 Burada key takeways verilmelidir. En az 3 en fazla 5 madde ile çarpıcı sonuçlar sunulmalıdır.

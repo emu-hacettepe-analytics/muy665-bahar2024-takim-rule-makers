@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Takım: XXX",
+    "title": "Takım: What R We Doing?",
     "section": "",
-    "text": "MUY660-İş Analitiği dersi takım sayfamıza hoş geldiniz.\nBu analitik çalışmalarımızı paylaşıyoruz.\nLütfen faaliyetlerimizi görmek için için bizi takipte kalın."
+    "text": "MUY665-İş Analitiği dersi takım sayfamıza hoş geldiniz.\nBurada iş analitiği çalışmalarımızı paylaşıyoruz.\nLütfen faaliyetlerimizi görmek için için bizi takipte kalın."
   },
   {
     "objectID": "teammembers/volkansonmez.html",
@@ -192,37 +192,37 @@
   {
     "objectID": "index.html#proje-adı",
     "href": "index.html#proje-adı",
-    "title": "Takım: XXX",
+    "title": "Takım: What R We Doing?",
     "section": "Proje Adı",
-    "text": "Proje Adı\nMUY660-İş Analitiği iyileştirme çalışmaları (örnek)"
+    "text": "Proje Adı\nMUY665 Projesi"
   },
   {
     "objectID": "index.html#proje-konusu",
     "href": "index.html#proje-konusu",
-    "title": "Takım: XXX",
+    "title": "Takım: What R We Doing?",
     "section": "Proje Konusu",
     "text": "Proje Konusu\nÖrnek: Bu projede MUY660-İş Analitiği ders içeriğinin analitik yaklaşımlarla iyileştirilmesini hedefledik. Bu doğrultuda tüm üniversitelerdeki benzer derslerin verisini toplayarak bir veri seti oluşturduk Analiz için …….. yöntemleri kullanarak, ……. çalışmaları yaptık Sonuç olarak, MUY660-İş Analitiği dersinin dünyadaki tüm derslerden daha iyi olduğunu ve bu dersi aldığımız için çok mutlu olduğumuzu tespit ettik."
   },
   {
     "objectID": "index.html#veri-seti-hakkında-özet-bilgi",
     "href": "index.html#veri-seti-hakkında-özet-bilgi",
-    "title": "Takım: XXX",
+    "title": "Takım: What R We Doing?",
     "section": "Veri Seti Hakkında Özet Bilgi",
     "text": "Veri Seti Hakkında Özet Bilgi"
   },
   {
     "objectID": "index.html#sonuçlar",
     "href": "index.html#sonuçlar",
-    "title": "Takım: XXX",
+    "title": "Takım: What R We Doing?",
     "section": "Sonuçlar",
     "text": "Sonuçlar\nBurada key takeways verilmelidir. En az 3 en fazla 5 madde ile çarpıcı sonuçlar sunulmalıdır."
   },
   {
     "objectID": "index.html#takım-üyeleri",
     "href": "index.html#takım-üyeleri",
-    "title": "Takım: XXX",
+    "title": "Takım: What R We Doing?",
     "section": "Takım Üyeleri",
-    "text": "Takım Üyeleri\n\nEdin_Džeko\nDušan Tadić\nFrederico Rodrigues de Paula Santos\nSebastian Szymański"
+    "text": "Takım Üyeleri\n\nEdin_DE&gt;eko\nDuE!an TadiD\u0007\nMuhammed Taha Günday\nSebastian SzymaE\u0004ski"
   },
   {
     "objectID": "portfolyo.html",
@@ -240,7 +240,7 @@
     "href": "takim.html",
     "title": "Takım Üyeleri",
     "section": "",
-    "text": "Takım Üyelerimizin detaylı özgemişlerinin yer aldığı kişisel sayfalarına gitmek için sol menüyü veya aşağıdaki linkleri kullanabilirsiniz.\n\nTakım Üyeleri\n\nEdin_Džeko\nDušan Tadić\nFrederico Rodrigues de Paula Santos\nSebastian Szymański\n\n\n\n\n\n Back to top",
+    "text": "Takım Üyelerimizin detaylı özgemişlerinin yer aldığı kişisel sayfalarına gitmek için sol menüyü veya aşağıdaki linkleri kullanabilirsiniz.\n\nTakım Üyeleri\n\nEdin_Džeko\nDušan Tadić\nMuhammed Taha Günday\nSebastian Szymański\n\n\n\n\n\n Back to top",
     "crumbs": [
       "Takım Üyeleri"
     ]
@@ -248,9 +248,9 @@
   {
     "objectID": "proje.html",
     "href": "proje.html",
-    "title": "Proje X (proje adını yazınız)",
+    "title": "Proje Adı",
     "section": "",
-    "text": "Proje sayfamıza hoş geldiniz.\nProjemizle ilgili güncellemelerden haberdar olmak için bu alanı takip edin.\n(Aşağıdaki başlıklar örnek olarak verilmiştir; lütfen gerektiği şekilde düzenlemekten çekinmeyin.)"
+    "text": "Proje Sayfamıza Hoşgeldiniz.\nProjemizle ilgili gC&lt;ncellemelerden haberdar olmak iC’in bu alanD1 takip edin.\n(AE\u001faD\u001fD1daki baE\u001flD1klar C6rnek olarak verilmiE\u001ftir; lC&lt;tfen gerektiD\u001fi E\u001fekilde dC&lt;zenlemekten C’ekinmeyin.)"
   },
   {
     "objectID": "proje.html#data-source",
@@ -347,7 +347,7 @@
   {
     "objectID": "proje.html#tercih-sebebi",
     "href": "proje.html#tercih-sebebi",
-    "title": "Proje X (proje adını yazınız)",
+    "title": "Proje Adı",
     "section": "2.3 Tercih Sebebi",
     "text": "2.3 Tercih Sebebi\nxxxxxx"
   },
@@ -368,14 +368,14 @@
   {
     "objectID": "proje.html#trend-analizi",
     "href": "proje.html#trend-analizi",
-    "title": "Proje X (proje adını yazınız)",
+    "title": "Proje Adı",
     "section": "3.2 Trend Analizi",
     "text": "3.2 Trend Analizi\nxxxxxx"
   },
   {
     "objectID": "proje.html#model-uydurma",
     "href": "proje.html#model-uydurma",
-    "title": "Proje X (proje adını yazınız)",
+    "title": "Proje Adı",
     "section": "3.3 Model Uydurma",
     "text": "3.3 Model Uydurma\nxxxxxx"
   },
@@ -550,5 +550,82 @@
       "Takım Üyeleri",
       "Dusan Tadic"
     ]
+  },
+  {
+    "objectID": "index.html#takm-yeleri",
+    "href": "index.html#takm-yeleri",
+    "title": "Tak??m: What R We Doing?",
+    "section": "Tak??m ??yeleri",
+    "text": "Tak??m ??yeleri\n\nEdin_DE&gt;eko\nDuE!an TadiD\u0007\nMuhammed Taha G??nday\nSebastian SzymaE\u0004ski"
+  },
+  {
+    "objectID": "index.html#proje-ad",
+    "href": "index.html#proje-ad",
+    "title": "Tak??m: What R We Doing?",
+    "section": "Proje Ad??",
+    "text": "Proje Ad??\nMUY665 Projesi"
+  },
+  {
+    "objectID": "index.html#veri-seti-hakknda-zet-bilgi",
+    "href": "index.html#veri-seti-hakknda-zet-bilgi",
+    "title": "Tak??m: What R We Doing?",
+    "section": "Veri Seti Hakk??nda ??zet Bilgi",
+    "text": "Veri Seti Hakk??nda ??zet Bilgi"
+  },
+  {
+    "objectID": "index.html#sonular",
+    "href": "index.html#sonular",
+    "title": "Tak??m: What R We Doing?",
+    "section": "Sonu??lar",
+    "text": "Sonu??lar\nBurada key takeways verilmelidir. En az 3 en fazla 5 madde ile ??arp??c?? sonu??lar sunulmal??d??r."
+  },
+  {
+    "objectID": "proje.html#veri-kaynadd1",
+    "href": "proje.html#veri-kaynadd1",
+    "title": "Proje Adı",
+    "section": "2.1 Veri KaynaD\u001fD1",
+    "text": "2.1 Veri KaynaD\u001fD1\nxxxxxx"
+  },
+  {
+    "objectID": "proje.html#veri-hakkd1nda-genel-bilgiler",
+    "href": "proje.html#veri-hakkd1nda-genel-bilgiler",
+    "title": "Proje Adı",
+    "section": "2.2 Veri HakkD1nda Genel Bilgiler",
+    "text": "2.2 Veri HakkD1nda Genel Bilgiler\nxxxxxx"
+  },
+  {
+    "objectID": "proje.html#cn-d0eleme",
+    "href": "proje.html#cn-d0eleme",
+    "title": "Proje Adı",
+    "section": "2.4 C\u0016n D0E\u001fleme",
+    "text": "2.4 C\u0016n D0E\u001fleme\nxxxxxx"
+  },
+  {
+    "objectID": "proje.html#keeifsel-veri-analizi",
+    "href": "proje.html#keeifsel-veri-analizi",
+    "title": "Proje Adı",
+    "section": "3.1 KeE\u001fifsel Veri Analizi",
+    "text": "3.1 KeE\u001fifsel Veri Analizi\nxxxxxx"
+  },
+  {
+    "objectID": "proje.html#sonuclar",
+    "href": "proje.html#sonuclar",
+    "title": "Proje Adı",
+    "section": "3.4 SonuC’lar",
+    "text": "3.4 SonuC’lar\nxxxxxx"
+  },
+  {
+    "objectID": "takim/mtgunday.html#işler",
+    "href": "takim/mtgunday.html#işler",
+    "title": "Muhammed Taha Günday",
+    "section": "İşler",
+    "text": "İşler\n\nRoketsan, Aviyonik Sistem Mühendisi, 2022 - devam ediyor."
+  },
+  {
+    "objectID": "takim/mtgunday.html#stajlar",
+    "href": "takim/mtgunday.html#stajlar",
+    "title": "Muhammed Taha Günday",
+    "section": "Stajlar",
+    "text": "Stajlar\n\nRoketsan, Aviyonik Mühendisliği Aday Mühendis, 2021 - 2022.\nRoketsan, Aviyonik Mühendisliği Stajyeri, 2021.\nBAYKAR, Aviyonik Mühendisliği Stajyeri, 2021.\nErmaksan, Ar-Ge Stajyeri, 2020."
   }
 ]
