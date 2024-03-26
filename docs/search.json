@@ -240,10 +240,7 @@
     "href": "takim.html",
     "title": "Takım Üyeleri",
     "section": "",
-    "text": "Takım Üyelerimizin detaylı özgemişlerinin yer aldığı kişisel sayfalarına gitmek için sol menüyü veya aşağıdaki linkleri kullanabilirsiniz.\n\nTakım Üyeleri\n\nEdin_Džeko\nDušan Tadić\nMuhammed Taha Günday\nSebastian Szymański\n\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Takım Üyeleri"
-    ]
+    "text": "Takım Üyelerimizin detaylı özgemişlerinin yer aldığı kişisel sayfalarına gitmek için sol menüyü veya aşağıdaki linkleri kullanabilirsiniz.\n\nTakım Üyeleri\n\nEdin_Džeko\nDušan Tadić\nMuhammed Taha Günday\nSebastian Szymański\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "proje.html",
@@ -313,22 +310,14 @@
     "href": "portfolyo/calisma2.html",
     "title": "Çalışma 2",
     "section": "",
-    "text": "(Aşağıdakiler örnek olarak verilmiştir.)\nBu çalışmada 3 görevimiz var. Bu görevler….. Bunlara sırayla aşağıda cevap arıyoruz.",
-    "crumbs": [
-      "Porfolyo",
-      "Çalışma 2"
-    ]
+    "text": "(Aşağıdakiler örnek olarak verilmiştir.)\nBu çalışmada 3 görevimiz var. Bu görevler….. Bunlara sırayla aşağıda cevap arıyoruz."
   },
   {
     "objectID": "portfolyo/calisma1.html",
     "href": "portfolyo/calisma1.html",
     "title": "Çalışma 1",
     "section": "",
-    "text": "(Aşağıdakiler örnek olarak verilmiştir.)\nBu çalışmada 3 görevimiz var. Bu görevler….. Bunlara sırayla aşağıda cevap arıyoruz.",
-    "crumbs": [
-      "Porfolyo",
-      "Çalışma 1"
-    ]
+    "text": "(Aşağıdakiler örnek olarak verilmiştir.)\nBu çalışmada 3 görevimiz var. Bu görevler….. Bunlara sırayla aşağıda cevap arıyoruz."
   },
   {
     "objectID": "proje.html#veri-kaynağı",
@@ -391,44 +380,28 @@
     "href": "portfolyo/calisma1.html#a",
     "title": "Çalışma 1",
     "section": "(a)",
-    "text": "(a)\n\n1 + 1\n\n[1] 2",
-    "crumbs": [
-      "Porfolyo",
-      "Çalışma 1"
-    ]
+    "text": "(a)\n\n1 + 1\n\n[1] 2"
   },
   {
     "objectID": "portfolyo/calisma2.html#a",
     "href": "portfolyo/calisma2.html#a",
     "title": "Çalışma 2",
     "section": "(a)",
-    "text": "(a)\n\n1 + 1\n\n[1] 2",
-    "crumbs": [
-      "Porfolyo",
-      "Çalışma 2"
-    ]
+    "text": "(a)\n\n1 + 1\n\n[1] 2"
   },
   {
     "objectID": "portfolyo/calisma2.html#b",
     "href": "portfolyo/calisma2.html#b",
     "title": "Çalışma 2",
     "section": "(b)",
-    "text": "(b)",
-    "crumbs": [
-      "Porfolyo",
-      "Çalışma 2"
-    ]
+    "text": "(b)"
   },
   {
     "objectID": "portfolyo/calisma1.html#b",
     "href": "portfolyo/calisma1.html#b",
     "title": "Çalışma 1",
     "section": "(b)",
-    "text": "(b)",
-    "crumbs": [
-      "Porfolyo",
-      "Çalışma 1"
-    ]
+    "text": "(b)"
   },
   {
     "objectID": "takim/dusantadic.html",
@@ -468,44 +441,28 @@
     "href": "takim/szymanski.html#işler",
     "title": "Sebastian Szymański",
     "section": "İşler",
-    "text": "İşler\n\nFirma xxx, pozisyon xx, yıl xxx\nFirma yyy, pozisyon yyy, yıl yyy",
-    "crumbs": [
-      "Takım Üyeleri",
-      "Sebastian Szymański"
-    ]
+    "text": "İşler\n\nFirma xxx, pozisyon xx, yıl xxx\nFirma yyy, pozisyon yyy, yıl yyy"
   },
   {
     "objectID": "takim/szymanski.html#stajlar",
     "href": "takim/szymanski.html#stajlar",
     "title": "Sebastian Szymański",
     "section": "Stajlar",
-    "text": "Stajlar\n\nFirma aaa, pozisyon xx, yıl xxx\nFirma bbb, pozisyon yyy, yıl yyy",
-    "crumbs": [
-      "Takım Üyeleri",
-      "Sebastian Szymański"
-    ]
+    "text": "Stajlar\n\nFirma aaa, pozisyon xx, yıl xxx\nFirma bbb, pozisyon yyy, yıl yyy"
   },
   {
     "objectID": "takim/edindzeko.html#işler",
     "href": "takim/edindzeko.html#işler",
-    "title": "Edin_Džeko",
+    "title": "osman erel",
     "section": "İşler",
-    "text": "İşler\n\nFirma xxx, pozisyon xx, yıl xxx\nFirma yyy, pozisyon yyy, yıl yyy",
-    "crumbs": [
-      "Takım Üyeleri",
-      "Edin_Džeko"
-    ]
+    "text": "İşler\n\nFirma xxx, pozisyon xx, yıl xxx\nFirma yyy, pozisyon yyy, yıl yyy\nerwr4rwerw"
   },
   {
     "objectID": "takim/edindzeko.html#stajlar",
     "href": "takim/edindzeko.html#stajlar",
-    "title": "Edin_Džeko",
+    "title": "osman erel",
     "section": "Stajlar",
-    "text": "Stajlar\n\nFirma aaa, pozisyon xx, yıl xxx\nFirma bbb, pozisyon yyy, yıl yyy",
-    "crumbs": [
-      "Takım Üyeleri",
-      "Edin_Džeko"
-    ]
+    "text": "Stajlar\n\nFirma aaa, pozisyon xx, yıl xxx\nFirma bbb, pozisyon yyy, yıl yyy"
   },
   {
     "objectID": "takim/fred.html#işler",
@@ -534,22 +491,14 @@
     "href": "takim/dusantadic.html#işler",
     "title": "Dusan Tadic",
     "section": "İşler",
-    "text": "İşler\n\nFirma xxx, pozisyon xx, yıl xxx\nFirma yyy, pozisyon yyy, yıl yyy",
-    "crumbs": [
-      "Takım Üyeleri",
-      "Dusan Tadic"
-    ]
+    "text": "İşler\n\nFirma xxx, pozisyon xx, yıl xxx\nFirma yyy, pozisyon yyy, yıl yyy"
   },
   {
     "objectID": "takim/dusantadic.html#stajlar",
     "href": "takim/dusantadic.html#stajlar",
     "title": "Dusan Tadic",
     "section": "Stajlar",
-    "text": "Stajlar\n\nFirma aaa, pozisyon xx, yıl xxx\nFirma bbb, pozisyon yyy, yıl yyy",
-    "crumbs": [
-      "Takım Üyeleri",
-      "Dusan Tadic"
-    ]
+    "text": "Stajlar\n\nFirma aaa, pozisyon xx, yıl xxx\nFirma bbb, pozisyon yyy, yıl yyy"
   },
   {
     "objectID": "index.html#takm-yeleri",

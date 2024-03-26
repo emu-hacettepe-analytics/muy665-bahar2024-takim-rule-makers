@@ -1,5 +1,5 @@
 ---
-title: "Edin_Džeko"
+title: "osman erel"
 ---
 
 ![](/assets/images/vesikalik.jpeg){fig-align="center"}
@@ -16,6 +16,8 @@ title: "Edin_Džeko"
 1.  Firma xxx, pozisyon xx, yıl xxx
 
 2.  Firma yyy, pozisyon yyy, yıl yyy
+
+3.  erwr4rwerw
 
 ## Stajlar
 
