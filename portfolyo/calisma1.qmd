@@ -9,8 +9,57 @@ Bu çalışmada 3 görevimiz var. Bu görevler..... Bunlara sırayla aşağıda 
 
 ## (a)
 
-```{r}
-1 + 1
+```{dataset <- mtcars}
+str(dataset) #dataset ozet
+head(dataset) #dataset ozet
+length(dataset$mpg)%%2    
+
+custom_summary <- function(input_vector){
+  
+  #ortalama
+  vector_mean <- sum(input_vector)/length(input_vector)
+  vector_mean_hazir_fonksiyon <- mean(input_vector)
+  
+  #medyan
+  if (length(input_vector)%%2==1) {
+    vector_median <- sort(input_vector)[(length(input_vector)+1)/2]
+  } 
+  else {
+    median_element_1_index <- length(input_vector)/2
+    median_element_2_index <- median_element_1_index+1
+    vector_median <- (sort(input_vector)[median_element_1_index] + sort(input_vector)[median_element_2_index])/2
+  }
+  vector_median_hazir_fonksiyon <- median(input_vector)
+  
+  #standart sapma
+  vector_std <- 0
+  for (element in input_vector){
+    vector_std <- vector_std + (element - vector_mean)^2
+  }
+  vector_std <- vector_std / (length(input_vector)-1)
+  vector_std <- sqrt(vector_std)
+  vector_std_hazir_fonksiyon <- sd(input_vector)
+  
+  #minimum ve maksimum
+  vector_max <- sort(input_vector)[length(input_vector)]
+  vector_min <- sort(input_vector)[1]
+  vector_max_hazir_fonksiyon <- max(input_vector)
+  vector_min_hazir_fonksiyon <- min(input_vector)
+  
+  #istenen degiskenleri liste haline getirip return edelim
+  sonuclar <- list(ortalama = vector_mean, ortalama_hazir_fonksiyon = vector_mean_hazir_fonksiyon, medyan = vector_median, medyan_hazir_fonksiyon = vector_median_hazir_fonksiyon, standart_sapma = vector_std, standart_sapma_hazir_fonksiyon = vector_std_hazir_fonksiyon, maksimum = vector_max, maksimum_hazir_fonksiyon = vector_max_hazir_fonksiyon, minimum = vector_min, minimum_hazir_fonksiyon = vector_min_hazir_fonksiyon)
+  return(sonuclar)
+}
+
+for (i in 1:ncol(dataset)){
+  print(names(dataset)[i])
+  print(custom_summary(dataset[[i]]))
+}
+
+# su anda eksik calisiyor
+apply_ile_sonuclar <- apply(dataset,2,FUN = custom_summary)
+print(apply_ile_sonuclar)
+
 ```
 
 ## (b)
