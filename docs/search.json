@@ -401,7 +401,7 @@
     "href": "portfolyo/calisma1.html#b",
     "title": "Çalışma 1",
     "section": "(b)",
-    "text": "(b)"
+    "text": "(b)\n{dataset &lt;- mtcars} str(dataset) #dataset ozet head(dataset) #dataset ozet length(dataset$mpg)%%2\ncustom_summary &lt;- function(input_vector){\n#ortalama vector_mean &lt;- sum(input_vector)/length(input_vector) vector_mean_hazir_fonksiyon &lt;- mean(input_vector)\n#medyan if (length(input_vector)%%2==1) { vector_median &lt;- sort(input_vector)[(length(input_vector)+1)/2] } else { median_element_1_index &lt;- length(input_vector)/2 median_element_2_index &lt;- median_element_1_index+1 vector_median &lt;- (sort(input_vector)[median_element_1_index] + sort(input_vector)[median_element_2_index])/2 } vector_median_hazir_fonksiyon &lt;- median(input_vector)\n#standart sapma vector_std &lt;- 0 for (element in input_vector){ vector_std &lt;- vector_std + (element - vector_mean)^2 } vector_std &lt;- vector_std / (length(input_vector)-1) vector_std &lt;- sqrt(vector_std) vector_std_hazir_fonksiyon &lt;- sd(input_vector)\n#minimum ve maksimum vector_max &lt;- sort(input_vector)[length(input_vector)] vector_min &lt;- sort(input_vector)[1] vector_max_hazir_fonksiyon &lt;- max(input_vector) vector_min_hazir_fonksiyon &lt;- min(input_vector)\n#istenen degiskenleri liste haline getirip return edelim sonuclar &lt;- list(ortalama = vector_mean, ortalama_hazir_fonksiyon = vector_mean_hazir_fonksiyon, medyan = vector_median, medyan_hazir_fonksiyon = vector_median_hazir_fonksiyon, standart_sapma = vector_std, standart_sapma_hazir_fonksiyon = vector_std_hazir_fonksiyon, maksimum = vector_max, maksimum_hazir_fonksiyon = vector_max_hazir_fonksiyon, minimum = vector_min, minimum_hazir_fonksiyon = vector_min_hazir_fonksiyon) return(sonuclar) }\nfor (i in 1:ncol(dataset)){ print(names(dataset)[i]) print(custom_summary(dataset[[i]])) }\n##apply(1:ncol(dataset), custom_summary)"
   },
   {
     "objectID": "takim/dusantadic.html",
@@ -632,5 +632,33 @@
     "title": "HATICE DENIZ AKBEN",
     "section": "Stajlar",
     "text": "Stajlar\n\nASELSAN HBT BIRIMI 2017-2017\nTAV ESENBOGA 2016-2016"
+  },
+  {
+    "objectID": "takim/selinoksuz.html#isler",
+    "href": "takim/selinoksuz.html#isler",
+    "title": "SELİN ÖKSÜZ",
+    "section": "Isler",
+    "text": "Isler\n\nEczacıbaşı Tüketim Ürünleri - Kalite Güvence, 2019-2021\nHayat Kimya - Ürün Geliştirme, 2022-2023\nRoketsan - Proje Takip ve Koordinasyon, 2023-devam ediyor"
+  },
+  {
+    "objectID": "takim/selinoksuz.html#stajlar",
+    "href": "takim/selinoksuz.html#stajlar",
+    "title": "SELİN ÖKSÜZ",
+    "section": "Stajlar",
+    "text": "Stajlar"
+  },
+  {
+    "objectID": "portfolyo/calisma1.html#video-izlenip-özeti-yazılacak",
+    "href": "portfolyo/calisma1.html#video-izlenip-özeti-yazılacak",
+    "title": "Çalışma 1",
+    "section": "video izlenip özeti yazılacak",
+    "text": "video izlenip özeti yazılacak"
+  },
+  {
+    "objectID": "portfolyo/calisma1.html#c",
+    "href": "portfolyo/calisma1.html#c",
+    "title": "Çalışma 1",
+    "section": "(c)",
+    "text": "(c)\ninstall.packages(“dslabs”) library(dslabs) data(na_example) str(na_example) print(na_example)\nsum(is.na(na_example)) no_nas &lt;- ifelse(is.na(na_example), 665, na_example) print(no_nas)\nsum(is.na(no_nas))\nno_665 &lt;- sum(no_nas==665) print(no_665)"
   }
 ]
