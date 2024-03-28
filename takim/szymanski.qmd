@@ -1,33 +1,40 @@
 ---
-title: "HGHJHG"
+title: "BERIL AKSOY"
 ---
 
 
 ![](/assets/images/vesikalik.jpeg){fig-align="center"}
 
-# EDitim
+# Egitim
 
--   Lisans, ............GJHKJHGFDGHJUKJHGF....................., .................................... Cniversitesi, TC<rkiye, 20xx - 20xx.
--   YC<ksek Lisans, EndC<stri MC<hendisliDi, Hacettepe Cniversitesi, TC<rkiye, 20xx - devam ediyor.
+-   Lisans, Kimya Muhendisligi, Gazi Universitesi, Turkiye, 2017 - 2022.
+-   Yuksek Lisans, Muhendislik Yonetimi, Hacettepe Universitesi, Turkiye, 2024 - devam ediyor.
 
-# D0E Deneyimi
+# Is Deneyimi
 
-## D0Eler
+## Isler
 
-1.  Firma xxx, pozisyon xx, yD1l xxx
+1.  Elsis Elektronik Sistemler Sanayi A.S., Proje Muhendisi, Subat 2023- devam ediyor
 
-2.  Firma yyy, pozisyon yyy, yD1l yyy
 
 ## Stajlar
 
-1.  Firma aaa, pozisyon xx, yD1l xxx
+1. Nurol Teknoloji ve Madencilik Ticaret A.S., Yari Zamanli Proje calisani, Ekim 2022-Mart 2023
 
-2.  Firma bbb, pozisyon yyy, yD1l yyy
+2. Turk Havacilik ve Uzay Sanayi A.S., Stajyer, Agustos 2020-Eylul 2020
 
-# Projeler
 
-1.  TCBD0TAK 1001..........................
+# Yetkinlikler
 
-# YayD1nlar
+MS Project, MS Excel, Jira, Canias ERP, Autocad
 
-1.  Dasdemir, E., Batta, R., Koksalan, M., Tezcaner CztC<rk, D. (2022) b
+
+# Sertifikalar
+
+1. Project Management Institute (PMI)- Certification Associate Project Management (CAPM) Preparation Training, Ocak 2024
+
+2. BSI Egitim Akademisi - AS/EN/JISQ 9100: 2016 Ic Tetkikci Egitimi, Ekim 2023
+
+3. BSI Egitim Akademisi - AS/EN/JISQ 9100: 2016 Gereklilikler Egitimi, Eylul 2023
+
+4. ODTU Yabanci Diller Yuksekokulu- IELTS Egitimi, Ocak 2023
