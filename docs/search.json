@@ -222,25 +222,21 @@
     "href": "index.html#takım-üyeleri",
     "title": "Takım: What R We Doing?",
     "section": "Takım Üyeleri",
-    "text": "Takım Üyeleri\n\nEdin_DE&gt;eko\nDuE!an TadiD\u0007\nMuhammed Taha Günday\nSebastian SzymaE\u0004ski"
+    "text": "Takım Üyeleri\n\nOsman Erel\nHatice Deniz Akben\nMuhammed Taha Günday\nBeril Aksoy\nSelin Öksüz\nSelin Kaya"
   },
   {
     "objectID": "portfolyo.html",
     "href": "portfolyo.html",
     "title": "Portfolyo",
     "section": "",
-    "text": "Bu sayfada, MUY665 İş Analitiği dersi 2023-2024 bahar dönemi boyunca yaptığımız analitik çalışmalarını sunmaktayız. Çalışmalarımıza sol menüden ulaşabilirsiniz.\n\n\n\n Back to top",
-    "crumbs": [
-      "Porfolyo",
-      "Portfolyo"
-    ]
+    "text": "Bu sayfada, MUY665 İş Analitiği dersi 2023-2024 bahar dönemi boyunca yaptığımız analitik çalışmalarını sunmaktayız. Çalışmalarımıza sol menüden ulaşabilirsiniz.\n\n\n\n Back to top"
   },
   {
     "objectID": "takim.html",
     "href": "takim.html",
     "title": "Takım Üyeleri",
     "section": "",
-    "text": "Takım Üyelerimizin detaylı özgemişlerinin yer aldığı kişisel sayfalarına gitmek için sol menüyü veya aşağıdaki linkleri kullanabilirsiniz.\n\nTakım Üyeleri\n\nEdin_Džeko\nDušan Tadić\nMuhammed Taha Günday\nSebastian Szymański\n\n\n\n\n\n Back to top"
+    "text": "Takım Üyelerimizin detaylı özgemişlerinin yer aldığı kişisel sayfalarına gitmek için sol menüyü veya aşağıdaki linkleri kullanabilirsiniz.\n\nTakım Üyeleri\n\nOsman Erel\nHatice Deniz Akben\nMuhammed Taha Günday\nBeril Aksoy\nSelin Öksüz\nSelin Kaya\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "proje.html",
@@ -660,5 +656,33 @@
     "title": "Çalışma 1",
     "section": "(c)",
     "text": "(c)\ninstall.packages(“dslabs”) library(dslabs) data(na_example) str(na_example) print(na_example)\nsum(is.na(na_example)) no_nas &lt;- ifelse(is.na(na_example), 665, na_example) print(no_nas)\nsum(is.na(no_nas))\nno_665 &lt;- sum(no_nas==665) print(no_665)"
+  },
+  {
+    "objectID": "takim/selinkaya.html#işler",
+    "href": "takim/selinkaya.html#işler",
+    "title": "Selin Kaya",
+    "section": "İşler",
+    "text": "İşler\n\nArçelik\nRoketsan, Aviyonik Sistem Mühendisi, 2023 - Devam Ediyor."
+  },
+  {
+    "objectID": "takim/selinkaya.html#stajlar",
+    "href": "takim/selinkaya.html#stajlar",
+    "title": "Selin Kaya",
+    "section": "Stajlar",
+    "text": "Stajlar\n\nRoketsan, Aviyonik Mühendisliği Aday Mühendis, 2021 - 2022.\nRoketsan, Aviyonik Mühendisliği Stajyeri, 2021.\nBAYKAR, Aviyonik Mühendisliği Stajyeri, 2021.\nErmaksan, Ar-Ge Stajyeri, 2020."
+  },
+  {
+    "objectID": "docs/takim/selinkaya.html#işler",
+    "href": "docs/takim/selinkaya.html#işler",
+    "title": "Muhammed Taha Günday",
+    "section": "İşler",
+    "text": "İşler\n\nRoketsan, Aviyonik Sistem Mühendisi, 2022 - devam ediyor."
+  },
+  {
+    "objectID": "docs/takim/selinkaya.html#stajlar",
+    "href": "docs/takim/selinkaya.html#stajlar",
+    "title": "Muhammed Taha Günday",
+    "section": "Stajlar",
+    "text": "Stajlar\n\nRoketsan, Aviyonik Mühendisliği Aday Mühendis, 2021 - 2022.\nRoketsan, Aviyonik Mühendisliği Stajyeri, 2021.\nBAYKAR, Aviyonik Mühendisliği Stajyeri, 2021.\nErmaksan, Ar-Ge Stajyeri, 2020."
   }
 ]

@@ -1,0 +1,38 @@
+---
+title: "Muhammed Taha Günday"
+---
+
+![](/assets/images/vesikalik_taha.jpg){fig-align="center" width="250"}
+
+# Eğitim
+
+-   Lisans, Elektrik-Elektronik Mühendisliği, Bilkent Üniversitesi, Türkiye, 2017 - 2022.
+-   Yüksek Lisans, Endüstri Mühendisliği, Hacettepe Üniversitesi, Türkiye, 2024 - devam ediyor.
+
+# İş Deneyimi
+
+## İşler
+
+1.  Roketsan, Aviyonik Sistem Mühendisi, 2022 - devam ediyor.
+
+## Stajlar
+
+1.  Roketsan, Aviyonik Mühendisliği Aday Mühendis, 2021 - 2022.
+
+2.  Roketsan, Aviyonik Mühendisliği Stajyeri, 2021.
+
+3.  BAYKAR, Aviyonik Mühendisliği Stajyeri, 2021.
+
+4.  Ermaksan, Ar-Ge Stajyeri, 2020.
+
+# Projeler
+
+1.  Bilkent Üniversitesi, Sanayi Odaklı Bitirme Projesi, Arçelik, Buzdolaplarında Enerji Tüketiminin Düşürülmesi
+
+# Yetkinlikler
+
+Python, Matlab, LTSpice, LabVIEW, Assembly, C#
+
+# Hobiler
+
+Şiir, Seyahat, Satranç, Tarih, Siyaset

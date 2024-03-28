@@ -40,6 +40,8 @@ website:
         - takim/edindzeko.qmd
         - takim/mtgunday.qmd  
         - takim/szymanski.qmd  
+        - takim/selinoksuz.qmd  
+        - takim/selinkaya.qmd  
         
         
   page-navigation: true
