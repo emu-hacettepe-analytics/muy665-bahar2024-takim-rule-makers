@@ -1,5 +1,5 @@
 ---
-title: "osman erel"
+title: "Osman Erel"
 ---
 
 ![](/assets/images/vesikalik.jpeg){fig-align="center"}

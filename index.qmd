@@ -3,9 +3,9 @@ title: "Takım: What R We Doing?"
 sidebar: false 
 ---
 
-MUY665-İş Analitiği dersi takım sayfamıza hoş geldiniz.
+MUY665-İş Analitiği dersi kapsamında oluşturduğumuz takım sayfamıza hoş geldiniz.
 
-Burada iş analitiği çalışmalarımızı paylaşıyoruz.
+Bu sayfa ile İş Analitiği çalışmalarımızı paylaşıyoruz.
 
 Lütfen faaliyetlerimizi görmek için için bizi takipte kalın.
 

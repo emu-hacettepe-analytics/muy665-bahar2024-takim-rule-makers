@@ -36,10 +36,10 @@ website:
       search: true
       contents:
         - takim.qmd
-        - takim/dusantadic.qmd
-        - takim/edindzeko.qmd
+        - takim/osmanerel.qmd
+        - takim/hdenizakben.qmd
         - takim/mtgunday.qmd  
-        - takim/szymanski.qmd  
+        - takim/berilaksoy.qmd  
         - takim/selinoksuz.qmd  
         - takim/selinkaya.qmd  
         
