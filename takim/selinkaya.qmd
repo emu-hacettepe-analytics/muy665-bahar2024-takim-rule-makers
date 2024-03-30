@@ -2,38 +2,38 @@
 title: "Selin Kaya"
 ---
 
-![](/assets/images/vesikalik_taha.jpg){fig-align="center" width="250"}
+![](images/vesikalık_selinkaya.jpg){fig-align="center" width="214"}
 
 # Eğitim
 
--   Lisans, Elektrik-Elektronik Mühendisliği, Bilkent Üniversitesi, Türkiye, 2016 - 2021.
--   Yüksek Lisans, Endüstri Mühendisliği, Hacettepe Üniversitesi, Türkiye, 2024 - devam ediyor.
+-   Lisans, Elektrik Elektronik Mühendisliği, Bilkent Üniversitesi, Türkiye, 2016 - 2021.
+-   Yüksek Lisans, Endüstri Mühendisliği, Hacettepe Üniversitesi, Türkiye, 2024 - Devam Ediyor.
 
 # İş Deneyimi
 
 ## İşler
 
-1.  Arçelik
-2.  Roketsan, Aviyonik Sistem Mühendisi, 2023 - Devam Ediyor.
+1.  Roketsan, Sistem Mühendisi, 2023 - Devam Ediyor.
+2.  Arçelik, Gömülü Yazılım Mühendisi, 2021 - 2022.
 
 ## Stajlar
 
-1.  Roketsan, Aviyonik Mühendisliği Aday Mühendis, 2021 - 2022.
+1.  Arçelik, Yazılım Mühendisliği Aday Mühendis, 2020 - 2021.
 
-2.  Roketsan, Aviyonik Mühendisliği Stajyeri, 2021.
+2.  Arçelik, Yazılıö Mühendisliği Stajyeri, 2020.
 
-3.  BAYKAR, Aviyonik Mühendisliği Stajyeri, 2021.
+3.  İş Bankası, Bilgi İşlem Stajyeri, 2020.
 
-4.  Ermaksan, Ar-Ge Stajyeri, 2020.
+4.  Türksat, Ar-Ge Stajyeri, 2019.
 
 # Projeler
 
-1.  Bilkent Üniversitesi, Sanayi Odaklı Bitirme Projesi, Arçelik, Buzdolaplarında Enerji Tüketiminin Düşürülmesi
+1.  Bilkent Üniversitesi, Sanayi Odaklı Bitirme Projesi, Arçelik, Buzdolaplarında Enerji Tüketiminin Azaltılması
 
 # Yetkinlikler
 
-Python, Matlab, LTSpice, LabVIEW, Assembly, C#
+Python, Matlab, Java, VHDL, LTSpice, Assembly, C
 
 # Hobiler
 
-Şiir, Seyahat, Satranç, Tarih, Siyaset
+Yüzme, Seyahat, Şiir, Tarih, Sanat
