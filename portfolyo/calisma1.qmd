@@ -2,7 +2,9 @@
 title: "Çalışma 1"
 ---
 
-Birinci grup ödevi çalışmamız 3 bölümden oluşmaktadır. İlk kısımda mtcar veri setini inceleyerek Bunlara sırayla aşağıda cevap arıyoruz.
+Birinci grup ödevi çalışmamız 3 bölümden oluşmaktadır. İlk kısımda Veri Bilimi ve Endüstri Mühendisliği konulu kaynaklardan biri özetlenmiştir. Ardından mtcar veri seti incelenerek çeşitli istatistiksel bilgileri bir liste olarak döndüren fonksiyon tanımı yapılmıştır. Son olarak na_exaple veriseti içerisindeki toplam NA sayısı bulunmuştur. NA verisi 665 değeri ile değiştirilerek kaç adet 665 değeri olduğu kontrol edilmiştir.
+
+Çözümler ve elde edilen çıktılar aşağıdaki gibidir.
 
 ## (a)
 
