@@ -12,30 +12,90 @@ Birinci grup ödevi çalışmamız 3 bölümden oluşmaktadır. İlk kısımda V
 
 ## (b)
 
-{dataset \<- mtcars} str(dataset) #dataset ozet head(dataset) #dataset ozet length(dataset\$mpg)%%2
+```{r}
+#mtcars dataseti incelenmiştir.
+dataset <- mtcars
+str(dataset)
+head(dataset) 
+length(dataset$mpg)%%2
 
-custom_summary \<- function(input_vector){
+#custom_summary fonksiyonu oluşturulmuştur.
+custom_summary <- function(input_vector) 
+{
+  # Ortalama hesaplanmıştır. Hesaplamayı yapabilmek için hem hazır fonksiyondan yararlanılmış hem de alogoritma tasarımı yapılmıştır.
+  vector_mean <- sum(input_vector)/length(input_vector)
+  vector_mean_hazir_fonksiyon <- mean(input_vector)
+  
+  # Medyan hesaplanmıştır. Hesaplamayı yapabilmek için hem hazır fonksiyondan yararlanılmış hem de alogoritma tasarımı yapılmıştır.
+  
+  if (length(input_vector)%%2==1) 
+  { 
+    vector_median <- sort(input_vector)[(length(input_vector)+1)/2] } 
+  else 
+  { 
+    median_element_1_index <- length(input_vector)/2 
+    median_element_2_index <- median_element_1_index+1 
+    
+    vector_median <- (sort(input_vector)[median_element_1_index] + sort(input_vector)[median_element_2_index])/2 } 
+  
+    vector_median_hazir_fonksiyon <- median(input_vector)
+  
+  #Standart sapma hesaplanmıştır. Hesaplamayı yapabilmek için hem hazır fonksiyondan yararlanılmış hem de alogoritma tasarımı yapılmıştır.
+  
+    vector_std <- 0 
+    for (element in input_vector)
+      { 
+        vector_std <- vector_std + (element - vector_mean)^2 
+        } 
+    vector_std <- vector_std / (length(input_vector)-1) 
+    vector_std <- sqrt(vector_std) 
+    vector_std_hazir_fonksiyon <- sd(input_vector)
+  
+    #Verideki minimum ve maksimum değerler hesaplanmıştır. Hesaplamayı yapabilmek için hem hazır fonksiyondan yararlanılmış hem de alogoritma tasarımı yapılmıştır.
+  
+    vector_max <- sort(input_vector)[length(input_vector)] 
+    vector_min <- sort(input_vector)[1] 
+    vector_max_hazir_fonksiyon <- max(input_vector) 
+    vector_min_hazir_fonksiyon <- min(input_vector)
+  
+    #Istenen iştatistiksel veriler liste haline getirlmiştir. 
+    sonuclar <- list(ortalama = vector_mean, ortalama_hazir_fonksiyon = vector_mean_hazir_fonksiyon, medyan = vector_median, medyan_hazir_fonksiyon = vector_median_hazir_fonksiyon, standart_sapma = vector_std, standart_sapma_hazir_fonksiyon = vector_std_hazir_fonksiyon, maksimum = vector_max, maksimum_hazir_fonksiyon = vector_max_hazir_fonksiyon, minimum = vector_min, minimum_hazir_fonksiyon = vector_min_hazir_fonksiyon) 
+  
+  return(sonuclar) 
+  }
 
-#ortalama vector_mean \<- sum(input_vector)/length(input_vector) vector_mean_hazir_fonksiyon \<- mean(input_vector)
+#For döngüsü oluşturularak hazırlanan fonsiyon ile mtcars veriseti incelenmiştir.
+for (i in 1:ncol(dataset))
+  { 
+  print(names(dataset)[i])  
+  print(custom_summary(dataset[[i]])) 
+}
 
-#medyan if (length(input_vector)%%2==1) { vector_median \<- sort(input_vector)\[(length(input_vector)+1)/2\] } else { median_element_1_index \<- length(input_vector)/2 median_element_2_index \<- median_element_1_index+1 vector_median \<- (sort(input_vector)\[median_element_1_index\] + sort(input_vector)\[median_element_2_index\])/2 } vector_median_hazir_fonksiyon \<- median(input_vector)
-
-#standart sapma vector_std \<- 0 for (element in input_vector){ vector_std \<- vector_std + (element - vector_mean)\^2 } vector_std \<- vector_std / (length(input_vector)-1) vector_std \<- sqrt(vector_std) vector_std_hazir_fonksiyon \<- sd(input_vector)
-
-#minimum ve maksimum vector_max \<- sort(input_vector)\[length(input_vector)\] vector_min \<- sort(input_vector)\[1\] vector_max_hazir_fonksiyon \<- max(input_vector) vector_min_hazir_fonksiyon \<- min(input_vector)
-
-#istenen degiskenleri liste haline getirip return edelim sonuclar \<- list(ortalama = vector_mean, ortalama_hazir_fonksiyon = vector_mean_hazir_fonksiyon, medyan = vector_median, medyan_hazir_fonksiyon = vector_median_hazir_fonksiyon, standart_sapma = vector_std, standart_sapma_hazir_fonksiyon = vector_std_hazir_fonksiyon, maksimum = vector_max, maksimum_hazir_fonksiyon = vector_max_hazir_fonksiyon, minimum = vector_min, minimum_hazir_fonksiyon = vector_min_hazir_fonksiyon) return(sonuclar) }
-
-for (i in 1:ncol(dataset)){ print(names(dataset)\[i\]) print(custom_summary(dataset\[\[i\]\])) }
-
-##apply(1:ncol(dataset), custom_summary)
+#Apply fonksiyonu kullanılarak hazırlanan fonsiyon ile mtcars veriseti incelenmiştir.
+inceleme <- apply(dataset, 2, custom_summary)
+print (inceleme)
+```
 
 ## (c)
 
-install.packages("dslabs") library(dslabs) data(na_example) str(na_example) print(na_example)
+```{r}
+#na_example dataseti incelenmiştir.
+library(dslabs) 
+data(na_example) 
+str(na_example) 
+print(na_example)
 
-sum(is.na(na_example)) no_nas \<- ifelse(is.na(na_example), 665, na_example) print(no_nas)
+#na_example dataseti içerisindeki NA sayısı bulunmuştur.
+sum(is.na(na_example)) 
 
+#na_example dataseti içerisindeki NA değerleri 665 değeri ile değiştirilmiştir.
+no_nas <- ifelse(is.na(na_example), 665, na_example) 
+print(no_nas)
+
+#Değiştirilen verideki NA değeri sayısı bulunmuştur.
 sum(is.na(no_nas))
 
-no_665 \<- sum(no_nas==665) print(no_665)
+#Değiştirilen verideki 665 değeri sayısı bulunmuştur.
+no_665 <- sum(no_nas==665) 
+print(no_665)
+```
