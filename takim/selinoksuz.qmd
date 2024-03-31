@@ -2,7 +2,8 @@
 title: "SELİN ÖKSÜZ"
 ---
 
-![](/assets/images/vesikalik.jpeg){fig-align="center"}
+![](images/SelinOksuz.png){fig-align="center" width="200"}
+
 
 # Egitim
 
@@ -23,7 +24,11 @@ title: "SELİN ÖKSÜZ"
 
 1.  
 
+# Projeler
+
 # Yetkinlikler
+
+# Hobiler
 
 # Sertifikalar
 
