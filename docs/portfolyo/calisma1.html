@@ -193,7 +193,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#a" id="toc-a" class="nav-link active" data-scroll-target="#a">(a)</a></li>
-  <li><a href="#video-izlenip-özeti-yazılacak" id="toc-video-izlenip-özeti-yazılacak" class="nav-link" data-scroll-target="#video-izlenip-özeti-yazılacak">video izlenip özeti yazılacak</a></li>
   <li><a href="#b" id="toc-b" class="nav-link" data-scroll-target="#b">(b)</a></li>
   <li><a href="#c" id="toc-c" class="nav-link" data-scroll-target="#c">(c)</a></li>
   </ul>
@@ -227,9 +226,90 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Çözümler ve elde edilen çıktılar aşağıdaki gibidir.</p>
 <section id="a" class="level2">
 <h2 class="anchored" data-anchor-id="a">(a)</h2>
-</section>
-<section id="video-izlenip-özeti-yazılacak" class="level2">
-<h2 class="anchored" data-anchor-id="video-izlenip-özeti-yazılacak">video izlenip özeti yazılacak</h2>
+<p><strong>VERİYE DAYALI KARAR VERME – FARKLI SEKTÖRDEN UYGULAMALAR</strong></p>
+<p>Endüstri mühendisleri iş hayatlarında çoğunlukla optimizasyon problemleri ile karşı karşıya kalmaktadır. Bu sorunlara çözüm üretebilmek için birçok araçtan faydalanmaktadırlar. Bu araçların en başında matematiksel modelleme ve simülasyon yer almaktadır. Matematiksel olarak modellenemeyen problemler, olasılıksal olarak ele alınabilmektedir.</p>
+<p>Son 5-10 yıla bakıldığında veri analizi ve veri madenciliği yöntemlerinin kullanılmaya başlandığı göze çarpmaktadır. Bu durumun temel sebebi endüstri mühendislerinin aldığı matematik temelli eğitime dayanmaktadır. Söz konusu durum incelendiğinde bahsi geçen alanların makine öğrenmesinin bir parçası olduğu görülmektedir.</p>
+<p>Mühendisliğin temelinde problem çözmek yer almaktadır. Problem çözme süreci birkaç farklı aşamada gerçekleşmektedir.</p>
+<ul>
+<li><p>İlk olarak problemin ne olduğu tespit edilerek tanımlanır.</p></li>
+<li><p>Sorun ile ilgili olası nedenler belirlenir.</p></li>
+<li><p>Problem veriler kullanılarak sayılarla ifade edilir. Burada problemi iyi anlayıp çözümler üretilir. Bunu yaparken tek bir çözüm değil farklı alternatiflerin üretilmesi gerekir. Her zaman karşılaştırma yöntemimizin olması gerekmektedir.</p></li>
+<li><p>Alternatif yöntemlerin içinden uygulanabilir en iyi yöntemi bulduğumuzda problem çözülebilmektedir.</p></li>
+</ul>
+<p><u><strong><em>Problem Örneği: Kereste Eğrilik Tahmini</em></strong></u></p>
+<p><strong>Problem</strong>:</p>
+<p>Yaş kereste resminden kurutma sonrasında eğrilik tahmini yapılması.</p>
+<p>Ev imalatlarında kullanılan bazı yaş kerestelerin kurutma esnasında yamulması problemi bulunmaktadır. Eğer hangi kerestelerin yamulacağı bilinirse önleyici faaliyetler kapsamında sabitleme gibi önlemler alınarak yamulması engellenebilecektir.</p>
+<p><strong>Problem Önemi:</strong></p>
+<p>Düz Kereste yaklaşık 10$ iken Eğri Kereste yaklaşık 2$’dır.</p>
+<p><strong>Problemin Temel Nedeni:</strong></p>
+<p>Bu konuda tecrübeli insanlardan ve diğer kaynaklardan eğrilme sebepleri tespit edilmelidir.</p>
+<ul>
+<li><p>Ağaç gövdesinin kesilme yerine bağlı olarak halka oryantasyonlarının açısı.</p></li>
+<li><p>Ağaçlardan dal çıkan kısımlar. (Budak noktaları dengeyi bozabilmektedir.)</p></li>
+<li><p>Tek parça ağaçta genç ve yaşlı odun dağılımı.</p></li>
+</ul>
+<p><strong>Veri:</strong></p>
+<p>Veri çeşitleri ve içeriği aşağıda listelendiği gibidir.</p>
+<ul>
+<li><p>Yaş kereste resimleri.</p></li>
+<li><p>Kurutma işlemi sonrası alınan ölçümler.</p></li>
+</ul>
+<p><strong>Nedenlerin Sayıya Dökülmesi:</strong></p>
+<p>Bu süreci gerçekleştirirken karşı tarafla uzlaşarak ilerlemek, işin kök nedeninden yola çıkıp sayılara ulaşmak problem çözümünde fayda sağlamaktadır.</p>
+<p><strong>Çözüm Yönetimi:</strong></p>
+<p>Çözüm yöntemleri aşağıda listelendiği gibidir.</p>
+<ul>
+<li><p>Farklı açılardan çizilen yaş kereste resimlerini birleştirip tek görsel haline getirilmesi.</p></li>
+<li><p>Resimler üzerinde filtreler kullanarak faklı açılardan kerestelerin incelenmesi.</p></li>
+<li><p>Ön işlem yapılan resimleri sayısal verilere dönüştürülüp tahmin algoritmasına verilmesi.</p></li>
+</ul>
+<p><strong>Etki:</strong></p>
+<p>Ciroda&nbsp; %5 artış.</p>
+<p>Bu yöntemler sonunda problemi çözüp yaş kerestenin neden yamulduğunun belirtilmesi ve açıklanabilir olması gerekmektedir.</p>
+<p>Süreci özetlemek gerekirse, ham veri işlenerek sayısallaştırılmıştır. Sayısal verinin bir öğrenici aracılığıyla incelenmesiyle geleneksel yöntemden yararlanılmıştır.</p>
+<p>Müzik, resim ve radyo dalgası gibi veriler yapısal olmayan veri olarak tanımlanırken, yapısal veriler ise satır ve sütunlara yerleştirilebilen verilerdir.</p>
+<p>Geleneksel öğrenme ve derin öğrenme arasındaki farklar incelendiğinde; geleneksel öğrenme, problemi anlama, faydalı parçaları bulma, sayısal verilere dökme ve sonrasında bu verileri uygun bir fonkisyona verme işlemini kapsar. Ayrıca, yorumlanabilirlik de önemli bir noktadır. Özellikle iş hayatında bazen kararların neden alındığının açıklanması gerekmektedir. Derin öğrenme ise kendi içinde öznitelik çıkaran modelleri kullanmaktadır. Genellikle yapısal olmayan verilerin kullanılmasında daha uygundur. Ancak, yorumlanabilirliğe uygun değil ve çok fazla parametresi mevcuttur. Çok fazla veriye ihtiyaç duymaktadır. Verilerdeki çok ufak bir hatanın geri dönüşü çok daha zor olmaktadır.</p>
+<p><u><strong><em>Problem Örneği: Elektrik Üretim Tahmini</em></strong></u></p>
+<p><strong>Problem:</strong></p>
+<p>Elektriğin tüketici ihtiyacı kadar üretilip az ya da fazla üretiminin engellenmesi.</p>
+<p>Elektriğin tüketildiği kadar üretilmesi de gerekmektedir. Başka bir ifade ile dengede olması gerekmektedir. Arz ve talebin paydaşlar tarafından doğru tahmin edilerek kayıpların en aza indirgenmesi gerekmektedir.</p>
+<p><strong>Problem Önemi:</strong></p>
+<p>Yıllık Dengesizlik Miktarı yaklaşık 19,1 TWh’tir.</p>
+<p>Net Zarar yaklaşık 421 Milyon TL’dir.</p>
+<p><strong>Veri:</strong></p>
+<p>Veri çeşitleri ve içeriği aşağıda listelendiği gibidir.</p>
+<ul>
+<li><p>Bölge tüketim verisi.</p></li>
+<li><p>Lisanssız santraller üretim verisi.</p></li>
+<li><p>Türkiye saatlik tüketim verisi.</p></li>
+<li><p>Hava durumu.</p></li>
+<li><p>Özel günler.</p></li>
+<li><p>Türkiye saatlik üretimi.</p></li>
+</ul>
+<p><strong>Çözüm Yönetimi:</strong></p>
+<p>Çözüm yöntemleri aşağıda listelendiği gibidir.</p>
+<ul>
+<li><p>Özel günleri dikkate alarak sezonsal bazlı elektrik ihtiyacı belirlenecektir.</p></li>
+<li><p>Tahminlerde aralıklı karar vermek daha anlamlı olacaktır.</p></li>
+<li><p>Sayısal verilerin tahmin algoritmasına verilmesi</p></li>
+</ul>
+<p><strong>Etki:</strong></p>
+<p>Var olan sisteme kıyasla 6 Milyon TL kar.</p>
+<p>Çevrimiçi alışveriş sitelerinden örnek vermek gerekirse, veri sıralamasının temelinde daha çok ürün satışı bulunmaktadır. Sıralamaların ziyaretçilerin düşünce yapısını değiştirebildiği gözlemlenmektedir. Önerilen sıralamada karşımıza çıkan ürünler ziyaretçinin o ürünleri alma olasılığı ile ilgilidir. Sitede yapmış olduğumuz tüm hareketler bize önerilen ürünleri etkilemektedir. Bu alanda benzetme, tercih öğrenme ve tahmini satış gibi makine öğrenme yöntemleri çok kullanılmaktadır. Burada ortaya çıkan veriler ile başka algoritmalar üzerinde çalışılmaktadır. Bu tür verilere tek taraflı veri denilmektedir. Bu tür durumlarda iyi algoritmalar ortaya çıkma olasılığı azalmaktadır. Pekiştirmeli öğrenme yöntemleri ise önceleri daha az kullanılmasına rağmen günümüzde popüler durumdadır.</p>
+<p>Verilen örneklere bakıldığında aşağıdaki çıkarımlarda bulunabiliriz.</p>
+<ul>
+<li><p>İş hayatında basit modeller oluşturmak her zaman daha iyidir. Çünkü açıklama ihtiyacı mevcuttur. Mükemmel modelleri iş hayatında kullanmak birkaç istisna dışında çok gerekli değildir.</p></li>
+<li><p>Az veya kirli veri ile uğraşmak ciddi anlamda insan kaynağı gerektirmektedir.</p></li>
+<li><p>Yapısal ve yapısal olmayan veri için alternatif yaklaşımlar geliştirme gereksinimi artmaktadır.</p></li>
+<li><p>Açık veri kaynakları zengin bilgi içeriği sağlamaktadır.</p></li>
+<li><p>İnsan yönlendirmesi fark yaratmaktadır.</p></li>
+<li><p>Yorumlanabilirlik önemini korumaktadır.</p></li>
+<li><p>Karar verme için kullanılan tahminler yüzde yüz doğru olmak zorunda değildir. Nokta tahminler yanıltıcı olabilmektedir. Aralıklı tahminlerle karar alıyorsak doğru kararı alma olasılığımız mevcuttur.</p></li>
+<li><p>Karar verme için takviyeli öğrenme yaklaşımları önemli hale gelmektedir.</p></li>
+</ul>
+<p>Tahmin yöntemlerinin gelişmesi ile insanoğlu ilginçlikleri, çözemediği problemleri çözmeye uğraşmaktadır. Herhangi bir fonksiyon öğrenme yönteminde ya da öğrenme sinir ağlarında sadece hataları değil problemin içinde bulunduğu matematiksel ya da fiziksel yasaları da denkleme katarsak daha doğru ilişki kurulması mümkündür. Eğer bulunan değerler mevcut yasalarla örtüşmüyorsa bulunan değerlerin hatalı olduğu çıkarımı yapılmaktadır. Son 4-5 yıldır özellikle dinamik sistemlerbe (zaman ve başka değişkenlere bağlı değişiklik gösteren sistemler) bu tür öğrenme yöntemleri revaçta bulunmaktadır.</p>
+<p>Son zamanlarda makine öğrenmesi yöntemlerinin optimizasyonu iyileştirmek için kullanılması Endüstri Mühendislerinin bu konuya olan odağını da arttırmıştır. Örneğin, geçmişte çözülen optimizasyon problemleri sonucunda oluşan verilerin yeni meydana gelen problemlerin çözümünde kullanılması üzerine çalışmalar sürdürülmektedir.</p>
 </section>
 <section id="b" class="level2">
 <h2 class="anchored" data-anchor-id="b">(b)</h2>
@@ -1052,16 +1132,13 @@ $carb$minimum_hazir_fonksiyon
 <h2 class="anchored" data-anchor-id="c">(c)</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#na_example dataseti incelenmiştir.</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dslabs) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'dslabs' was built under R version 4.3.3</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(na_example) </span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(na_example) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dslabs) </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(na_example) </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(na_example) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> int [1:1000] 2 1 3 2 1 3 1 4 3 2 ...</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(na_example)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(na_example)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   [1]  2  1  3  2  1  3  1  4  3  2  2 NA  2  2  1  4 NA  1  1  2  1  2  2  1
   [25]  2  5 NA  2  2  3  1  2  4  1  1  1  4  5  2  3  4  1  2  4  1  1  2  1
@@ -1106,14 +1183,14 @@ $carb$minimum_hazir_fonksiyon
  [961]  3 NA  1  2 NA NA  2 NA  3  1  1  2  5  3  5  1  1  4 NA  2  1  3  1  1
  [985]  2  4  3  3  3 NA  1  1  2  2  1  1  2  2 NA  2</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">#na_example dataseti içerisindeki NA sayısı bulunmuştur.</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(na_example)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#na_example dataseti içerisindeki NA sayısı bulunmuştur.</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(na_example)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 145</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">#na_example dataseti içerisindeki NA değerleri 665 değeri ile değiştirilmiştir.</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>no_nas <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(na_example), <span class="dv">665</span>, na_example) </span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(no_nas)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">#na_example dataseti içerisindeki NA değerleri 665 değeri ile değiştirilmiştir.</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>no_nas <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(na_example), <span class="dv">665</span>, na_example) </span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(no_nas)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   [1]   2   1   3   2   1   3   1   4   3   2   2 665   2   2   1   4 665   1
   [19]   1   2   1   2   2   1   2   5 665   2   2   3   1   2   4   1   1   1
@@ -1172,14 +1249,14 @@ $carb$minimum_hazir_fonksiyon
  [973]   5   3   5   1   1   4 665   2   1   3   1   1   2   4   3   3   3 665
  [991]   1   1   2   2   1   1   2   2 665   2</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Değiştirilen verideki NA değeri sayısı bulunmuştur.</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(no_nas))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Değiştirilen verideki NA değeri sayısı bulunmuştur.</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(no_nas))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Değiştirilen verideki 665 değeri sayısı bulunmuştur.</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>no_665 <span class="ot">&lt;-</span> <span class="fu">sum</span>(no_nas<span class="sc">==</span><span class="dv">665</span>) </span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(no_665)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Değiştirilen verideki 665 değeri sayısı bulunmuştur.</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>no_665 <span class="ot">&lt;-</span> <span class="fu">sum</span>(no_nas<span class="sc">==</span><span class="dv">665</span>) </span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(no_665)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 145</code></pre>
 </div>

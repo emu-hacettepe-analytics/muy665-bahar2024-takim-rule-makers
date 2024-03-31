@@ -8,7 +8,145 @@ Birinci grup ödevi çalışmamız 3 bölümden oluşmaktadır. İlk kısımda V
 
 ## (a)
 
-## video izlenip özeti yazılacak
+**VERİYE DAYALI KARAR VERME – FARKLI SEKTÖRDEN UYGULAMALAR**
+
+Endüstri mühendisleri iş hayatlarında çoğunlukla optimizasyon problemleri ile karşı karşıya kalmaktadır. Bu sorunlara çözüm üretebilmek için birçok araçtan faydalanmaktadırlar. Bu araçların en başında matematiksel modelleme ve simülasyon yer almaktadır. Matematiksel olarak modellenemeyen problemler, olasılıksal olarak ele alınabilmektedir.
+
+Son 5-10 yıla bakıldığında veri analizi ve veri madenciliği yöntemlerinin kullanılmaya başlandığı göze çarpmaktadır. Bu durumun temel sebebi endüstri mühendislerinin aldığı matematik temelli eğitime dayanmaktadır. Söz konusu durum incelendiğinde bahsi geçen alanların makine öğrenmesinin bir parçası olduğu görülmektedir.
+
+Mühendisliğin temelinde problem çözmek yer almaktadır. Problem çözme süreci birkaç farklı aşamada gerçekleşmektedir.
+
+-   İlk olarak problemin ne olduğu tespit edilerek tanımlanır.
+
+-   Sorun ile ilgili olası nedenler belirlenir.
+
+-   Problem veriler kullanılarak sayılarla ifade edilir. Burada problemi iyi anlayıp çözümler üretilir. Bunu yaparken tek bir çözüm değil farklı alternatiflerin üretilmesi gerekir. Her zaman karşılaştırma yöntemimizin olması gerekmektedir.
+
+-   Alternatif yöntemlerin içinden uygulanabilir en iyi yöntemi bulduğumuzda problem çözülebilmektedir.
+
+[***Problem Örneği: Kereste Eğrilik Tahmini***]{.underline}
+
+**Problem**:
+
+Yaş kereste resminden kurutma sonrasında eğrilik tahmini yapılması.
+
+Ev imalatlarında kullanılan bazı yaş kerestelerin kurutma esnasında yamulması problemi bulunmaktadır. Eğer hangi kerestelerin yamulacağı bilinirse önleyici faaliyetler kapsamında sabitleme gibi önlemler alınarak yamulması engellenebilecektir.
+
+**Problem Önemi:**
+
+Düz Kereste yaklaşık 10\$ iken Eğri Kereste yaklaşık 2\$'dır.
+
+**Problemin Temel Nedeni:**
+
+Bu konuda tecrübeli insanlardan ve diğer kaynaklardan eğrilme sebepleri tespit edilmelidir.
+
+-   Ağaç gövdesinin kesilme yerine bağlı olarak halka oryantasyonlarının açısı.
+
+-   Ağaçlardan dal çıkan kısımlar. (Budak noktaları dengeyi bozabilmektedir.)
+
+-   Tek parça ağaçta genç ve yaşlı odun dağılımı.
+
+**Veri:**
+
+Veri çeşitleri ve içeriği aşağıda listelendiği gibidir.
+
+-   Yaş kereste resimleri.
+
+-   Kurutma işlemi sonrası alınan ölçümler.
+
+**Nedenlerin Sayıya Dökülmesi:**
+
+Bu süreci gerçekleştirirken karşı tarafla uzlaşarak ilerlemek, işin kök nedeninden yola çıkıp sayılara ulaşmak problem çözümünde fayda sağlamaktadır.
+
+**Çözüm Yönetimi:**
+
+Çözüm yöntemleri aşağıda listelendiği gibidir.
+
+-   Farklı açılardan çizilen yaş kereste resimlerini birleştirip tek görsel haline getirilmesi.
+
+-   Resimler üzerinde filtreler kullanarak faklı açılardan kerestelerin incelenmesi.
+
+-   Ön işlem yapılan resimleri sayısal verilere dönüştürülüp tahmin algoritmasına verilmesi.
+
+**Etki:**
+
+Ciroda  %5 artış.
+
+Bu yöntemler sonunda problemi çözüp yaş kerestenin neden yamulduğunun belirtilmesi ve açıklanabilir olması gerekmektedir.
+
+Süreci özetlemek gerekirse, ham veri işlenerek sayısallaştırılmıştır. Sayısal verinin bir öğrenici aracılığıyla incelenmesiyle geleneksel yöntemden yararlanılmıştır.
+
+Müzik, resim ve radyo dalgası gibi veriler yapısal olmayan veri olarak tanımlanırken, yapısal veriler ise satır ve sütunlara yerleştirilebilen verilerdir.
+
+Geleneksel öğrenme ve derin öğrenme arasındaki farklar incelendiğinde; geleneksel öğrenme, problemi anlama, faydalı parçaları bulma, sayısal verilere dökme ve sonrasında bu verileri uygun bir fonkisyona verme işlemini kapsar. Ayrıca, yorumlanabilirlik de önemli bir noktadır. Özellikle iş hayatında bazen kararların neden alındığının açıklanması gerekmektedir. Derin öğrenme ise kendi içinde öznitelik çıkaran modelleri kullanmaktadır. Genellikle yapısal olmayan verilerin kullanılmasında daha uygundur. Ancak, yorumlanabilirliğe uygun değil ve çok fazla parametresi mevcuttur. Çok fazla veriye ihtiyaç duymaktadır. Verilerdeki çok ufak bir hatanın geri dönüşü çok daha zor olmaktadır.
+
+[***Problem Örneği: Elektrik Üretim Tahmini***]{.underline}
+
+**Problem:**
+
+Elektriğin tüketici ihtiyacı kadar üretilip az ya da fazla üretiminin engellenmesi.
+
+Elektriğin tüketildiği kadar üretilmesi de gerekmektedir. Başka bir ifade ile dengede olması gerekmektedir. Arz ve talebin paydaşlar tarafından doğru tahmin edilerek kayıpların en aza indirgenmesi gerekmektedir.
+
+**Problem Önemi:**
+
+Yıllık Dengesizlik Miktarı yaklaşık 19,1 TWh'tir.
+
+Net Zarar yaklaşık 421 Milyon TL'dir.
+
+**Veri:**
+
+Veri çeşitleri ve içeriği aşağıda listelendiği gibidir.
+
+-   Bölge tüketim verisi.
+
+-   Lisanssız santraller üretim verisi.
+
+-   Türkiye saatlik tüketim verisi.
+
+-    Hava durumu.
+
+-   Özel günler.
+
+-   Türkiye saatlik üretimi.
+
+**Çözüm Yönetimi:**
+
+Çözüm yöntemleri aşağıda listelendiği gibidir.
+
+-   Özel günleri dikkate alarak sezonsal bazlı elektrik ihtiyacı belirlenecektir.
+
+-   Tahminlerde aralıklı karar vermek daha anlamlı olacaktır.
+
+-   Sayısal verilerin tahmin algoritmasına verilmesi
+
+**Etki:**
+
+Var olan sisteme kıyasla 6 Milyon TL kar.
+
+Çevrimiçi alışveriş sitelerinden örnek vermek gerekirse, veri sıralamasının temelinde daha çok ürün satışı bulunmaktadır. Sıralamaların ziyaretçilerin düşünce yapısını değiştirebildiği gözlemlenmektedir. Önerilen sıralamada karşımıza çıkan ürünler ziyaretçinin o ürünleri alma olasılığı ile ilgilidir. Sitede yapmış olduğumuz tüm hareketler bize önerilen ürünleri etkilemektedir. Bu alanda benzetme, tercih öğrenme ve tahmini satış gibi makine öğrenme yöntemleri çok kullanılmaktadır. Burada ortaya çıkan veriler ile başka algoritmalar üzerinde çalışılmaktadır. Bu tür verilere tek taraflı veri denilmektedir. Bu tür durumlarda iyi algoritmalar ortaya çıkma olasılığı azalmaktadır. Pekiştirmeli öğrenme yöntemleri ise önceleri daha az kullanılmasına rağmen günümüzde popüler durumdadır.
+
+Verilen örneklere bakıldığında aşağıdaki çıkarımlarda bulunabiliriz.
+
+-   İş hayatında basit modeller oluşturmak her zaman daha iyidir. Çünkü açıklama ihtiyacı mevcuttur. Mükemmel modelleri iş hayatında kullanmak birkaç istisna dışında çok gerekli değildir.
+
+-   Az veya kirli veri ile uğraşmak ciddi anlamda insan kaynağı gerektirmektedir.
+
+-   Yapısal ve yapısal olmayan veri için alternatif yaklaşımlar geliştirme gereksinimi artmaktadır.
+
+-   Açık veri kaynakları zengin bilgi içeriği sağlamaktadır.
+
+-   İnsan yönlendirmesi fark yaratmaktadır.
+
+-   Yorumlanabilirlik önemini korumaktadır.
+
+-   Karar verme için kullanılan tahminler yüzde yüz doğru olmak zorunda değildir. Nokta tahminler yanıltıcı olabilmektedir. Aralıklı tahminlerle karar alıyorsak doğru kararı alma olasılığımız mevcuttur.
+
+-   Karar verme için takviyeli öğrenme yaklaşımları önemli hale gelmektedir.
+
+Tahmin yöntemlerinin gelişmesi ile insanoğlu ilginçlikleri, çözemediği problemleri çözmeye uğraşmaktadır. Herhangi bir fonksiyon öğrenme yönteminde ya da öğrenme sinir ağlarında sadece hataları değil problemin içinde bulunduğu matematiksel ya da fiziksel yasaları da denkleme katarsak daha doğru ilişki kurulması mümkündür. Eğer bulunan değerler mevcut yasalarla örtüşmüyorsa bulunan değerlerin hatalı olduğu çıkarımı yapılmaktadır. Son 4-5 yıldır özellikle dinamik sistemlerbe (zaman ve başka değişkenlere bağlı değişiklik gösteren sistemler) bu tür öğrenme yöntemleri revaçta bulunmaktadır.
+
+Son zamanlarda makine öğrenmesi yöntemlerinin optimizasyonu iyileştirmek için kullanılması Endüstri Mühendislerinin bu konuya olan odağını da arttırmıştır. Örneğin, geçmişte çözülen optimizasyon problemleri sonucunda oluşan verilerin yeni meydana gelen problemlerin çözümünde kullanılması üzerine çalışmalar sürdürülmektedir.
 
 ## (b)
 
