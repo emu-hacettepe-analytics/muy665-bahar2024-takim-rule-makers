@@ -2,7 +2,7 @@
 title: "SELİN ÖKSÜZ"
 ---
 
-![](images/SelinOksuz.jpg){fig-align="center" width="200"}
+![](images/SelinOksuz.jpg){fig-align="center"}
 
 # Egitim
 
@@ -30,11 +30,11 @@ title: "SELİN ÖKSÜZ"
 
 1.  AB Youth Change in Action Project, Kokkola/Fİnland, 2014
 
-2. Sour Water Treatment, ODTÜ Kimya Mühendisliği Bitirme Projesi, 2019
+2.  Sour Water Treatment, ODTÜ Kimya Mühendisliği Bitirme Projesi, 2019
 
 # Yetkinlikler
 
--SAP S4 HANA, SAP ME/MII ERP Management Systems, QDMS, Jira, MS Office Programları, Keycreator, Matlab 
+-SAP S4 HANA, SAP ME/MII ERP Management Systems, QDMS, Jira, MS Office Programları, Keycreator, Matlab
 
 # Hobiler
 
@@ -42,10 +42,10 @@ title: "SELİN ÖKSÜZ"
 
 # Sertifikalar
 
-1. Proje YÖnetimi Sertifikası, 2023
+1.  Proje YÖnetimi Sertifikası, 2023
 
-2. İleri Seviye Excel Eğitimi, 2022
+2.  İleri Seviye Excel Eğitimi, 2022
 
-3. IFS HPC Eğitim Sertifikası, 2022
+3.  IFS HPC Eğitim Sertifikası, 2022
 
-4. ISO9001:2015 ve ISO19011:2018 Sertifiaları, 2015 , 2021
+4.  ISO9001:2015 ve ISO19011:2018 Sertifiaları, 2015 , 2021
