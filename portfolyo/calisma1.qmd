@@ -192,7 +192,7 @@ custom_summary <- function(input_vector)
     #Verideki minimum ve maksimum değerler hesaplanmıştır. Hesaplamayı yapabilmek için hem hazır fonksiyondan yararlanılmış hem de alogoritma tasarımı yapılmıştır.
   
     vector_max <- sort(input_vector)[length(input_vector)] 
-    vector_min <- sort(input_vector)[1] 
+    vector_min <- sort(input_vector)[1]
     vector_max_hazir_fonksiyon <- max(input_vector) 
     vector_min_hazir_fonksiyon <- min(input_vector)
   
@@ -208,10 +208,17 @@ for (i in 1:ncol(dataset))
   print(names(dataset)[i])  
   print(custom_summary(dataset[[i]])) 
 }
-
+class(dataset)
 #Apply fonksiyonu kullanılarak hazırlanan fonsiyon ile mtcars veriseti incelenmiştir.
-inceleme <- apply(dataset, 2, custom_summary)
-print (inceleme)
+# combined_vector oluşturulmuştur.
+combined_vector <- c(mtcars$mpg, mtcars$cyl, mtcars$disp, mtcars$hp, mtcars$drat, 
+                     mtcars$wt, mtcars$qsec, mtcars$vs, mtcars$am, mtcars$gear, mtcars$carb)
+
+# matrix_from_vector oluşturulmuştur.
+matrix_from_vector <- matrix(combined_vector, nrow = 32)
+# Apply fonksiyonunu kullanarak her sütun için custom_summary işlevi uygulanmıştırç
+inceleme <- apply(matrix_from_vector, 2, custom_summary)
+print(inceleme)
 ```
 
 ## (c)

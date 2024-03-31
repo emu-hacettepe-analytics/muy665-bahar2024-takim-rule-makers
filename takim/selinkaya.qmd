@@ -6,29 +6,31 @@ title: "Selin Kaya"
 
 # Eğitim
 
--   Lisans, Elektrik Elektronik Mühendisliği, Bilkent Üniversitesi, Türkiye, 2016 - 2021.
--   Yüksek Lisans, Endüstri Mühendisliği, Hacettepe Üniversitesi, Türkiye, 2024 - Devam Ediyor.
+![](images/bilkent_logo.jpg){width="150" height="100"} Lisans, Elektrik Elektronik Mühendisliği, Bilkent Üniversitesi, Türkiye, 2016 - 2021.
+
+![](images/hacettepe_logo.png){width="150"} Yüksek Lisans, Endüstri Mühendisliği, Hacettepe Üniversitesi, Türkiye, 2024 - Devam Ediyor.
 
 # İş Deneyimi
 
 ## İşler
 
-1.  Roketsan, Sistem Mühendisi, 2023 - Devam Ediyor.
-2.  Arçelik, Gömülü Yazılım Mühendisi, 2021 - 2022.
+![](images/rs_loga.jpg){width="150"} Roketsan, Sistem Mühendisi, 2023 - Devam Ediyor.
+
+![](images/arçelik_logo.png){width="150"} Arçelik, Gömülü Yazılım Mühendisi, 2021 - 2022.
 
 ## Stajlar
 
-1.  Arçelik, Yazılım Mühendisliği Aday Mühendis, 2020 - 2021.
+![](images/arçelik_logo-01.png){width="150"} Arçelik, Yazılım Mühendisliği Aday Mühendis, 2020 - 2021.
 
-2.  Arçelik, Yazılıö Mühendisliği Stajyeri, 2020.
+![](images/arçelik_logo-02.png){width="150"} Arçelik, Yazılıö Mühendisliği Stajyeri, 2020.
 
-3.  İş Bankası, Bilgi İşlem Stajyeri, 2020.
+![](images/işbank_logo.png){width="150"} İş Bankası, Bilgi İşlem Stajyeri, 2020.
 
-4.  Türksat, Ar-Ge Stajyeri, 2019.
+![](images/türksat_logo.webp){width="150"} Türksat, Ar-Ge Stajyeri, 2019.
 
 # Projeler
 
-1.  Bilkent Üniversitesi, Sanayi Odaklı Bitirme Projesi, Arçelik, Buzdolaplarında Enerji Tüketiminin Azaltılması
+Bilkent Üniversitesi, Sanayi Odaklı Bitirme Projesi, Arçelik, Buzdolaplarında Enerji Tüketiminin Azaltılması
 
 # Yetkinlikler
 

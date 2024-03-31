@@ -380,7 +380,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>    <span class="co">#Verideki minimum ve maksimum değerler hesaplanmıştır. Hesaplamayı yapabilmek için hem hazır fonksiyondan yararlanılmış hem de alogoritma tasarımı yapılmıştır.</span></span>
 <span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>    vector_max <span class="ot">&lt;-</span> <span class="fu">sort</span>(input_vector)[<span class="fu">length</span>(input_vector)] </span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>    vector_min <span class="ot">&lt;-</span> <span class="fu">sort</span>(input_vector)[<span class="dv">1</span>] </span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>    vector_min <span class="ot">&lt;-</span> <span class="fu">sort</span>(input_vector)[<span class="dv">1</span>]</span>
 <span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>    vector_max_hazir_fonksiyon <span class="ot">&lt;-</span> <span class="fu">max</span>(input_vector) </span>
 <span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>    vector_min_hazir_fonksiyon <span class="ot">&lt;-</span> <span class="fu">min</span>(input_vector)</span>
 <span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>  </span>
@@ -738,392 +738,370 @@ $minimum
 $minimum_hazir_fonksiyon
 [1] 1</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Apply fonksiyonu kullanılarak hazırlanan fonsiyon ile mtcars veriseti incelenmiştir.</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>inceleme <span class="ot">&lt;-</span> <span class="fu">apply</span>(dataset, <span class="dv">2</span>, custom_summary)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span> (inceleme)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(dataset)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>$mpg
-$mpg$ortalama
+<pre><code>[1] "data.frame"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Apply fonksiyonu kullanılarak hazırlanan fonsiyon ile mtcars veriseti incelenmiştir.</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># combined_vector oluşturulmuştur.</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>combined_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(mtcars<span class="sc">$</span>mpg, mtcars<span class="sc">$</span>cyl, mtcars<span class="sc">$</span>disp, mtcars<span class="sc">$</span>hp, mtcars<span class="sc">$</span>drat, </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>                     mtcars<span class="sc">$</span>wt, mtcars<span class="sc">$</span>qsec, mtcars<span class="sc">$</span>vs, mtcars<span class="sc">$</span>am, mtcars<span class="sc">$</span>gear, mtcars<span class="sc">$</span>carb)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># matrix_from_vector oluşturulmuştur.</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>matrix_from_vector <span class="ot">&lt;-</span> <span class="fu">matrix</span>(combined_vector, <span class="at">nrow =</span> <span class="dv">32</span>)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply fonksiyonunu kullanarak her sütun için custom_summary işlevi uygulanmıştırç</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>inceleme <span class="ot">&lt;-</span> <span class="fu">apply</span>(matrix_from_vector, <span class="dv">2</span>, custom_summary)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(inceleme)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[[1]]$ortalama
 [1] 20.09062
 
-$mpg$ortalama_hazir_fonksiyon
+[[1]]$ortalama_hazir_fonksiyon
 [1] 20.09062
 
-$mpg$medyan
-Merc 280 
-    19.2 
-
-$mpg$medyan_hazir_fonksiyon
+[[1]]$medyan
 [1] 19.2
 
-$mpg$standart_sapma
+[[1]]$medyan_hazir_fonksiyon
+[1] 19.2
+
+[[1]]$standart_sapma
 [1] 6.026948
 
-$mpg$standart_sapma_hazir_fonksiyon
+[[1]]$standart_sapma_hazir_fonksiyon
 [1] 6.026948
 
-$mpg$maksimum
-Toyota Corolla 
-          33.9 
-
-$mpg$maksimum_hazir_fonksiyon
+[[1]]$maksimum
 [1] 33.9
 
-$mpg$minimum
-Cadillac Fleetwood 
-              10.4 
+[[1]]$maksimum_hazir_fonksiyon
+[1] 33.9
 
-$mpg$minimum_hazir_fonksiyon
+[[1]]$minimum
+[1] 10.4
+
+[[1]]$minimum_hazir_fonksiyon
 [1] 10.4
 
 
-$cyl
-$cyl$ortalama
+[[2]]
+[[2]]$ortalama
 [1] 6.1875
 
-$cyl$ortalama_hazir_fonksiyon
+[[2]]$ortalama_hazir_fonksiyon
 [1] 6.1875
 
-$cyl$medyan
-Merc 280 
-       6 
-
-$cyl$medyan_hazir_fonksiyon
+[[2]]$medyan
 [1] 6
 
-$cyl$standart_sapma
+[[2]]$medyan_hazir_fonksiyon
+[1] 6
+
+[[2]]$standart_sapma
 [1] 1.785922
 
-$cyl$standart_sapma_hazir_fonksiyon
+[[2]]$standart_sapma_hazir_fonksiyon
 [1] 1.785922
 
-$cyl$maksimum
-Maserati Bora 
-            8 
-
-$cyl$maksimum_hazir_fonksiyon
+[[2]]$maksimum
 [1] 8
 
-$cyl$minimum
-Datsun 710 
-         4 
+[[2]]$maksimum_hazir_fonksiyon
+[1] 8
 
-$cyl$minimum_hazir_fonksiyon
+[[2]]$minimum
+[1] 4
+
+[[2]]$minimum_hazir_fonksiyon
 [1] 4
 
 
-$disp
-$disp$ortalama
+[[3]]
+[[3]]$ortalama
 [1] 230.7219
 
-$disp$ortalama_hazir_fonksiyon
+[[3]]$ortalama_hazir_fonksiyon
 [1] 230.7219
 
-$disp$medyan
-Merc 280C 
-    196.3 
-
-$disp$medyan_hazir_fonksiyon
+[[3]]$medyan
 [1] 196.3
 
-$disp$standart_sapma
+[[3]]$medyan_hazir_fonksiyon
+[1] 196.3
+
+[[3]]$standart_sapma
 [1] 123.9387
 
-$disp$standart_sapma_hazir_fonksiyon
+[[3]]$standart_sapma_hazir_fonksiyon
 [1] 123.9387
 
-$disp$maksimum
-Cadillac Fleetwood 
-               472 
-
-$disp$maksimum_hazir_fonksiyon
+[[3]]$maksimum
 [1] 472
 
-$disp$minimum
-Toyota Corolla 
-          71.1 
+[[3]]$maksimum_hazir_fonksiyon
+[1] 472
 
-$disp$minimum_hazir_fonksiyon
+[[3]]$minimum
+[1] 71.1
+
+[[3]]$minimum_hazir_fonksiyon
 [1] 71.1
 
 
-$hp
-$hp$ortalama
+[[4]]
+[[4]]$ortalama
 [1] 146.6875
 
-$hp$ortalama_hazir_fonksiyon
+[[4]]$ortalama_hazir_fonksiyon
 [1] 146.6875
 
-$hp$medyan
-Merc 280 
-     123 
-
-$hp$medyan_hazir_fonksiyon
+[[4]]$medyan
 [1] 123
 
-$hp$standart_sapma
+[[4]]$medyan_hazir_fonksiyon
+[1] 123
+
+[[4]]$standart_sapma
 [1] 68.56287
 
-$hp$standart_sapma_hazir_fonksiyon
+[[4]]$standart_sapma_hazir_fonksiyon
 [1] 68.56287
 
-$hp$maksimum
-Maserati Bora 
-          335 
-
-$hp$maksimum_hazir_fonksiyon
+[[4]]$maksimum
 [1] 335
 
-$hp$minimum
-Honda Civic 
-         52 
+[[4]]$maksimum_hazir_fonksiyon
+[1] 335
 
-$hp$minimum_hazir_fonksiyon
+[[4]]$minimum
+[1] 52
+
+[[4]]$minimum_hazir_fonksiyon
 [1] 52
 
 
-$drat
-$drat$ortalama
+[[5]]
+[[5]]$ortalama
 [1] 3.596563
 
-$drat$ortalama_hazir_fonksiyon
+[[5]]$ortalama_hazir_fonksiyon
 [1] 3.596563
 
-$drat$medyan
-Merc 240D 
-    3.695 
-
-$drat$medyan_hazir_fonksiyon
+[[5]]$medyan
 [1] 3.695
 
-$drat$standart_sapma
+[[5]]$medyan_hazir_fonksiyon
+[1] 3.695
+
+[[5]]$standart_sapma
 [1] 0.5346787
 
-$drat$standart_sapma_hazir_fonksiyon
+[[5]]$standart_sapma_hazir_fonksiyon
 [1] 0.5346787
 
-$drat$maksimum
-Honda Civic 
-       4.93 
-
-$drat$maksimum_hazir_fonksiyon
+[[5]]$maksimum
 [1] 4.93
 
-$drat$minimum
-Valiant 
-   2.76 
+[[5]]$maksimum_hazir_fonksiyon
+[1] 4.93
 
-$drat$minimum_hazir_fonksiyon
+[[5]]$minimum
+[1] 2.76
+
+[[5]]$minimum_hazir_fonksiyon
 [1] 2.76
 
 
-$wt
-$wt$ortalama
+[[6]]
+[[6]]$ortalama
 [1] 3.21725
 
-$wt$ortalama_hazir_fonksiyon
+[[6]]$ortalama_hazir_fonksiyon
 [1] 3.21725
 
-$wt$medyan
-Hornet 4 Drive 
-         3.325 
-
-$wt$medyan_hazir_fonksiyon
+[[6]]$medyan
 [1] 3.325
 
-$wt$standart_sapma
+[[6]]$medyan_hazir_fonksiyon
+[1] 3.325
+
+[[6]]$standart_sapma
 [1] 0.9784574
 
-$wt$standart_sapma_hazir_fonksiyon
+[[6]]$standart_sapma_hazir_fonksiyon
 [1] 0.9784574
 
-$wt$maksimum
-Lincoln Continental 
-              5.424 
-
-$wt$maksimum_hazir_fonksiyon
+[[6]]$maksimum
 [1] 5.424
 
-$wt$minimum
-Lotus Europa 
-       1.513 
+[[6]]$maksimum_hazir_fonksiyon
+[1] 5.424
 
-$wt$minimum_hazir_fonksiyon
+[[6]]$minimum
+[1] 1.513
+
+[[6]]$minimum_hazir_fonksiyon
 [1] 1.513
 
 
-$qsec
-$qsec$ortalama
+[[7]]
+[[7]]$ortalama
 [1] 17.84875
 
-$qsec$ortalama_hazir_fonksiyon
+[[7]]$ortalama_hazir_fonksiyon
 [1] 17.84875
 
-$qsec$medyan
-Merc 450SL 
-     17.71 
-
-$qsec$medyan_hazir_fonksiyon
+[[7]]$medyan
 [1] 17.71
 
-$qsec$standart_sapma
+[[7]]$medyan_hazir_fonksiyon
+[1] 17.71
+
+[[7]]$standart_sapma
 [1] 1.786943
 
-$qsec$standart_sapma_hazir_fonksiyon
+[[7]]$standart_sapma_hazir_fonksiyon
 [1] 1.786943
 
-$qsec$maksimum
-Merc 230 
-    22.9 
-
-$qsec$maksimum_hazir_fonksiyon
+[[7]]$maksimum
 [1] 22.9
 
-$qsec$minimum
-Ford Pantera L 
-          14.5 
+[[7]]$maksimum_hazir_fonksiyon
+[1] 22.9
 
-$qsec$minimum_hazir_fonksiyon
+[[7]]$minimum
+[1] 14.5
+
+[[7]]$minimum_hazir_fonksiyon
 [1] 14.5
 
 
-$vs
-$vs$ortalama
+[[8]]
+[[8]]$ortalama
 [1] 0.4375
 
-$vs$ortalama_hazir_fonksiyon
+[[8]]$ortalama_hazir_fonksiyon
 [1] 0.4375
 
-$vs$medyan
-Ford Pantera L 
-             0 
-
-$vs$medyan_hazir_fonksiyon
+[[8]]$medyan
 [1] 0
 
-$vs$standart_sapma
+[[8]]$medyan_hazir_fonksiyon
+[1] 0
+
+[[8]]$standart_sapma
 [1] 0.5040161
 
-$vs$standart_sapma_hazir_fonksiyon
+[[8]]$standart_sapma_hazir_fonksiyon
 [1] 0.5040161
 
-$vs$maksimum
-Volvo 142E 
-         1 
-
-$vs$maksimum_hazir_fonksiyon
+[[8]]$maksimum
 [1] 1
 
-$vs$minimum
-Mazda RX4 
-        0 
-
-$vs$minimum_hazir_fonksiyon
-[1] 0
-
-
-$am
-$am$ortalama
-[1] 0.40625
-
-$am$ortalama_hazir_fonksiyon
-[1] 0.40625
-
-$am$medyan
-Dodge Challenger 
-               0 
-
-$am$medyan_hazir_fonksiyon
-[1] 0
-
-$am$standart_sapma
-[1] 0.4989909
-
-$am$standart_sapma_hazir_fonksiyon
-[1] 0.4989909
-
-$am$maksimum
-Volvo 142E 
-         1 
-
-$am$maksimum_hazir_fonksiyon
+[[8]]$maksimum_hazir_fonksiyon
 [1] 1
 
-$am$minimum
-Hornet 4 Drive 
-             0 
+[[8]]$minimum
+[1] 0
 
-$am$minimum_hazir_fonksiyon
+[[8]]$minimum_hazir_fonksiyon
 [1] 0
 
 
-$gear
-$gear$ortalama
+[[9]]
+[[9]]$ortalama
+[1] 0.40625
+
+[[9]]$ortalama_hazir_fonksiyon
+[1] 0.40625
+
+[[9]]$medyan
+[1] 0
+
+[[9]]$medyan_hazir_fonksiyon
+[1] 0
+
+[[9]]$standart_sapma
+[1] 0.4989909
+
+[[9]]$standart_sapma_hazir_fonksiyon
+[1] 0.4989909
+
+[[9]]$maksimum
+[1] 1
+
+[[9]]$maksimum_hazir_fonksiyon
+[1] 1
+
+[[9]]$minimum
+[1] 0
+
+[[9]]$minimum_hazir_fonksiyon
+[1] 0
+
+
+[[10]]
+[[10]]$ortalama
 [1] 3.6875
 
-$gear$ortalama_hazir_fonksiyon
+[[10]]$ortalama_hazir_fonksiyon
 [1] 3.6875
 
-$gear$medyan
-Mazda RX4 
-        4 
-
-$gear$medyan_hazir_fonksiyon
+[[10]]$medyan
 [1] 4
 
-$gear$standart_sapma
+[[10]]$medyan_hazir_fonksiyon
+[1] 4
+
+[[10]]$standart_sapma
 [1] 0.7378041
 
-$gear$standart_sapma_hazir_fonksiyon
+[[10]]$standart_sapma_hazir_fonksiyon
 [1] 0.7378041
 
-$gear$maksimum
-Maserati Bora 
-            5 
-
-$gear$maksimum_hazir_fonksiyon
+[[10]]$maksimum
 [1] 5
 
-$gear$minimum
-Hornet 4 Drive 
-             3 
+[[10]]$maksimum_hazir_fonksiyon
+[1] 5
 
-$gear$minimum_hazir_fonksiyon
+[[10]]$minimum
+[1] 3
+
+[[10]]$minimum_hazir_fonksiyon
 [1] 3
 
 
-$carb
-$carb$ortalama
+[[11]]
+[[11]]$ortalama
 [1] 2.8125
 
-$carb$ortalama_hazir_fonksiyon
+[[11]]$ortalama_hazir_fonksiyon
 [1] 2.8125
 
-$carb$medyan
-Lotus Europa 
-           2 
-
-$carb$medyan_hazir_fonksiyon
+[[11]]$medyan
 [1] 2
 
-$carb$standart_sapma
+[[11]]$medyan_hazir_fonksiyon
+[1] 2
+
+[[11]]$standart_sapma
 [1] 1.6152
 
-$carb$standart_sapma_hazir_fonksiyon
+[[11]]$standart_sapma_hazir_fonksiyon
 [1] 1.6152
 
-$carb$maksimum
-Maserati Bora 
-            8 
-
-$carb$maksimum_hazir_fonksiyon
+[[11]]$maksimum
 [1] 8
 
-$carb$minimum
-Datsun 710 
-         1 
+[[11]]$maksimum_hazir_fonksiyon
+[1] 8
 
-$carb$minimum_hazir_fonksiyon
+[[11]]$minimum
+[1] 1
+
+[[11]]$minimum_hazir_fonksiyon
 [1] 1</code></pre>
 </div>
 </div>
@@ -1131,14 +1109,14 @@ $carb$minimum_hazir_fonksiyon
 <section id="c" class="level2">
 <h2 class="anchored" data-anchor-id="c">(c)</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#na_example dataseti incelenmiştir.</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dslabs) </span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(na_example) </span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(na_example) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#na_example dataseti incelenmiştir.</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dslabs) </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(na_example) </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(na_example) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> int [1:1000] 2 1 3 2 1 3 1 4 3 2 ...</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(na_example)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(na_example)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   [1]  2  1  3  2  1  3  1  4  3  2  2 NA  2  2  1  4 NA  1  1  2  1  2  2  1
   [25]  2  5 NA  2  2  3  1  2  4  1  1  1  4  5  2  3  4  1  2  4  1  1  2  1
@@ -1183,14 +1161,14 @@ $carb$minimum_hazir_fonksiyon
  [961]  3 NA  1  2 NA NA  2 NA  3  1  1  2  5  3  5  1  1  4 NA  2  1  3  1  1
  [985]  2  4  3  3  3 NA  1  1  2  2  1  1  2  2 NA  2</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#na_example dataseti içerisindeki NA sayısı bulunmuştur.</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(na_example)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">#na_example dataseti içerisindeki NA sayısı bulunmuştur.</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(na_example)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 145</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">#na_example dataseti içerisindeki NA değerleri 665 değeri ile değiştirilmiştir.</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>no_nas <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(na_example), <span class="dv">665</span>, na_example) </span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(no_nas)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">#na_example dataseti içerisindeki NA değerleri 665 değeri ile değiştirilmiştir.</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>no_nas <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(na_example), <span class="dv">665</span>, na_example) </span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(no_nas)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   [1]   2   1   3   2   1   3   1   4   3   2   2 665   2   2   1   4 665   1
   [19]   1   2   1   2   2   1   2   5 665   2   2   3   1   2   4   1   1   1
@@ -1249,14 +1227,14 @@ $carb$minimum_hazir_fonksiyon
  [973]   5   3   5   1   1   4 665   2   1   3   1   1   2   4   3   3   3 665
  [991]   1   1   2   2   1   1   2   2 665   2</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Değiştirilen verideki NA değeri sayısı bulunmuştur.</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(no_nas))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Değiştirilen verideki NA değeri sayısı bulunmuştur.</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(no_nas))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Değiştirilen verideki 665 değeri sayısı bulunmuştur.</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>no_665 <span class="ot">&lt;-</span> <span class="fu">sum</span>(no_nas<span class="sc">==</span><span class="dv">665</span>) </span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(no_665)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Değiştirilen verideki 665 değeri sayısı bulunmuştur.</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>no_665 <span class="ot">&lt;-</span> <span class="fu">sum</span>(no_nas<span class="sc">==</span><span class="dv">665</span>) </span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(no_665)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 145</code></pre>
 </div>
