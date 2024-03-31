@@ -2,34 +2,50 @@
 title: "SELİN ÖKSÜZ"
 ---
 
-![](images/SelinOksuz.png){fig-align="center" width="200"}
-
+![](images/SelinOksuz.jpg){fig-align="center" width="200"}
 
 # Egitim
 
--   Lisans, Kimya Muhendisligi, ODTÜ, Turkiye, 2013 - 2019.
--   Yuksek Lisans, Muhendislik Yonetimi, Hacettepe Universitesi, Turkiye, 2024 - devam ediyor.
+-   Lisans, Kimya Muhendisligi, ODTÜ, Ankara, 2013 - 2019.
+
+-   Lisans(Erasmus), Köln Üniversitesi, Köln/Almanya, 2018
+
+-   Yuksek Lisans, Muhendislik Yonetimi, Hacettepe Universitesi, Ankara, 2024 - devam ediyor.
 
 # Is Deneyimi
 
-## Isler
+1.  Eczacıbaşı Tüketim Ürünleri - Kalite Güvence, Yalova, 2019-2021
 
-1.  Eczacıbaşı Tüketim Ürünleri - Kalite Güvence, 2019-2021
+2.  Hayat Kimya - Ürün Geliştirme, Kocaeli, 2022-2023
 
-2.  Hayat Kimya - Ürün Geliştirme, 2022-2023
+3.  Roketsan - Proje Takip ve Koordinasyon, Ankara, 2023-devam ediyor
 
-3.  Roketsan - Proje Takip ve Koordinasyon, 2023-devam ediyor
+# Stajlar
 
-## Stajlar
+1.  Şişecam - Üretim, Ankara, 2016
 
-1.  
+2.  Unilever - Tedarik Zinciri, Konya, 2017
 
 # Projeler
 
+1.  AB Youth Change in Action Project, Kokkola/Fİnland, 2014
+
+2. Sour Water Treatment, ODTÜ Kimya Mühendisliği Bitirme Projesi, 2019
+
 # Yetkinlikler
+
+-SAP S4 HANA, SAP ME/MII ERP Management Systems, QDMS, Jira, MS Office Programları, Keycreator, Matlab 
 
 # Hobiler
 
+-Seyahat, Yemek, Müzik, Reformer Pilates, Organizasyon Yapmak
+
 # Sertifikalar
 
-1.  
+1. Proje YÖnetimi Sertifikası, 2023
+
+2. İleri Seviye Excel Eğitimi, 2022
+
+3. IFS HPC Eğitim Sertifikası, 2022
+
+4. ISO9001:2015 ve ISO19011:2018 Sertifiaları, 2015 , 2021
