@@ -56,3 +56,72 @@ xxxxxx
 # SonuC'lar ve Ana CD1karD1mlar
 
 xxxxxx
+
+```{r}
+library(readxl)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+
+path <- "nufuslar.xlsx"
+data <- read_excel(path)
+head(data)
+
+
+new_data <- data |> pivot_longer('2008':'2023', names_to = 'year', values_to = 'population')
+head(new_data)
+str(new_data)
+
+# İlçeye göre ortalama nüfusları tablo şeklinde gösterilim
+
+new_data$year  <- as.numeric(new_data$year)
+new_data$population  <- as.numeric(new_data$population)
+
+
+ilçe_avg <- new_data |> 
+  group_by(İlçe) |> 
+  summarise(nüfus_ortalaması = mean(population))
+                                             
+print(ilçe_avg)
+
+
+
+# İlçeye göre ortalama nüfusları grafik şeklinde gösterilim
+
+ggplot(ilçe_avg, aes(x =İlçe, y=nüfus_ortalaması/1000)) + geom_point() + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + xlab(" ") + scale_y_continuous(trans = "log2")
+
+# İlçeye göre çöp tüketim verisini birleştirelim
+
+path_2 <- "evsel.xlsx"
+data_2 <- read_excel(path_2)
+
+new_data_2 <- data_2 |> pivot_longer('2008':'2023', names_to = 'year', values_to = 'trash')
+head(new_data)
+str(new_data)
+
+ilçe_avg_trash <- new_data_2 |> 
+  group_by(İlçe) |> 
+  summarise( çöp_ortalaması = mean(trash))
+                                             
+print(ilçe_avg_trash)
+
+ilçe_avg %>% arrange(desc(nüfus_ortalaması)) %>% head()
+ilçe_avg_trash %>% arrange(desc(çöp_ortalaması)) %>% head()
+
+en_iyi_veri <- left_join(ilçe_avg, ilçe_avg_trash, by = "İlçe")
+
+
+en_iyi_veri <- en_iyi_veri %>% mutate(trash_rate_per_person = çöp_ortalaması/nüfus_ortalaması)
+
+p <- en_iyi_veri %>% ggplot() + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + xlab(" ") + scale_y_continuous(trans = "log2")
+p + geom_boxplot(aes(İlçe, trash_rate_per_person, fill = factor(İlçe))) 
+
+important_data <- left_join(data, data_2, by = "İlçe", suffix = c(".population", ".trash"))
+head(important_data)
+
+
+
+
+
+
+```
