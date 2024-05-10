@@ -5,25 +5,23 @@ number-sections: true
 
 **Proje Sayfamıza Hoşgeldiniz.**
 
-*Projemizle ilgili gC\<ncellemelerden haberdar olmak iC'in bu alanD1 takip edin.*
+*Projemizle ilgili güncellemelerden haberdar olmak için bu alanı takip edin.*
 
-(AEaDD1daki baElD1klar C6rnek olarak verilmiEtir; lC\<tfen gerektiDi Eekilde dC\<zenlemekten C'ekinmeyin.)
+# Projeye Genel Bakış ve Kapsam
 
-# Proje Genel BakD1E ve KapsamD1
-
-xxxxxx
+"Çöp" bir süreç sonucunda sistemin istenmeyen, verim alınamayan, israf edilen veya bir başka sisteme girdi olamayan bir çıktı, diğer bir deyişle bir "artık" olarak ifade edilebilir. Çöpler, guruplanarak incelendiğinde sanayi atığı, tıbbi atık, inşaat atığı gibi farklı şekillerde karşımıza çıkabilir. Aslında her bir atık miktarı, ilgili sürecin ne derece işletildiği ile doğru ve verimi ile ters orantılıdır. Peki, "Geri dönüşüm ve verimlilik kavramından uzak görülen, ekonomik bir değeri olmadığı gibi incelenmekten de geri durulan bir çöp türü olan evsel atıklar acaba bizlere bir şeyler söyler mi?" sorusunu sorarsak, nasıl bir cevap alırız? İşte bu projede, evsel atık miktarının ortalaması ve değişimi ile ilgili veriler ile "diğer" bazı göstergeler arasında İstanbul ilçeri özelinde belirli ilişkiler arıyor olacağız.
 
 # Veri
 
 xxxxxx
 
-## Veri KaynaDD1
+## Veri Kaynağı
 
-xxxxxx
+Veri kaynağı olarak İstanbul Büyükşehir Belediyesi (İBB) Açık Veri Portalı ve Türkiye İstatistik Kurumu (TÜİK) Veri Tabanı kullanılmıştır.
 
-## Veri HakkD1nda Genel Bilgiler
+## Veri Hakkında Genel Bilgiler
 
-xxxxxx
+N
 
 ## Tercih Sebebi
 
