@@ -3,17 +3,13 @@ title: "Proje Adı"
 number-sections: true
 ---
 
-**Proje Sayfamıza Hoşgeldiniz.**
-
-*Projemizle ilgili güncellemelerden haberdar olmak için bu alanı takip edin.*
-
 # Projeye Genel Bakış ve Kapsam
 
-"Çöp" bir süreç sonucunda sistemin istenmeyen, verim alınamayan, israf edilen veya bir başka sisteme girdi olamayan bir çıktı, diğer bir deyişle bir "artık" olarak ifade edilebilir. Çöpler, guruplanarak incelendiğinde sanayi atığı, tıbbi atık, inşaat atığı gibi farklı şekillerde karşımıza çıkabilir. Aslında her bir atık miktarı, ilgili sürecin ne derece işletildiği ile doğru ve verimi ile ters orantılıdır. Peki, "Geri dönüşüm ve verimlilik kavramından uzak görülen, ekonomik bir değeri olmadığı gibi incelenmekten de geri durulan bir çöp türü olan evsel atıklar acaba bizlere bir şeyler söyler mi?" sorusunu sorarsak, nasıl bir cevap alırız? İşte bu projede, evsel atık miktarının ortalaması ve değişimi ile ilgili veriler ile "diğer" bazı göstergeler arasında İstanbul ilçeri özelinde belirli ilişkiler arıyor olacağız.
+**Çöp**, bir süreç sonucunda sistemin istenmeyen, verim alınamayan, israf edilen veya bir başka sisteme girdi olamayan çıktısı, diğer bir deyişle bir *artık* olarak ifade edilebilir. Çöpler, guruplanarak incelendiğinde sanayi atığı, tıbbi atık, inşaat atığı gibi farklı şekillerde karşımıza çıkabilir. Aslında her bir atık miktarı, ilgili sürecin ne derece işletildiği ile doğru ve verimi ile ters orantılıdır. Peki, "Geri dönüşüm ve verimlilik kavramından uzak görülen, ekonomik bir değeri olmadığı gibi incelenmekten de geri durulan bir çöp türü olan *evsel atıklar* acaba bizlere bir şeyler söyler mi?" sorusunu sorarsak, nasıl bir cevap alırız? Bu projede, evsel atık miktarının ortalaması ve değişimi ile ilgili veriler ile diğer *bazı* göstergeler arasında İstanbul ilçeri özelinde belirli ilişkiler arıyor olacağız.
+
+![](assets/images/proje_gorsel_2.jpg){fig-align="center" width="539"}
 
 # Veri
-
-xxxxxx
 
 ## Veri Kaynağı
 
@@ -21,7 +17,7 @@ Veri kaynağı olarak İstanbul Büyükşehir Belediyesi (İBB) Açık Veri Port
 
 ## Veri Hakkında Genel Bilgiler
 
-N
+xxxx
 
 ## Tercih Sebebi
 

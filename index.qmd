@@ -3,9 +3,11 @@ title: "Takım: What R We Doing?"
 sidebar: false 
 ---
 
+![](assets/images/takim_gorsel.webp){fig-align="center"}
+
 MUY665-İş Analitiği dersi kapsamında oluşturduğumuz takım sayfamıza hoş geldiniz.
 
-Bu sayfa ile İş Analitiği çalışmalarımızı paylaşıyoruz.
+Bu sayfa ile İş Analitiği çalışmalarımızı paylaşıyoruz. Takım Üyelerimize ve proje özetimize aşağıdan erişebilir, çalışmalarımızı daha detaylı incelemek için sayfanın tepesinde bulunan araç çubuğundan faydalanabilirsiniz.
 
 Lütfen faaliyetlerimizi görmek için için bizi takipte kalın.
 
@@ -25,13 +27,22 @@ Lütfen faaliyetlerimizi görmek için için bizi takipte kalın.
 
 ## Proje Adı
 
-MUY665 Projesi
+Evsel Atık Miktarımız Bize Ne Söylüyor?
 
 ## Proje Konusu
 
-Örnek: Bu projede MUY660-İş Analitiği ders içeriğinin analitik yaklaşımlarla iyileştirilmesini hedefledik. Bu doğrultuda tüm üniversitelerdeki benzer derslerin verisini toplayarak bir veri seti oluşturduk Analiz için …….. yöntemleri kullanarak, ……. çalışmaları yaptık Sonuç olarak, MUY660-İş Analitiği dersinin dünyadaki tüm derslerden daha iyi olduğunu ve bu dersi aldığımız için çok mutlu olduğumuzu tespit ettik.
+İstanbul ilçelerinde
 
 ## Veri Seti Hakkında Özet Bilgi
+
+İstanbul Büyükşehir Belediyesi (İBB) Açık Veri Portalı ve Türkiye İstatistik Kurumu (TÜİK) Veri Tabanı üzerinden elde edilen İstanbul'un ilçe bazlı;
+
+-   2008-2023 evsel atık miktarı ($ton$)
+-   2008-2023 nüfus
+-   2008-2023 su tüketimi ($m^3$)
+-   2008-2023 doğalgaz tüketimi ($m^3$)
+-   Ortalama hane büyüklüğü
+-   BURAYA VERİ EKLENEBİLİR, EKLENMEZSE SİL
 
 ## Sonuçlar
 

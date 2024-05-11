@@ -243,7 +243,7 @@
     "href": "proje.html",
     "title": "Proje Adı",
     "section": "",
-    "text": "Proje Sayfamıza Hoşgeldiniz.\nProjemizle ilgili gC&lt;ncellemelerden haberdar olmak iC’in bu alanD1 takip edin.\n(AE\u001faD\u001fD1daki baE\u001flD1klar C6rnek olarak verilmiE\u001ftir; lC&lt;tfen gerektiD\u001fi E\u001fekilde dC&lt;zenlemekten C’ekinmeyin.)"
+    "text": "Proje Sayfamıza Hoşgeldiniz.\nProjemizle ilgili güncellemelerden haberdar olmak için bu alanı takip edin."
   },
   {
     "objectID": "proje.html#data-source",
@@ -306,7 +306,11 @@
     "href": "portfolyo/calisma2.html",
     "title": "Çalışma 2",
     "section": "",
-    "text": "(Aşağıdakiler örnek olarak verilmiştir.)\nBu çalışmada 3 görevimiz var. Bu görevler….. Bunlara sırayla aşağıda cevap arıyoruz."
+    "text": "print(\"Henüz 2. bir çalışmamız mevcut değildir. Takipte kalın!\")\n\n[1] \"Henüz 2. bir çalışmamız mevcut değildir. Takipte kalın!\"\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Porfolyo",
+      "Çalışma 2"
+    ]
   },
   {
     "objectID": "portfolyo/calisma1.html",
@@ -318,16 +322,16 @@
   {
     "objectID": "proje.html#veri-kaynağı",
     "href": "proje.html#veri-kaynağı",
-    "title": "Proje X (proje adını yazınız)",
+    "title": "Proje Adı",
     "section": "2.1 Veri Kaynağı",
-    "text": "2.1 Veri Kaynağı\nxxxxxx"
+    "text": "2.1 Veri Kaynağı\nVeri kaynağı olarak İstanbul Büyükşehir Belediyesi (İBB) Açık Veri Portalı ve Türkiye İstatistik Kurumu (TÜİK) Veri Tabanı kullanılmıştır."
   },
   {
     "objectID": "proje.html#veri-hakkında-genel-bilgiler",
     "href": "proje.html#veri-hakkında-genel-bilgiler",
-    "title": "Proje X (proje adını yazınız)",
+    "title": "Proje Adı",
     "section": "2.2 Veri Hakkında Genel Bilgiler",
-    "text": "2.2 Veri Hakkında Genel Bilgiler\nxxxxxx"
+    "text": "2.2 Veri Hakkında Genel Bilgiler\nN"
   },
   {
     "objectID": "proje.html#tercih-sebebi",
@@ -564,14 +568,22 @@
     "href": "takim/mtgunday.html#işler",
     "title": "Muhammed Taha Günday",
     "section": "İşler",
-    "text": "İşler\n\nRoketsan, Aviyonik Sistem Mühendisi, 2022 - devam ediyor."
+    "text": "İşler\n\nRoketsan, Aviyonik Sistem Mühendisi, 2022 - devam ediyor.",
+    "crumbs": [
+      "Takım Üyeleri",
+      "Muhammed Taha Günday"
+    ]
   },
   {
     "objectID": "takim/mtgunday.html#stajlar",
     "href": "takim/mtgunday.html#stajlar",
     "title": "Muhammed Taha Günday",
     "section": "Stajlar",
-    "text": "Stajlar\n\nRoketsan, Aviyonik Mühendisliği Aday Mühendis, 2021 - 2022.\nRoketsan, Aviyonik Mühendisliği Stajyeri, 2021.\nBAYKAR, Aviyonik Mühendisliği Stajyeri, 2021.\nErmaksan, Ar-Ge Stajyeri, 2020."
+    "text": "Stajlar\n\nRoketsan, Aviyonik Mühendisliği Aday Mühendis, 2021 - 2022.\nRoketsan, Aviyonik Mühendisliği Stajyeri, 2021.\nBAYKAR, Aviyonik Mühendisliği Stajyeri, 2021.\nErmaksan, Ar-Ge Stajyeri, 2020.",
+    "crumbs": [
+      "Takım Üyeleri",
+      "Muhammed Taha Günday"
+    ]
   },
   {
     "objectID": "takim/szymanski.html#d0eler",
