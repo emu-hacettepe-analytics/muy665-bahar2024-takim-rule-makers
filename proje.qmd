@@ -17,11 +17,29 @@ Veri kaynağı olarak İstanbul Büyükşehir Belediyesi (İBB) Açık Veri Port
 
 ## Veri Hakkında Genel Bilgiler
 
-xxxx
+Çeşitli kaynaklardan elde edilebilen ve belirli bir konu veya problem üzerinde analiz yapmak için kullanılabilen örneklere veri ya da veriseti denmektedir.
+
+Genellikle belirli bir formatta ve belirli bir konu ya da alanla ilgili bilgileri içeren veriler, veri analizi alanlarında kullanılan önemli araçlardır.
+
+İstanbul, Türkiye'nin en kalabalık ve en dinamik şehirlerinden biri olarak göze çarpmaktadır. Bu büyük metropolde yaşayan nüfusun demografik yapıları, tüketim alışkanlıkları ve yaşam tarzları, hem akademik araştırmaların hem de iş dünyasının için ilgi çekici veriler barındırmaktadır.
+
+Bu bağlamda, hazırlanan bu proje kapsamında İstanbul'da yaşayan nüfusun tüketim alışkanlıklarına yönelik bir araştırma ve analiz çalışması gerçekleştirilmiştir.
 
 ## Tercih Sebebi
 
-xxxxxx
+İstanbul'daki nüfus ve tüketim alışkanlıklarına odaklanan bir veri seti, çeşitli sektörlerde faaliyet gösteren işletmeler, araştırmacılar ve hükümetler için aiağıda belirtilen nedenlerden ötürü değerlidir.
+
+**Nüfus Yoğunluğu:** İstanbul, Türkiye'nin en kalabalık şehri ve dünyanın en kalabalık nüfuslu metropollerinden biridir. Bu nedenle, İstanbul'daki nüfusun demografik yapısı ve tüketim alışkanlıkları, geniş bir örnekleme dayalı olarak incelenebilmektedir.Genel tüketici eğilimleri hakkında önemli içgörüler sunabilmesi bu verisetinin incelenmesini daha cazip hale getirmektedir.
+
+**Ekonomik Önem:** Türkiye'nin ekonomik başkenti olarak kabul edilebilecek olan İstanbuş, ülkenin gayri safi yurtiçi hasılasının büyük bir kısmını oluşturmaktadır. Bu şehirdeki tüketim alışkanlıkları, perakende sektörü ve ekonominin genel sağlığı hakkında bilgi edinmenin, işletmeler ve hükümetler için stratejik öneme sahip olabileceği değerlendirilmektedir.
+
+**Çeşitlilik:** İstanbul, farklı kültürel, ekonomik ve demografik yapıları bünyesinde barındıran bir şehir olarak, tüketici tercihlerinde ve alışkanlıklarında çeşitlilik içermektedir. Şehirdeki nüfus ve tüketim alışkanlıklarını anlamak, farklı segmentlerdeki tüketici davranışlarını analiz etmek ve özel pazarlama stratejileri geliştirmek için önemli görülmektedir.
+
+**Büyüme Potansiyeli:** İstanbul, sürekli olarak büyüyen ve değişen bir şehirdir. Nüfus artışı, göç hareketleri, altyapı projeleri ve ekonomik değişimler, tüketim alışkanlıklarını etkileyebilir. Bu nedenle, İstanbul'daki nüfus ve tüketim verilerini düzenli olarak izlemek ve analiz etmek, gelecekteki trendleri tahmin etmek ve uygun stratejiler geliştirmek için önemlidir.
+
+**Karşılaşılan Zorluklar:** İstanbul gibi büyük bir şehirde yaşamak, çeşitli zorlukları da beraberinde getirir. Trafik, altyapı sorunları, çevresel endişeler gibi faktörler, tüketici davranışlarını etkileyebilir. Bu zorluklarla başa çıkabilmek için,  nüfus ve tüketim alışkanlıklarını anlamak önemlidir.
+
+İstanbul'daki nüfus ve tüketim alışkanlıklarını incelemek, sadece şehirdeki yaşamı anlamakla kalmaz, aynı zamanda farklı sektörler, pazarlama ve şehir planlaması gibi alanlar için de önemli içgörüler sağlar. Bu nedenle, bu konuya odaklanan bir veri seti oldukça ilgi çekicidir.
 
 ## Cn D0Eleme
 
@@ -31,7 +49,7 @@ xxxxxx
 
 xxxxxx
 
-## KeEifsel Veri Analizi
+## Keşifsel Veri Analizi
 
 xxxxxx
 
@@ -43,11 +61,11 @@ xxxxxx
 
 xxxxxx
 
-## SonuC'lar
+## Sonuçlar
 
 xxxxxx
 
-# SonuC'lar ve Ana CD1karD1mlar
+# Sonuçlar ve Ana Çıkarımlar
 
 xxxxxx
 
@@ -86,7 +104,7 @@ ggplot(ilçe_avg, aes(x =İlçe, y=nüfus_ortalaması/1000)) + geom_point() + th
 
 # İlçeye göre çöp tüketim verisini birleştirelim
 
-path_2 <- "evsel.xlsx"
+path_2 <- "evsel_atik.xlsx"
 data_2 <- read_excel(path_2)
 
 new_data_2 <- data_2 |> pivot_longer('2008':'2023', names_to = 'year', values_to = 'trash')

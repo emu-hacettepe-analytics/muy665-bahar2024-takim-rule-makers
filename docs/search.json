@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Takım: What R We Doing?",
     "section": "",
-    "text": "MUY665-İş Analitiği dersi kapsamında oluşturduğumuz takım sayfamıza hoş geldiniz.\nBu sayfa ile İş Analitiği çalışmalarımızı paylaşıyoruz.\nLütfen faaliyetlerimizi görmek için için bizi takipte kalın."
+    "text": "MUY665-İş Analitiği dersi kapsamında oluşturduğumuz takım sayfamıza hoş geldiniz.\nBu sayfa ile İş Analitiği çalışmalarımızı paylaşıyoruz. Takım Üyelerimize ve proje özetimize aşağıdan erişebilir, çalışmalarımızı daha detaylı incelemek için sayfanın tepesinde bulunan araç çubuğundan faydalanabilirsiniz.\nLütfen faaliyetlerimizi görmek için için bizi takipte kalın."
   },
   {
     "objectID": "teammembers/volkansonmez.html",
@@ -194,21 +194,21 @@
     "href": "index.html#proje-adı",
     "title": "Takım: What R We Doing?",
     "section": "Proje Adı",
-    "text": "Proje Adı\nMUY665 Projesi"
+    "text": "Proje Adı\nEvsel Atık Miktarımız Bize Ne Söylüyor?"
   },
   {
     "objectID": "index.html#proje-konusu",
     "href": "index.html#proje-konusu",
     "title": "Takım: What R We Doing?",
     "section": "Proje Konusu",
-    "text": "Proje Konusu\nÖrnek: Bu projede MUY660-İş Analitiği ders içeriğinin analitik yaklaşımlarla iyileştirilmesini hedefledik. Bu doğrultuda tüm üniversitelerdeki benzer derslerin verisini toplayarak bir veri seti oluşturduk Analiz için …….. yöntemleri kullanarak, ……. çalışmaları yaptık Sonuç olarak, MUY660-İş Analitiği dersinin dünyadaki tüm derslerden daha iyi olduğunu ve bu dersi aldığımız için çok mutlu olduğumuzu tespit ettik."
+    "text": "Proje Konusu\nİstanbul ilçelerinde"
   },
   {
     "objectID": "index.html#veri-seti-hakkında-özet-bilgi",
     "href": "index.html#veri-seti-hakkında-özet-bilgi",
     "title": "Takım: What R We Doing?",
     "section": "Veri Seti Hakkında Özet Bilgi",
-    "text": "Veri Seti Hakkında Özet Bilgi"
+    "text": "Veri Seti Hakkında Özet Bilgi\nİstanbul Büyükşehir Belediyesi (İBB) Açık Veri Portalı ve Türkiye İstatistik Kurumu (TÜİK) Veri Tabanı üzerinden elde edilen İstanbul’un ilçe bazlı;\n\n2008-2023 evsel atık miktarı (\\(ton\\))\n2008-2023 nüfus\n2008-2023 su tüketimi (\\(m^3\\))\n2008-2023 doğalgaz tüketimi (\\(m^3\\))\nOrtalama hane büyüklüğü\nBURAYA VERİ EKLENEBİLİR, EKLENMEZSE SİL"
   },
   {
     "objectID": "index.html#sonuçlar",
@@ -243,7 +243,7 @@
     "href": "proje.html",
     "title": "Proje Adı",
     "section": "",
-    "text": "Proje Sayfamıza Hoşgeldiniz.\nProjemizle ilgili güncellemelerden haberdar olmak için bu alanı takip edin."
+    "text": "Çöp, bir süreç sonucunda sistemin istenmeyen, verim alınamayan, israf edilen veya bir başka sisteme girdi olamayan çıktısı, diğer bir deyişle bir artık olarak ifade edilebilir. Çöpler, guruplanarak incelendiğinde sanayi atığı, tıbbi atık, inşaat atığı gibi farklı şekillerde karşımıza çıkabilir. Aslında her bir atık miktarı, ilgili sürecin ne derece işletildiği ile doğru ve verimi ile ters orantılıdır. Peki, “Geri dönüşüm ve verimlilik kavramından uzak görülen, ekonomik bir değeri olmadığı gibi incelenmekten de geri durulan bir çöp türü olan evsel atıklar acaba bizlere bir şeyler söyler mi?” sorusunu sorarsak, nasıl bir cevap alırız? Bu projede, evsel atık miktarının ortalaması ve değişimi ile ilgili veriler ile diğer bazı göstergeler arasında İstanbul ilçeri özelinde belirli ilişkiler arıyor olacağız."
   },
   {
     "objectID": "proje.html#data-source",
@@ -306,11 +306,7 @@
     "href": "portfolyo/calisma2.html",
     "title": "Çalışma 2",
     "section": "",
-    "text": "print(\"Henüz 2. bir çalışmamız mevcut değildir. Takipte kalın!\")\n\n[1] \"Henüz 2. bir çalışmamız mevcut değildir. Takipte kalın!\"\n\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Porfolyo",
-      "Çalışma 2"
-    ]
+    "text": "print(\"Henüz 2. bir çalışmamız mevcut değildir. Takipte kalın!\")\n\n[1] \"Henüz 2. bir çalışmamız mevcut değildir. Takipte kalın!\"\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "portfolyo/calisma1.html",
@@ -331,14 +327,14 @@
     "href": "proje.html#veri-hakkında-genel-bilgiler",
     "title": "Proje Adı",
     "section": "2.2 Veri Hakkında Genel Bilgiler",
-    "text": "2.2 Veri Hakkında Genel Bilgiler\nN"
+    "text": "2.2 Veri Hakkında Genel Bilgiler\nÇeşitli kaynaklardan elde edilebilen ve belirli bir konu veya problem üzerinde analiz yapmak için kullanılabilen örneklere veri ya da veriseti denmektedir.\nGenellikle belirli bir formatta ve belirli bir konu ya da alanla ilgili bilgileri içeren veriler, veri analizi alanlarında kullanılan önemli araçlardır.\nİstanbul, Türkiye’nin en kalabalık ve en dinamik şehirlerinden biri olarak göze çarpmaktadır. Bu büyük metropolde yaşayan nüfusun demografik yapıları, tüketim alışkanlıkları ve yaşam tarzları, hem akademik araştırmaların hem de iş dünyasının için ilgi çekici veriler barındırmaktadır.\nBu bağlamda, hazırlanan bu proje kapsamında İstanbul’da yaşayan nüfusun tüketim alışkanlıklarına yönelik bir araştırma ve analiz çalışması gerçekleştirilmiştir."
   },
   {
     "objectID": "proje.html#tercih-sebebi",
     "href": "proje.html#tercih-sebebi",
     "title": "Proje Adı",
     "section": "2.3 Tercih Sebebi",
-    "text": "2.3 Tercih Sebebi\nxxxxxx"
+    "text": "2.3 Tercih Sebebi\nİstanbul’daki nüfus ve tüketim alışkanlıklarına odaklanan bir veri seti, çeşitli sektörlerde faaliyet gösteren işletmeler, araştırmacılar ve hükümetler için aiağıda belirtilen nedenlerden ötürü değerlidir.\nNüfus Yoğunluğu: İstanbul, Türkiye’nin en kalabalık şehri ve dünyanın en kalabalık nüfuslu metropollerinden biridir. Bu nedenle, İstanbul’daki nüfusun demografik yapısı ve tüketim alışkanlıkları, geniş bir örnekleme dayalı olarak incelenebilmektedir.Genel tüketici eğilimleri hakkında önemli içgörüler sunabilmesi bu verisetinin incelenmesini daha cazip hale getirmektedir.\nEkonomik Önem: Türkiye’nin ekonomik başkenti olarak kabul edilebilecek olan İstanbuş, ülkenin gayri safi yurtiçi hasılasının büyük bir kısmını oluşturmaktadır. Bu şehirdeki tüketim alışkanlıkları, perakende sektörü ve ekonominin genel sağlığı hakkında bilgi edinmenin, işletmeler ve hükümetler için stratejik öneme sahip olabileceği değerlendirilmektedir.\nÇeşitlilik: İstanbul, farklı kültürel, ekonomik ve demografik yapıları bünyesinde barındıran bir şehir olarak, tüketici tercihlerinde ve alışkanlıklarında çeşitlilik içermektedir. Şehirdeki nüfus ve tüketim alışkanlıklarını anlamak, farklı segmentlerdeki tüketici davranışlarını analiz etmek ve özel pazarlama stratejileri geliştirmek için önemli görülmektedir.\nBüyüme Potansiyeli: İstanbul, sürekli olarak büyüyen ve değişen bir şehirdir. Nüfus artışı, göç hareketleri, altyapı projeleri ve ekonomik değişimler, tüketim alışkanlıklarını etkileyebilir. Bu nedenle, İstanbul’daki nüfus ve tüketim verilerini düzenli olarak izlemek ve analiz etmek, gelecekteki trendleri tahmin etmek ve uygun stratejiler geliştirmek için önemlidir.\nKarşılaşılan Zorluklar: İstanbul gibi büyük bir şehirde yaşamak, çeşitli zorlukları da beraberinde getirir. Trafik, altyapı sorunları, çevresel endişeler gibi faktörler, tüketici davranışlarını etkileyebilir. Bu zorluklarla başa çıkabilmek için, nüfus ve tüketim alışkanlıklarını anlamak önemlidir.\nİstanbul’daki nüfus ve tüketim alışkanlıklarını incelemek, sadece şehirdeki yaşamı anlamakla kalmaz, aynı zamanda farklı sektörler, pazarlama ve şehir planlaması gibi alanlar için de önemli içgörüler sağlar. Bu nedenle, bu konuya odaklanan bir veri seti oldukça ilgi çekicidir."
   },
   {
     "objectID": "proje.html#ön-işleme",
@@ -350,7 +346,7 @@
   {
     "objectID": "proje.html#keşifsel-veri-analizi",
     "href": "proje.html#keşifsel-veri-analizi",
-    "title": "Proje X (proje adını yazınız)",
+    "title": "Proje Adı",
     "section": "3.1 Keşifsel Veri Analizi",
     "text": "3.1 Keşifsel Veri Analizi\nxxxxxx"
   },
@@ -371,7 +367,7 @@
   {
     "objectID": "proje.html#sonuçlar",
     "href": "proje.html#sonuçlar",
-    "title": "Proje X (proje adını yazınız)",
+    "title": "Proje Adı",
     "section": "3.4 Sonuçlar",
     "text": "3.4 Sonuçlar\nxxxxxx"
   },
