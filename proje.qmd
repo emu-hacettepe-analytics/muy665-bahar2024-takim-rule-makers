@@ -74,6 +74,7 @@ library(readxl)
 library(ggplot2)
 library(dplyr)
 library(tidyr)
+library(stringr)
 
 nüfus_path <- "nufuslar.xlsx"
 nüfus_data <- read_excel(nüfus_path)
@@ -127,41 +128,47 @@ proje_data <- left_join(ilçe_nüfus_ortalama, ilçe_atık_ortalama, by = "İlç
 proje_data <- proje_data %>% mutate(kişi_başı_atık_miktarı = evsel_atık_ortalaması/nüfus_ortalaması)
 
 
-
 p1 <- proje_data %>% ggplot() + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + xlab(" ") + scale_y_continuous(trans = "log2")
 p1 + geom_point(aes(İlçe, kişi_başı_atık_miktarı, fill = factor(İlçe))) 
 
 
-
-
-#aşağıda hata var
-
-proje_detay_data <- left_join(nüfus_data, evsel_atık_data, by = "İlçe", suffix = c(".nüfus", ".atık"))
-proje_detay_data <- arrange(proje_detay_data, yıl)
-
-#
 
 su_tüketim_path <- "su_tuketim.xlsx"
 su_tüketim_data <- read_excel(su_tüketim_path)
 head(su_tüketim_data)
 
 
-su_tüketim_data <- su_tüketim_data |> pivot_longer('2008':'2023', names_to = 'yıl', values_to = 'su_tüketim')
-head(su_tüketim_data)
-str(su_tüketim_data)
-su_tüketim_data[su_tüketim_data == 0] <- NA
+su_tüketim_data <- su_tüketim_data |> pivot_longer('2015':'2023', names_to = 'yıl', values_to = 'su_tüketim')
 
+ilçe_su_ortalama <- su_tüketim_data |> 
+  group_by(İlçe) |> 
+  summarise( su_tüketim_ortalaması = mean(su_tüketim, na.rm = TRUE))
+
+proje_data <- left_join(proje_data, ilçe_su_ortalama[, c("İlçe", "su_tüketim_ortalaması")], by = "İlçe")
+
+proje_data <- proje_data %>% mutate(kişi_başı_su_tüketim_miktarı = su_tüketim_ortalaması/nüfus_ortalaması)
 
 
 dogalgaz_tüketim_path <- "dogalgaz_tuketim.xlsx"
 dogalgaz_tüketim_data <- read_excel(dogalgaz_tüketim_path)
-head(dogalgaz_tüketim_data)
 
 dogalgaz_tüketim_data <- dogalgaz_tüketim_data %>% group_by(İlçe,Yıl) %>% summarise(yıllık_tüketim= sum(`Dogalgaz Tüketim Miktarı (m3)`))
 
+dogalgaz_tüketim_data <- dogalgaz_tüketim_data %>%
+  filter(Yıl != 2023)
 
-okuma_yazma_orani_path <- "okuma_yazma_oranı.xlsx"
+ilçe_dogalgaz_ortalama <- dogalgaz_tüketim_data |> 
+  group_by(İlçe) |> 
+  summarise( dogalgaz_tüketim_ortalaması = mean(yıllık_tüketim, na.rm = TRUE))
+
+proje_data <- left_join(proje_data, ilçe_dogalgaz_ortalama[, c("İlçe", "dogalgaz_tüketim_ortalaması")], by = "İlçe")
+
+proje_data <- proje_data %>% mutate(kişi_başı_dogalgaz_tüketim_miktarı = dogalgaz_tüketim_ortalaması/nüfus_ortalaması)
+
+okuma_yazma_orani_path <- "okuma_yazma_orani.xlsx"
 okuma_yazma_orani_data <- read_excel(okuma_yazma_orani_path)
-head(su_tüketim_data)
+okuma_yazma_orani_data <- okuma_yazma_orani_data %>% mutate(okuma_yazma_oranı = `Okuma Yazma Bilen`/(`Okuma Yazma Bilmeyen`+`Okuma Yazma Bilen`)*100)
+
+proje_data <- left_join(proje_data, okuma_yazma_orani_data[, c("İlçe", "okuma_yazma_oranı")], by = "İlçe")
 
 ```
