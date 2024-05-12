@@ -17,29 +17,29 @@ Veri kaynağı olarak İstanbul Büyükşehir Belediyesi (İBB) Açık Veri Port
 
 ## Veri Hakkında Genel Bilgiler
 
-Çeşitli kaynaklardan elde edilebilen ve belirli bir konu veya problem üzerinde analiz yapmak için kullanılabilen örneklere veri ya da veriseti denmektedir.
+-Çeşitli kaynaklardan elde edilebilen ve belirli bir konu veya problem üzerinde analiz yapmak için kullanılabilen örneklere veri ya da veriseti denmektedir.
 
-Genellikle belirli bir formatta ve belirli bir konu ya da alanla ilgili bilgileri içeren veriler, veri analizi alanlarında kullanılan önemli araçlardır.
+-Genellikle belirli bir formatta ve belirli bir konu ya da alanla ilgili bilgileri içeren veriler, veri analizi alanlarında kullanılan önemli araçlardır.
 
-İstanbul, Türkiye'nin en kalabalık ve en dinamik şehirlerinden biri olarak göze çarpmaktadır. Bu büyük metropolde yaşayan nüfusun demografik yapıları, tüketim alışkanlıkları ve yaşam tarzları, hem akademik araştırmaların hem de iş dünyasının için ilgi çekici veriler barındırmaktadır.
+-İstanbul, Türkiye'nin en kalabalık ve en dinamik şehirlerinden biri olarak göze çarpmaktadır. Bu büyük metropolde yaşayan nüfusun demografik yapıları, tüketim alışkanlıkları ve yaşam tarzları, hem akademik araştırmaların hem de iş dünyasının için ilgi çekici veriler barındırmaktadır.
 
-Bu bağlamda, hazırlanan bu proje kapsamında İstanbul'da yaşayan nüfusun tüketim alışkanlıklarına yönelik bir araştırma ve analiz çalışması gerçekleştirilmiştir.
+-Bu bağlamda, hazırlanan bu proje kapsamında İstanbul'da yaşayan nüfusun tüketim alışkanlıklarına yönelik bir araştırma ve analiz çalışması gerçekleştirilmiştir.
 
 ## Tercih Sebebi
 
-İstanbul'daki nüfus ve tüketim alışkanlıklarına odaklanan bir veri seti, çeşitli sektörlerde faaliyet gösteren işletmeler, araştırmacılar ve hükümetler için aiağıda belirtilen nedenlerden ötürü değerlidir.
+-İstanbul'daki nüfus ve tüketim alışkanlıklarına odaklanan bir veri seti, çeşitli sektörlerde faaliyet gösteren işletmeler, araştırmacılar ve hükümetler için aiağıda belirtilen nedenlerden ötürü değerlidir.
 
-**Nüfus Yoğunluğu:** İstanbul, Türkiye'nin en kalabalık şehri ve dünyanın en kalabalık nüfuslu metropollerinden biridir. Bu nedenle, İstanbul'daki nüfusun demografik yapısı ve tüketim alışkanlıkları, geniş bir örnekleme dayalı olarak incelenebilmektedir.Genel tüketici eğilimleri hakkında önemli içgörüler sunabilmesi bu verisetinin incelenmesini daha cazip hale getirmektedir.
+\-**Nüfus Yoğunluğu:** İstanbul, Türkiye'nin en kalabalık şehri ve dünyanın en kalabalık nüfuslu metropollerinden biridir. Bu nedenle, İstanbul'daki nüfusun demografik yapısı ve tüketim alışkanlıkları, geniş bir örnekleme dayalı olarak incelenebilmektedir.Genel tüketici eğilimleri hakkında önemli içgörüler sunabilmesi bu verisetinin incelenmesini daha cazip hale getirmektedir.
 
-**Ekonomik Önem:** Türkiye'nin ekonomik başkenti olarak kabul edilebilecek olan İstanbuş, ülkenin gayri safi yurtiçi hasılasının büyük bir kısmını oluşturmaktadır. Bu şehirdeki tüketim alışkanlıkları, perakende sektörü ve ekonominin genel sağlığı hakkında bilgi edinmenin, işletmeler ve hükümetler için stratejik öneme sahip olabileceği değerlendirilmektedir.
+\-**Ekonomik Önem:** Türkiye'nin ekonomik başkenti olarak kabul edilebilecek olan İstanbuş, ülkenin gayri safi yurtiçi hasılasının büyük bir kısmını oluşturmaktadır. Bu şehirdeki tüketim alışkanlıkları, perakende sektörü ve ekonominin genel sağlığı hakkında bilgi edinmenin, işletmeler ve hükümetler için stratejik öneme sahip olabileceği değerlendirilmektedir.
 
-**Çeşitlilik:** İstanbul, farklı kültürel, ekonomik ve demografik yapıları bünyesinde barındıran bir şehir olarak, tüketici tercihlerinde ve alışkanlıklarında çeşitlilik içermektedir. Şehirdeki nüfus ve tüketim alışkanlıklarını anlamak, farklı segmentlerdeki tüketici davranışlarını analiz etmek ve özel pazarlama stratejileri geliştirmek için önemli görülmektedir.
+\-**Çeşitlilik:** İstanbul, farklı kültürel, ekonomik ve demografik yapıları bünyesinde barındıran bir şehir olarak, tüketici tercihlerinde ve alışkanlıklarında çeşitlilik içermektedir. Şehirdeki nüfus ve tüketim alışkanlıklarını anlamak, farklı segmentlerdeki tüketici davranışlarını analiz etmek ve özel pazarlama stratejileri geliştirmek için önemli görülmektedir.
 
-**Büyüme Potansiyeli:** İstanbul, sürekli olarak büyüyen ve değişen bir şehirdir. Nüfus artışı, göç hareketleri, altyapı projeleri ve ekonomik değişimler, tüketim alışkanlıklarını etkileyebilir. Bu nedenle, İstanbul'daki nüfus ve tüketim verilerini düzenli olarak izlemek ve analiz etmek, gelecekteki trendleri tahmin etmek ve uygun stratejiler geliştirmek için önemlidir.
+\-**Büyüme Potansiyeli:** İstanbul, sürekli olarak büyüyen ve değişen bir şehirdir. Nüfus artışı, göç hareketleri, altyapı projeleri ve ekonomik değişimler, tüketim alışkanlıklarını etkileyebilir. Bu nedenle, İstanbul'daki nüfus ve tüketim verilerini düzenli olarak izlemek ve analiz etmek, gelecekteki trendleri tahmin etmek ve uygun stratejiler geliştirmek için önemlidir.
 
-**Karşılaşılan Zorluklar:** İstanbul gibi büyük bir şehirde yaşamak, çeşitli zorlukları da beraberinde getirir. Trafik, altyapı sorunları, çevresel endişeler gibi faktörler, tüketici davranışlarını etkileyebilir. Bu zorluklarla başa çıkabilmek için,  nüfus ve tüketim alışkanlıklarını anlamak önemlidir.
+\-**Karşılaşılan Zorluklar:** İstanbul gibi büyük bir şehirde yaşamak, çeşitli zorlukları da beraberinde getirir. Trafik, altyapı sorunları, çevresel endişeler gibi faktörler, tüketici davranışlarını etkileyebilir. Bu zorluklarla başa çıkabilmek için, nüfus ve tüketim alışkanlıklarını anlamak önemlidir.
 
-İstanbul'daki nüfus ve tüketim alışkanlıklarını incelemek, sadece şehirdeki yaşamı anlamakla kalmaz, aynı zamanda farklı sektörler, pazarlama ve şehir planlaması gibi alanlar için de önemli içgörüler sağlar. Bu nedenle, bu konuya odaklanan bir veri seti oldukça ilgi çekicidir.
+-İstanbul'daki nüfus ve tüketim alışkanlıklarını incelemek, sadece şehirdeki yaşamı anlamakla kalmaz, aynı zamanda farklı sektörler, pazarlama ve şehir planlaması gibi alanlar için de önemli içgörüler sağlar. Bu nedenle, bu konuya odaklanan bir veri seti oldukça ilgi çekicidir.
 
 ## Cn D0Eleme
 
@@ -49,7 +49,7 @@ xxxxxx
 
 xxxxxx
 
-## Keşifsel Veri Analizi
+## KeEifsel Veri Analizi
 
 xxxxxx
 
@@ -61,11 +61,11 @@ xxxxxx
 
 xxxxxx
 
-## Sonuçlar
+## SonuC'lar
 
 xxxxxx
 
-# Sonuçlar ve Ana Çıkarımlar
+# SonuC'lar ve Ana CD1karD1mlar
 
 xxxxxx
 
@@ -75,65 +75,93 @@ library(ggplot2)
 library(dplyr)
 library(tidyr)
 
-path <- "nufuslar.xlsx"
-data <- read_excel(path)
-head(data)
+nüfus_path <- "nufuslar.xlsx"
+nüfus_data <- read_excel(nüfus_path)
+head(nüfus_data)
 
 
-new_data <- data |> pivot_longer('2008':'2023', names_to = 'year', values_to = 'population')
-head(new_data)
-str(new_data)
+nüfus_data <- nüfus_data |> pivot_longer('2008':'2023', names_to = 'yıl', values_to = 'nüfus')
+head(nüfus_data)
+str(nüfus_data)
 
 # İlçeye göre ortalama nüfusları tablo şeklinde gösterilim
 
-new_data$year  <- as.numeric(new_data$year)
-new_data$population  <- as.numeric(new_data$population)
+nüfus_data$yıl  <- as.numeric(nüfus_data$yıl)
+nüfus_data$nüfus  <- as.numeric(nüfus_data$nüfus)
 
 
-ilçe_avg <- new_data |> 
+ilçe_nüfus_ortalama <- nüfus_data |> 
   group_by(İlçe) |> 
-  summarise(nüfus_ortalaması = mean(population))
+  summarise(nüfus_ortalaması = mean(nüfus))
                                              
-print(ilçe_avg)
+print(ilçe_nüfus_ortalama)
 
 
 
 # İlçeye göre ortalama nüfusları grafik şeklinde gösterilim
 
-ggplot(ilçe_avg, aes(x =İlçe, y=nüfus_ortalaması/1000)) + geom_point() + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + xlab(" ") + scale_y_continuous(trans = "log2")
+ilçe_ortalama_plot <- ggplot(ilçe_nüfus_ortalama, aes(x =İlçe, y=nüfus_ortalaması/1000)) + geom_point() + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + xlab(" ") + scale_y_continuous(trans = "log2")
 
 # İlçeye göre çöp tüketim verisini birleştirelim
 
-path_2 <- "evsel_atik.xlsx"
-data_2 <- read_excel(path_2)
+evsel_atık_path <- "evsel_atik.xlsx"
+evsel_atık_data <- read_excel(evsel_atık_path)
 
-new_data_2 <- data_2 |> pivot_longer('2008':'2023', names_to = 'year', values_to = 'trash')
-head(new_data)
-str(new_data)
+evsel_atık_data <- evsel_atık_data |> pivot_longer('2008':'2023', names_to = 'yıl', values_to = 'evsel_atık')
+head(evsel_atık_data)
+str(evsel_atık_data)
+evsel_atık_data[evsel_atık_data == 0] <- NA
 
-ilçe_avg_trash <- new_data_2 |> 
+ilçe_atık_ortalama <- evsel_atık_data |> 
   group_by(İlçe) |> 
-  summarise( çöp_ortalaması = mean(trash))
+  summarise( evsel_atık_ortalaması = mean(evsel_atık, na.rm = TRUE))
                                              
-print(ilçe_avg_trash)
+print(ilçe_atık_ortalama)
 
-ilçe_avg %>% arrange(desc(nüfus_ortalaması)) %>% head()
-ilçe_avg_trash %>% arrange(desc(çöp_ortalaması)) %>% head()
+ilçe_nüfus_ortalama %>% arrange(desc(nüfus_ortalaması)) %>% head()
+ilçe_atık_ortalama %>% arrange(desc(evsel_atık_ortalaması)) %>% head()
 
-en_iyi_veri <- left_join(ilçe_avg, ilçe_avg_trash, by = "İlçe")
+proje_data <- left_join(ilçe_nüfus_ortalama, ilçe_atık_ortalama, by = "İlçe")
 
 
-en_iyi_veri <- en_iyi_veri %>% mutate(trash_rate_per_person = çöp_ortalaması/nüfus_ortalaması)
+proje_data <- proje_data %>% mutate(kişi_başı_atık_miktarı = evsel_atık_ortalaması/nüfus_ortalaması)
 
-p <- en_iyi_veri %>% ggplot() + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + xlab(" ") + scale_y_continuous(trans = "log2")
-p + geom_boxplot(aes(İlçe, trash_rate_per_person, fill = factor(İlçe))) 
 
-important_data <- left_join(data, data_2, by = "İlçe", suffix = c(".population", ".trash"))
-head(important_data)
 
+p1 <- proje_data %>% ggplot() + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + xlab(" ") + scale_y_continuous(trans = "log2")
+p1 + geom_point(aes(İlçe, kişi_başı_atık_miktarı, fill = factor(İlçe))) 
 
 
 
 
+#aşağıda hata var
+
+proje_detay_data <- left_join(nüfus_data, evsel_atık_data, by = "İlçe", suffix = c(".nüfus", ".atık"))
+proje_detay_data <- arrange(proje_detay_data, yıl)
+
+#
+
+su_tüketim_path <- "su_tuketim.xlsx"
+su_tüketim_data <- read_excel(su_tüketim_path)
+head(su_tüketim_data)
+
+
+su_tüketim_data <- su_tüketim_data |> pivot_longer('2008':'2023', names_to = 'yıl', values_to = 'su_tüketim')
+head(su_tüketim_data)
+str(su_tüketim_data)
+su_tüketim_data[su_tüketim_data == 0] <- NA
+
+
+
+dogalgaz_tüketim_path <- "dogalgaz_tuketim.xlsx"
+dogalgaz_tüketim_data <- read_excel(dogalgaz_tüketim_path)
+head(dogalgaz_tüketim_data)
+
+dogalgaz_tüketim_data <- dogalgaz_tüketim_data %>% group_by(İlçe,Yıl) %>% summarise(yıllık_tüketim= sum(`Dogalgaz Tüketim Miktarı (m3)`))
+
+
+okuma_yazma_orani_path <- "okuma_yazma_oranı.xlsx"
+okuma_yazma_orani_data <- read_excel(okuma_yazma_orani_path)
+head(su_tüketim_data)
 
 ```

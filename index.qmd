@@ -39,8 +39,8 @@ Evsel Atık Miktarımız Bize Ne Söylüyor?
 
 -   2008-2023 evsel atık miktarı ($ton$)
 -   2008-2023 nüfus
--   2008-2023 su tüketimi ($m^3$)
--   2008-2023 doğalgaz tüketimi ($m^3$)
+-   2015-2023 su tüketimi ($m^3$)
+-   2015-2023 doğalgaz tüketimi ($m^3$)
 -   Ortalama hane büyüklüğü
 -   BURAYA VERİ EKLENEBİLİR, EKLENMEZSE SİL
 
