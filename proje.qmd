@@ -106,6 +106,7 @@ library(dplyr)
 library(tidyr)
 library(stringr)
 
+path = getwd()
 nüfus_path <- "nufuslar.xlsx"
 nüfus_data <- read_excel(nüfus_path)
 head(nüfus_data)
@@ -200,4 +201,61 @@ okuma_yazma_orani_data <- okuma_yazma_orani_data %>% mutate(okuma_yazma_oranı =
 
 proje_data <- left_join(proje_data, okuma_yazma_orani_data[, c("İlçe", "okuma_yazma_oranı")], by = "İlçe")
 
+teknolojik_erisim_path <- "teknolojik_erisim.xlsx"
+teknolojik_erisim_data <- read_excel(teknolojik_erisim_path)
+head(teknolojik_erisim_data)
+
+#tek veriye indirgeme
+sütun_ortalamaları <- sapply(teknolojik_erisim_data[,-1],mean)
+toplam_ortalama <- sum(sütun_ortalamaları)
+katsayı = 1/(sütun_ortalamaları/toplam_ortalama)
+katsayı[10] <- katsayı[10]*(-3)
+teknolojik_erisim_data$teknolojik_erisim_degeri <- rowSums(teknolojik_erisim_data[,-1]*katsayı)
+teknolojik_erisim_data <- teknolojik_erisim_data %>%
+  mutate(teknolojik_erisim_degeri_normalize = (teknolojik_erisim_degeri - min(teknolojik_erisim_degeri)) / max(teknolojik_erisim_degeri))
+
+
+proje_data <- left_join(proje_data, teknolojik_erisim_data[, c("İlçe", "teknolojik_erisim_degeri_normalize")], by = "İlçe")
+
+mulkiyet_durumu_path <- "mulkiyet_durumu.xlsx"
+mulkiyet_durumu_data <- read_excel(mulkiyet_durumu_path)
+mulkiyet_durumu_data <- mulkiyet_durumu_data %>% mutate(ev_sahiplik_oranı = `Ev Sahibi`/(`Ev Sahibi`+`Ev Sahibi Değil`)*100)
+
+proje_data <- left_join(proje_data, mulkiyet_durumu_data[, c("İlçe", "ev_sahiplik_oranı")], by = "İlçe")
+
+#ilçelere kısaltma ekleyelim
+proje_data$ilçe_kısaltma <- toupper(substring(abbreviate(proje_data$İlçe, minlength=3),1,4))
+#aynı kısaltmaları düzeltme
+proje_data[proje_data$İlçe == "Sultangazi", "ilçe_kısaltma"] <- "SLTG"
+proje_data[proje_data$İlçe == "Sultanbeyli", "ilçe_kısaltma"] <- "SLTB"
+
+
+ikamet_suresi_path <- "ikamet_suresi.xlsx"
+ikamet_suresi_data <- read_excel(ikamet_suresi_path)
+ikamet_suresi_data <- ikamet_suresi_data %>% rename(ortalama_ikamet_suresi=`Ortalama Yıl`)
+
+proje_data <- left_join(proje_data, ikamet_suresi_data[, c("İlçe", "ortalama_ikamet_suresi")], by = "İlçe")
+
+
+
+hanehalki_buyukluk_path <- "hanehalki_buyukluk.xlsx"
+hanehalki_buyukluk_data <- read_excel(hanehalki_buyukluk_path)
+hanehalki_buyukluk_data <- hanehalki_buyukluk_data %>% rename(hanehalki_buyuklugu=`Ortalama Hanehalkı Büyüklüğü 2022`)
+proje_data <- left_join(proje_data, hanehalki_buyukluk_data[, c("İlçe", "hanehalki_buyuklugu")], by = "İlçe")
+
+
+#korelasyon matrisi çizdirme 1
+cor_data <- proje_data[,c("kişi_başı_atık_miktarı", "kişi_başı_su_tüketim_miktarı", "kişi_başı_dogalgaz_tüketim_miktarı", "okuma_yazma_oranı","teknolojik_erisim_degeri_normalize","ev_sahiplik_oranı","ortalama_ikamet_suresi","hanehalki_buyuklugu")]
+corr_matrix <- cor(cor_data, use="complete.obs")
+
+library(corrplot)
+c1 <- corrplot(corr_matrix, method = "circle")
+
+
+
+
+#korelasyon matrisi çizdirme 2
+library(plotly)
+c2 <- plot_ly(z = corr_matrix, type = "heatmap")
+print(c2)
 ```
