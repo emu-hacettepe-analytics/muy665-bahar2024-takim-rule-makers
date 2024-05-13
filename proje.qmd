@@ -105,6 +105,9 @@ library(ggplot2)
 library(dplyr)
 library(tidyr)
 library(stringr)
+library(scales)
+library(plotly)
+library(ggrepel)
 
 path = getwd()
 nüfus_path <- "nufuslar.xlsx"
@@ -252,10 +255,43 @@ library(corrplot)
 c1 <- corrplot(corr_matrix, method = "circle")
 
 
-
-
 #korelasyon matrisi çizdirme 2
 library(plotly)
 c2 <- plot_ly(z = corr_matrix, type = "heatmap")
 print(c2)
+
+
+#Grafikler
+
+x <- proje_data %>% arrange(desc(nüfus_ortalaması))%>% top_n(5)
+
+proje_data %>% filter(İlçe %in% x$İlçe) %>% ggplot(aes(kişi_başı_atık_miktarı, hanehalki_buyuklugu,
+color = nüfus_ortalaması/10^6)) + geom_point() + 
+facet_grid(nüfus_ortalaması/10^6 ~ İlçe)
+
+proje_data_kategori <- ntile(proje_data$ortalama_ikamet_suresi, 3)
+
+proje_data_kategori <- recode(proje_data_kategori,
+                              '1' = 'Kötü',
+                              '2' = 'Orta',
+                              '3' = 'İyi')
+
+
+proje_data |> ggplot(aes(nüfus_ortalaması/10^6, 
+evsel_atık_ortalaması/10^6, label = ilçe_kısaltma, color= proje_data_kategori)) + geom_point() +
+geom_text_repel() +
+geom_smooth(method = "lm"
+, se = FALSE)
+
+proje_data %>% ggplot(aes(İlçe, evsel_atık_ortalaması)) + geom_point() + theme_bw()
+
+
+proje_data  %>% ggplot(aes(nüfus_ortalaması/10^6,
+evsel_atık_ortalaması/10^6)) + geom_jitter(aes(color
+= hanehalki_buyuklugu), alpha = 0.5) + theme_bw()+ theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+
+
+
 ```
+
