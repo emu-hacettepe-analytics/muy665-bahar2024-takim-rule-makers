@@ -5,7 +5,7 @@ sidebar: false
 
 ![](assets/images/takim_gorsel.webp){fig-align="center"}
 
-MUY665-İş Analitiği dersi kapsamında oluşturduğumuz takım sayfamıza hoş geldiniz.
+*MUY665-İş Analitiği dersi kapsamında oluşturduğumuz takım sayfamıza hoş geldiniz.*
 
 Bu sayfa ile İş Analitiği çalışmalarımızı paylaşıyoruz. Takım Üyelerimize ve proje özetimize aşağıdan erişebilir, çalışmalarımızı daha detaylı incelemek için sayfanın tepesinde bulunan araç çubuğundan faydalanabilirsiniz.
 
@@ -27,11 +27,11 @@ Lütfen faaliyetlerimizi görmek için için bizi takipte kalın.
 
 ## Proje Adı
 
-Evsel Atık Miktarımız Bize Ne Söylüyor?
+İstanbul’da Sürdürülebilirlik Haritası: Nüfus, Atık ve Enerji Tüketimi Analizi
 
 ## Proje Konusu
 
-İstanbul ilçelerinde
+İstanbul, hem Türkiye'nin hem de dünyanın en dinamik ve karmaşık şehirlerinden biri oalrak araştırmacıların karşısına çıkmaktadır. Proje kapsamında, İstanbul'daki nüfus ve tüketim alışkanlıklarına odaklanarak şehirdeki yaşamı anlamak, farklı sektörler, pazarlama ve şehir planlaması gibi alanlar için de önemli içgörüler kazanmak hedeflenmektedir.
 
 ## Veri Seti Hakkında Özet Bilgi
 
@@ -42,8 +42,17 @@ Evsel Atık Miktarımız Bize Ne Söylüyor?
 -   2015-2023 su tüketimi ($m^3$)
 -   2015-2023 doğalgaz tüketimi ($m^3$)
 -   Ortalama hane büyüklüğü
--   BURAYA VERİ EKLENEBİLİR, EKLENMEZSE SİL
 
 ## Sonuçlar
 
-Burada key takeways verilmelidir. En az 3 en fazla 5 madde ile çarpıcı sonuçlar sunulmalıdır.
+İstanbul'daki nüfus ve tüketim alışkanlıklarını analizi kapsamında elde edilen sonuçlar aşağıda listelenmiştir:
+
+-   Demografik Profil
+
+-   Tüketim Eğilimleri ve Trendleri
+
+-   Şehir Planlaması ve Altyapı Geliştirme Stratejileri
+
+-   İlçe Bazlı Turizm Potansiyeli
+
+Bu sonuçların, çeşitli kurumların ve şehir yönetiminin stratejik planlamalarını ve kararlarını desteklemek için önemli bir temel oluşturabileceği öngörülmektedir.

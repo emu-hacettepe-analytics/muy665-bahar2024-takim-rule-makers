@@ -1,5 +1,5 @@
 ---
-title: "SELİN ÖKSÜZ"
+title: "Selin Öksüz"
 ---
 
 ![](images/SelinOksuz.jpg){fig-align="center"}

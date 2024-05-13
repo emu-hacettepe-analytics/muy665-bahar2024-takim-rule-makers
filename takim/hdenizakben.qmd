@@ -1,18 +1,19 @@
 ---
-title: "HATICE DENIZ AKBEN"
+title: "Hatice Deniz Akben"
 ---
 
 ![](/assets/images/vesikalik.jpeg){fig-align="center"}
 
 # EGITIM
--   Lisans,CUMHURIYET UNIVERSITESI  , Turkiye, 2013 - 2017.
+
+-   Lisans,CUMHURIYET UNIVERSITESI , Turkiye, 2013 - 2017.
 -   Yuksek Lisans, MUHENDISLIK YONETIMI, Hacettepe Universitesi, Turkiye, 2024 - devam ediyor.
 
 # IS DENEYIMI
 
 ## ISLER
 
-1.  ELSIS ELEKTRONIK ARGE MUHENDISI  2022 Devam ediyor
+1.  ELSIS ELEKTRONIK ARGE MUHENDISI 2022 Devam ediyor
 
 2.  BESMAK LAB. PROJE MUHENDISI 2029-2022
 
@@ -26,6 +27,3 @@ title: "HATICE DENIZ AKBEN"
 
 1.  ERP Programi
 2.  Office Programi
-
-
-

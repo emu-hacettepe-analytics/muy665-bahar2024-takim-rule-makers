@@ -1,5 +1,5 @@
 ---
-title: "Proje Adı"
+title: "İSTANBUL'DA SÜRDÜRÜLEBİLİRLİK HARİTASI: NÜFUS, ATIK VE ENERJİ TÜKETİMİ ANALİZİ"
 number-sections: true
 ---
 
@@ -27,7 +27,7 @@ Veri kaynağı olarak İstanbul Büyükşehir Belediyesi (İBB) Açık Veri Port
 
 ## Tercih Sebebi
 
--İstanbul'daki nüfus ve tüketim alışkanlıklarına odaklanan bir veri seti, çeşitli sektörlerde faaliyet gösteren işletmeler, araştırmacılar ve hükümetler için aiağıda belirtilen nedenlerden ötürü değerlidir.
+-İstanbul'daki nüfus ve tüketim alışkanlıklarına odaklanan bir veri seti, çeşitli sektörlerde faaliyet gösteren işletmeler, araştırmacılar ve hükümetler için aşağıda belirtilen nedenlerden ötürü değerlidir.
 
 \-**Nüfus Yoğunluğu:** İstanbul, Türkiye'nin en kalabalık şehri ve dünyanın en kalabalık nüfuslu metropollerinden biridir. Bu nedenle, İstanbul'daki nüfusun demografik yapısı ve tüketim alışkanlıkları, geniş bir örnekleme dayalı olarak incelenebilmektedir.Genel tüketici eğilimleri hakkında önemli içgörüler sunabilmesi bu verisetinin incelenmesini daha cazip hale getirmektedir.
 
@@ -41,31 +41,61 @@ Veri kaynağı olarak İstanbul Büyükşehir Belediyesi (İBB) Açık Veri Port
 
 -İstanbul'daki nüfus ve tüketim alışkanlıklarını incelemek, sadece şehirdeki yaşamı anlamakla kalmaz, aynı zamanda farklı sektörler, pazarlama ve şehir planlaması gibi alanlar için de önemli içgörüler sağlar. Bu nedenle, bu konuya odaklanan bir veri seti oldukça ilgi çekicidir.
 
-## Cn D0Eleme
+## Cn Düzenleme
 
 xxxxxx
 
 # Analiz
 
-xxxxxx
+Veri setini analiz etmek, veri bilimi ve istatistik alanlarında önemli bir yetenek olarak göze çarpmaktadır.
 
-## KeEifsel Veri Analizi
+## Keşifsel Veri Analizi
 
-xxxxxx
+Keşifsel Veri Analizi, Veri Bilimi, İstatistik ve Makine Öğrenmesi gibi disiplinlerde yararlanılan; bir veri setini anlamak ve içerdiği bilgilere ulaşmak için kullanılan bir olgudur. Genellikle bir veri setinin yapısını, dağılımını, ilişkilerini ve özelliklerini keşfetmek için kullanılan bir dizi teknik ve araç içermektedir.
+
+Keşifsel Veri Analizi temel olarak aşağıdaki adımları içerebilir:
+
+\-**Veri Toplama ve Temizleme:** Veri setini inceleyip düzenlemek, eksik veya yanlış verileri düzeltmek, gereksiz sütunları kaldırmak veya gerekirse veriye yeni sütunlar eklemek gibi işlemlerin yapıldığı adımdır.
+
+\-**Veri Görselleştirme:** Veri setinin yapısını ve ilişkilerini görsel olarak analiz etmek için çeşitli grafikler ve görselleştirmelerin yapıldığı adımdır. Örneğin, histogramlar, kutu grafikleri, saçılım grafikleri ve sıcaklık haritaları gibi araçlardan faydalanılabilir.
+
+\-**Özellik Mühendisliği:** Veri setindeki değişkenlerin ve özelliklerin incelenmesi ve analiz edilmesiyle yeni özelliklerin oluşturulduğu adımda, model performansını artırmak veya veri setindeki gizli yapıları ortaya çıkarmak amaçlanmaktadır.
+
+\-**İstatistiksel Analiz:** Veri setinin istatistiksel özellikleri, dağılımları ve ilişkileri incelenerek; ortalamalar, standart sapmalar, korelasyonlar ve varyanslar gibi istatistiksel metriklerin hesaplaması yapılmaktadır
+
+\-**Modelleme ve Tahmin:** Keşifsel veri analizi aynı zamanda, veri setinin yapısal özelliklerini anlamak için basit modellerin oluşturulmasını içerebilir. Tahmin yapmak ve veri setindeki kalıpları ortaya çıkarmak için değerlidir.
+
+Keşifsel Veri Analizi, veri setinin doğasını daha iyi anlamak ve sonraki analiz ve modelleme adımları için bir temel oluşturmak için öneme sahiptir.
+
+Bu yöntem, veri bilimi projelerinin başlangıç noktasını oluşturarak veri setini keşfetme ve anlama sürecinde kritik bir rol oynamaktadır.
+
+Bu proje kapsamında bu yöntemden yararlanılarak, projenin hedeflerini daha iyi anlayabilmek, veri setinizdeki önemli ilişkileri belirleyebilmek ve veriye dayalı stratejiler geliştirebilmek hedeflenmiştir.
 
 ## Trend Analizi
 
-xxxxxx
+Trend Analizi, zaman içindeki veri değişimlerini inceleyerek belirli bir eğilimi tanımlamayı amaçlayan bir analiz yöntemi oalrak karşımıza çıkmaktadır. Geçmiş veri noktalarının bir dizisini kullanarak gelecekteki davranışları tahmin etmek için kullanılabilen Trend Analizi yöntemi, genellikle keşifsel veri analizinin bir parçası olarak uygulanmaktadır.
+
+Trend Analizi aşağıdaki adımları içerebilir:
+
+\-**Veri Görselleştirme:** Trend analizi için veri setinizin zaman serisi verilerini görselleştirerek zaman boyunca değişen bir değişkenin trendini gösteren bir çizgi grafiği veya nokta grafiği oluşturmak mümkündür.
+
+\-**Trendin Tanımlanması:** Veri setinizdeki zaman serisi verilerini inceleyerek belirli bir eğilimi tanımlanabilir. Bu, verinin genel eğilimini, artışları veya azalışları, belirli bir periyotta tekrar eden desenleri veya diğer önemli özellikleri içerebilir.
+
+\-**Trendin Modelleme:** Belirlenen trendin matematiksel bir modelini oluşturularak; doğrusal bir trend çizgisi, ikinci dereceden bir polinom veya başka bir regresyon modeli hazırlanabilir. Bu model, trendin gelecekte nasıl devam edebileceği hakkında tahminler yapmak için kullanılabilir.
+
+\-**Trendin Değerlendirilmesi:** Oluşturulan modeli kullanarak gelecekteki trendin tahminlerini modelin ne kadar iyi uyarlandığını ve tahminlerin ne kadar güvenilir olduğunu değerlendirmeyi içerir.
+
+Trend Analizi, birçok farklı alanda kullanılabilecek bir yöntem olarak göze çarpmaktadır.
 
 ## Model Uydurma
 
 xxxxxx
 
-## SonuC'lar
+## Sonuçlar
 
 xxxxxx
 
-# SonuC'lar ve Ana CD1karD1mlar
+# Sonuçlar ve Ana Çıkarımlar
 
 xxxxxx
 
@@ -96,7 +126,6 @@ ilçe_nüfus_ortalama <- nüfus_data |>
   summarise(nüfus_ortalaması = mean(nüfus))
                                              
 print(ilçe_nüfus_ortalama)
-
 
 
 # İlçeye göre ortalama nüfusları grafik şeklinde gösterilim

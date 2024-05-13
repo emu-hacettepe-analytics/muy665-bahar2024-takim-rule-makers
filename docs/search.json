@@ -194,28 +194,28 @@
     "href": "index.html#proje-adı",
     "title": "Takım: What R We Doing?",
     "section": "Proje Adı",
-    "text": "Proje Adı\nEvsel Atık Miktarımız Bize Ne Söylüyor?"
+    "text": "Proje Adı\nİstanbul’da Sürdürülebilirlik Haritası: Nüfus, Atık ve Enerji Tüketimi Analizi"
   },
   {
     "objectID": "index.html#proje-konusu",
     "href": "index.html#proje-konusu",
     "title": "Takım: What R We Doing?",
     "section": "Proje Konusu",
-    "text": "Proje Konusu\nİstanbul ilçelerinde"
+    "text": "Proje Konusu\nİstanbul, hem Türkiye’nin hem de dünyanın en dinamik ve karmaşık şehirlerinden biri oalrak araştırmacıların karşısına çıkmaktadır. Proje kapsamında, İstanbul’daki nüfus ve tüketim alışkanlıklarına odaklanarak şehirdeki yaşamı anlamak, farklı sektörler, pazarlama ve şehir planlaması gibi alanlar için de önemli içgörüler kazanmak hedeflenmektedir."
   },
   {
     "objectID": "index.html#veri-seti-hakkında-özet-bilgi",
     "href": "index.html#veri-seti-hakkında-özet-bilgi",
     "title": "Takım: What R We Doing?",
     "section": "Veri Seti Hakkında Özet Bilgi",
-    "text": "Veri Seti Hakkında Özet Bilgi\nİstanbul Büyükşehir Belediyesi (İBB) Açık Veri Portalı ve Türkiye İstatistik Kurumu (TÜİK) Veri Tabanı üzerinden elde edilen İstanbul’un ilçe bazlı;\n\n2008-2023 evsel atık miktarı (\\(ton\\))\n2008-2023 nüfus\n2008-2023 su tüketimi (\\(m^3\\))\n2008-2023 doğalgaz tüketimi (\\(m^3\\))\nOrtalama hane büyüklüğü\nBURAYA VERİ EKLENEBİLİR, EKLENMEZSE SİL"
+    "text": "Veri Seti Hakkında Özet Bilgi\nİstanbul Büyükşehir Belediyesi (İBB) Açık Veri Portalı ve Türkiye İstatistik Kurumu (TÜİK) Veri Tabanı üzerinden elde edilen İstanbul’un ilçe bazlı;\n\n2008-2023 evsel atık miktarı (\\(ton\\))\n2008-2023 nüfus\n2015-2023 su tüketimi (\\(m^3\\))\n2015-2023 doğalgaz tüketimi (\\(m^3\\))\nOrtalama hane büyüklüğü"
   },
   {
     "objectID": "index.html#sonuçlar",
     "href": "index.html#sonuçlar",
     "title": "Takım: What R We Doing?",
     "section": "Sonuçlar",
-    "text": "Sonuçlar\nBurada key takeways verilmelidir. En az 3 en fazla 5 madde ile çarpıcı sonuçlar sunulmalıdır."
+    "text": "Sonuçlar\nİstanbul’daki nüfus ve tüketim alışkanlıklarını analizi kapsamında elde edilen sonuçlar aşağıda listelenmiştir:\n\nDemografik Profil\nTüketim Eğilimleri ve Trendleri\nŞehir Planlaması ve Altyapı Geliştirme Stratejileri\nİlçe Bazlı Turizm Potansiyeli\n\nBu sonuçların, çeşitli kurumların ve şehir yönetiminin stratejik planlamalarını ve kararlarını desteklemek için önemli bir temel oluşturabileceği öngörülmektedir."
   },
   {
     "objectID": "index.html#takım-üyeleri",
@@ -241,7 +241,7 @@
   {
     "objectID": "proje.html",
     "href": "proje.html",
-    "title": "Proje Adı",
+    "title": "İSTANBUL’DA SÜRDÜRÜLEBİLİRLİK HARİTASI: NÜFUS, ATIK VE ENERJİ TÜKETİMİ ANALİZİ",
     "section": "",
     "text": "Çöp, bir süreç sonucunda sistemin istenmeyen, verim alınamayan, israf edilen veya bir başka sisteme girdi olamayan çıktısı, diğer bir deyişle bir artık olarak ifade edilebilir. Çöpler, guruplanarak incelendiğinde sanayi atığı, tıbbi atık, inşaat atığı gibi farklı şekillerde karşımıza çıkabilir. Aslında her bir atık miktarı, ilgili sürecin ne derece işletildiği ile doğru ve verimi ile ters orantılıdır. Peki, “Geri dönüşüm ve verimlilik kavramından uzak görülen, ekonomik bir değeri olmadığı gibi incelenmekten de geri durulan bir çöp türü olan evsel atıklar acaba bizlere bir şeyler söyler mi?” sorusunu sorarsak, nasıl bir cevap alırız? Bu projede, evsel atık miktarının ortalaması ve değişimi ile ilgili veriler ile diğer bazı göstergeler arasında İstanbul ilçeri özelinde belirli ilişkiler arıyor olacağız."
   },
@@ -318,23 +318,23 @@
   {
     "objectID": "proje.html#veri-kaynağı",
     "href": "proje.html#veri-kaynağı",
-    "title": "Proje Adı",
+    "title": "İSTANBUL’DA SÜRDÜRÜLEBİLİRLİK HARİTASI: NÜFUS, ATIK VE ENERJİ TÜKETİMİ ANALİZİ",
     "section": "2.1 Veri Kaynağı",
     "text": "2.1 Veri Kaynağı\nVeri kaynağı olarak İstanbul Büyükşehir Belediyesi (İBB) Açık Veri Portalı ve Türkiye İstatistik Kurumu (TÜİK) Veri Tabanı kullanılmıştır."
   },
   {
     "objectID": "proje.html#veri-hakkında-genel-bilgiler",
     "href": "proje.html#veri-hakkında-genel-bilgiler",
-    "title": "Proje Adı",
+    "title": "İSTANBUL’DA SÜRDÜRÜLEBİLİRLİK HARİTASI: NÜFUS, ATIK VE ENERJİ TÜKETİMİ ANALİZİ",
     "section": "2.2 Veri Hakkında Genel Bilgiler",
-    "text": "2.2 Veri Hakkında Genel Bilgiler\nÇeşitli kaynaklardan elde edilebilen ve belirli bir konu veya problem üzerinde analiz yapmak için kullanılabilen örneklere veri ya da veriseti denmektedir.\nGenellikle belirli bir formatta ve belirli bir konu ya da alanla ilgili bilgileri içeren veriler, veri analizi alanlarında kullanılan önemli araçlardır.\nİstanbul, Türkiye’nin en kalabalık ve en dinamik şehirlerinden biri olarak göze çarpmaktadır. Bu büyük metropolde yaşayan nüfusun demografik yapıları, tüketim alışkanlıkları ve yaşam tarzları, hem akademik araştırmaların hem de iş dünyasının için ilgi çekici veriler barındırmaktadır.\nBu bağlamda, hazırlanan bu proje kapsamında İstanbul’da yaşayan nüfusun tüketim alışkanlıklarına yönelik bir araştırma ve analiz çalışması gerçekleştirilmiştir."
+    "text": "2.2 Veri Hakkında Genel Bilgiler\n-Çeşitli kaynaklardan elde edilebilen ve belirli bir konu veya problem üzerinde analiz yapmak için kullanılabilen örneklere veri ya da veriseti denmektedir.\n-Genellikle belirli bir formatta ve belirli bir konu ya da alanla ilgili bilgileri içeren veriler, veri analizi alanlarında kullanılan önemli araçlardır.\n-İstanbul, Türkiye’nin en kalabalık ve en dinamik şehirlerinden biri olarak göze çarpmaktadır. Bu büyük metropolde yaşayan nüfusun demografik yapıları, tüketim alışkanlıkları ve yaşam tarzları, hem akademik araştırmaların hem de iş dünyasının için ilgi çekici veriler barındırmaktadır.\n-Bu bağlamda, hazırlanan bu proje kapsamında İstanbul’da yaşayan nüfusun tüketim alışkanlıklarına yönelik bir araştırma ve analiz çalışması gerçekleştirilmiştir."
   },
   {
     "objectID": "proje.html#tercih-sebebi",
     "href": "proje.html#tercih-sebebi",
-    "title": "Proje Adı",
+    "title": "İSTANBUL’DA SÜRDÜRÜLEBİLİRLİK HARİTASI: NÜFUS, ATIK VE ENERJİ TÜKETİMİ ANALİZİ",
     "section": "2.3 Tercih Sebebi",
-    "text": "2.3 Tercih Sebebi\nİstanbul’daki nüfus ve tüketim alışkanlıklarına odaklanan bir veri seti, çeşitli sektörlerde faaliyet gösteren işletmeler, araştırmacılar ve hükümetler için aiağıda belirtilen nedenlerden ötürü değerlidir.\nNüfus Yoğunluğu: İstanbul, Türkiye’nin en kalabalık şehri ve dünyanın en kalabalık nüfuslu metropollerinden biridir. Bu nedenle, İstanbul’daki nüfusun demografik yapısı ve tüketim alışkanlıkları, geniş bir örnekleme dayalı olarak incelenebilmektedir.Genel tüketici eğilimleri hakkında önemli içgörüler sunabilmesi bu verisetinin incelenmesini daha cazip hale getirmektedir.\nEkonomik Önem: Türkiye’nin ekonomik başkenti olarak kabul edilebilecek olan İstanbuş, ülkenin gayri safi yurtiçi hasılasının büyük bir kısmını oluşturmaktadır. Bu şehirdeki tüketim alışkanlıkları, perakende sektörü ve ekonominin genel sağlığı hakkında bilgi edinmenin, işletmeler ve hükümetler için stratejik öneme sahip olabileceği değerlendirilmektedir.\nÇeşitlilik: İstanbul, farklı kültürel, ekonomik ve demografik yapıları bünyesinde barındıran bir şehir olarak, tüketici tercihlerinde ve alışkanlıklarında çeşitlilik içermektedir. Şehirdeki nüfus ve tüketim alışkanlıklarını anlamak, farklı segmentlerdeki tüketici davranışlarını analiz etmek ve özel pazarlama stratejileri geliştirmek için önemli görülmektedir.\nBüyüme Potansiyeli: İstanbul, sürekli olarak büyüyen ve değişen bir şehirdir. Nüfus artışı, göç hareketleri, altyapı projeleri ve ekonomik değişimler, tüketim alışkanlıklarını etkileyebilir. Bu nedenle, İstanbul’daki nüfus ve tüketim verilerini düzenli olarak izlemek ve analiz etmek, gelecekteki trendleri tahmin etmek ve uygun stratejiler geliştirmek için önemlidir.\nKarşılaşılan Zorluklar: İstanbul gibi büyük bir şehirde yaşamak, çeşitli zorlukları da beraberinde getirir. Trafik, altyapı sorunları, çevresel endişeler gibi faktörler, tüketici davranışlarını etkileyebilir. Bu zorluklarla başa çıkabilmek için, nüfus ve tüketim alışkanlıklarını anlamak önemlidir.\nİstanbul’daki nüfus ve tüketim alışkanlıklarını incelemek, sadece şehirdeki yaşamı anlamakla kalmaz, aynı zamanda farklı sektörler, pazarlama ve şehir planlaması gibi alanlar için de önemli içgörüler sağlar. Bu nedenle, bu konuya odaklanan bir veri seti oldukça ilgi çekicidir."
+    "text": "2.3 Tercih Sebebi\n-İstanbul’daki nüfus ve tüketim alışkanlıklarına odaklanan bir veri seti, çeşitli sektörlerde faaliyet gösteren işletmeler, araştırmacılar ve hükümetler için aşağıda belirtilen nedenlerden ötürü değerlidir.\n-Nüfus Yoğunluğu: İstanbul, Türkiye’nin en kalabalık şehri ve dünyanın en kalabalık nüfuslu metropollerinden biridir. Bu nedenle, İstanbul’daki nüfusun demografik yapısı ve tüketim alışkanlıkları, geniş bir örnekleme dayalı olarak incelenebilmektedir.Genel tüketici eğilimleri hakkında önemli içgörüler sunabilmesi bu verisetinin incelenmesini daha cazip hale getirmektedir.\n-Ekonomik Önem: Türkiye’nin ekonomik başkenti olarak kabul edilebilecek olan İstanbuş, ülkenin gayri safi yurtiçi hasılasının büyük bir kısmını oluşturmaktadır. Bu şehirdeki tüketim alışkanlıkları, perakende sektörü ve ekonominin genel sağlığı hakkında bilgi edinmenin, işletmeler ve hükümetler için stratejik öneme sahip olabileceği değerlendirilmektedir.\n-Çeşitlilik: İstanbul, farklı kültürel, ekonomik ve demografik yapıları bünyesinde barındıran bir şehir olarak, tüketici tercihlerinde ve alışkanlıklarında çeşitlilik içermektedir. Şehirdeki nüfus ve tüketim alışkanlıklarını anlamak, farklı segmentlerdeki tüketici davranışlarını analiz etmek ve özel pazarlama stratejileri geliştirmek için önemli görülmektedir.\n-Büyüme Potansiyeli: İstanbul, sürekli olarak büyüyen ve değişen bir şehirdir. Nüfus artışı, göç hareketleri, altyapı projeleri ve ekonomik değişimler, tüketim alışkanlıklarını etkileyebilir. Bu nedenle, İstanbul’daki nüfus ve tüketim verilerini düzenli olarak izlemek ve analiz etmek, gelecekteki trendleri tahmin etmek ve uygun stratejiler geliştirmek için önemlidir.\n-Karşılaşılan Zorluklar: İstanbul gibi büyük bir şehirde yaşamak, çeşitli zorlukları da beraberinde getirir. Trafik, altyapı sorunları, çevresel endişeler gibi faktörler, tüketici davranışlarını etkileyebilir. Bu zorluklarla başa çıkabilmek için, nüfus ve tüketim alışkanlıklarını anlamak önemlidir.\n-İstanbul’daki nüfus ve tüketim alışkanlıklarını incelemek, sadece şehirdeki yaşamı anlamakla kalmaz, aynı zamanda farklı sektörler, pazarlama ve şehir planlaması gibi alanlar için de önemli içgörüler sağlar. Bu nedenle, bu konuya odaklanan bir veri seti oldukça ilgi çekicidir."
   },
   {
     "objectID": "proje.html#ön-işleme",
@@ -346,28 +346,28 @@
   {
     "objectID": "proje.html#keşifsel-veri-analizi",
     "href": "proje.html#keşifsel-veri-analizi",
-    "title": "Proje Adı",
+    "title": "İSTANBUL’DA SÜRDÜRÜLEBİLİRLİK HARİTASI: NÜFUS, ATIK VE ENERJİ TÜKETİMİ ANALİZİ",
     "section": "3.1 Keşifsel Veri Analizi",
-    "text": "3.1 Keşifsel Veri Analizi\nxxxxxx"
+    "text": "3.1 Keşifsel Veri Analizi\nKeşifsel Veri Analizi, Veri Bilimi, İstatistik ve Makine Öğrenmesi gibi disiplinlerde yararlanılan; bir veri setini anlamak ve içerdiği bilgilere ulaşmak için kullanılan bir olgudur. Genellikle bir veri setinin yapısını, dağılımını, ilişkilerini ve özelliklerini keşfetmek için kullanılan bir dizi teknik ve araç içermektedir.\nKeşifsel Veri Analizi temel olarak aşağıdaki adımları içerebilir:\n-Veri Toplama ve Temizleme: Veri setini inceleyip düzenlemek, eksik veya yanlış verileri düzeltmek, gereksiz sütunları kaldırmak veya gerekirse veriye yeni sütunlar eklemek gibi işlemlerin yapıldığı adımdır.\n-Veri Görselleştirme: Veri setinin yapısını ve ilişkilerini görsel olarak analiz etmek için çeşitli grafikler ve görselleştirmelerin yapıldığı adımdır. Örneğin, histogramlar, kutu grafikleri, saçılım grafikleri ve sıcaklık haritaları gibi araçlardan faydalanılabilir.\n-Özellik Mühendisliği: Veri setindeki değişkenlerin ve özelliklerin incelenmesi ve analiz edilmesiyle yeni özelliklerin oluşturulduğu adımda, model performansını artırmak veya veri setindeki gizli yapıları ortaya çıkarmak amaçlanmaktadır.\n-İstatistiksel Analiz: Veri setinin istatistiksel özellikleri, dağılımları ve ilişkileri incelenerek; ortalamalar, standart sapmalar, korelasyonlar ve varyanslar gibi istatistiksel metriklerin hesaplaması yapılmaktadır\n-Modelleme ve Tahmin: Keşifsel veri analizi aynı zamanda, veri setinin yapısal özelliklerini anlamak için basit modellerin oluşturulmasını içerebilir. Tahmin yapmak ve veri setindeki kalıpları ortaya çıkarmak için değerlidir.\nKeşifsel Veri Analizi, veri setinin doğasını daha iyi anlamak ve sonraki analiz ve modelleme adımları için bir temel oluşturmak için öneme sahiptir.\nBu yöntem, veri bilimi projelerinin başlangıç noktasını oluşturarak veri setini keşfetme ve anlama sürecinde kritik bir rol oynamaktadır.\nBu proje kapsamında bu yöntemden yararlanılarak, projenin hedeflerini daha iyi anlayabilmek, veri setinizdeki önemli ilişkileri belirleyebilmek ve veriye dayalı stratejiler geliştirebilmek hedeflenmiştir."
   },
   {
     "objectID": "proje.html#trend-analizi",
     "href": "proje.html#trend-analizi",
-    "title": "Proje Adı",
+    "title": "İSTANBUL’DA SÜRDÜRÜLEBİLİRLİK HARİTASI: NÜFUS, ATIK VE ENERJİ TÜKETİMİ ANALİZİ",
     "section": "3.2 Trend Analizi",
-    "text": "3.2 Trend Analizi\nxxxxxx"
+    "text": "3.2 Trend Analizi\nTrend Analizi, zaman içindeki veri değişimlerini inceleyerek belirli bir eğilimi tanımlamayı amaçlayan bir analiz yöntemi oalrak karşımıza çıkmaktadır. Geçmiş veri noktalarının bir dizisini kullanarak gelecekteki davranışları tahmin etmek için kullanılabilen Trend Analizi yöntemi, genellikle keşifsel veri analizinin bir parçası olarak uygulanmaktadır.\nTrend Analizi aşağıdaki adımları içerebilir:\n-Veri Görselleştirme: Trend analizi için veri setinizin zaman serisi verilerini görselleştirerek zaman boyunca değişen bir değişkenin trendini gösteren bir çizgi grafiği veya nokta grafiği oluşturmak mümkündür.\n-Trendin Tanımlanması: Veri setinizdeki zaman serisi verilerini inceleyerek belirli bir eğilimi tanımlanabilir. Bu, verinin genel eğilimini, artışları veya azalışları, belirli bir periyotta tekrar eden desenleri veya diğer önemli özellikleri içerebilir.\n-Trendin Modelleme: Belirlenen trendin matematiksel bir modelini oluşturularak; doğrusal bir trend çizgisi, ikinci dereceden bir polinom veya başka bir regresyon modeli hazırlanabilir. Bu model, trendin gelecekte nasıl devam edebileceği hakkında tahminler yapmak için kullanılabilir.\n-Trendin Değerlendirilmesi: Oluşturulan modeli kullanarak gelecekteki trendin tahminlerini modelin ne kadar iyi uyarlandığını ve tahminlerin ne kadar güvenilir olduğunu değerlendirmeyi içerir.\nTrend Analizi, birçok farklı alanda kullanılabilecek bir yöntem olarak göze çarpmaktadır."
   },
   {
     "objectID": "proje.html#model-uydurma",
     "href": "proje.html#model-uydurma",
-    "title": "Proje Adı",
+    "title": "İSTANBUL’DA SÜRDÜRÜLEBİLİRLİK HARİTASI: NÜFUS, ATIK VE ENERJİ TÜKETİMİ ANALİZİ",
     "section": "3.3 Model Uydurma",
     "text": "3.3 Model Uydurma\nxxxxxx"
   },
   {
     "objectID": "proje.html#sonuçlar",
     "href": "proje.html#sonuçlar",
-    "title": "Proje Adı",
+    "title": "İSTANBUL’DA SÜRDÜRÜLEBİLİRLİK HARİTASI: NÜFUS, ATIK VE ENERJİ TÜKETİMİ ANALİZİ",
     "section": "3.4 Sonuçlar",
     "text": "3.4 Sonuçlar\nxxxxxx"
   },
@@ -541,21 +541,21 @@
   {
     "objectID": "proje.html#cn-d0eleme",
     "href": "proje.html#cn-d0eleme",
-    "title": "Proje Adı",
+    "title": "İSTANBUL’DA SÜRDÜRÜLEBİLİRLİK HARİTASI: NÜFUS, ATIK VE ENERJİ TÜKETİMİ ANALİZİ",
     "section": "2.4 C\u0016n D0E\u001fleme",
     "text": "2.4 C\u0016n D0E\u001fleme\nxxxxxx"
   },
   {
     "objectID": "proje.html#keeifsel-veri-analizi",
     "href": "proje.html#keeifsel-veri-analizi",
-    "title": "Proje Adı",
+    "title": "İSTANBUL’DA SÜRDÜRÜLEBİLİRLİK HARİTASI: NÜFUS, ATIK VE ENERJİ TÜKETİMİ ANALİZİ",
     "section": "3.1 KeE\u001fifsel Veri Analizi",
-    "text": "3.1 KeE\u001fifsel Veri Analizi\nxxxxxx"
+    "text": "3.1 KeE\u001fifsel Veri Analizi\nKeşifsel Veri Analizi, Veri Bilimi, İstatistik ve Makine Öğrenmesi gibi disiplinlerde yararlanılan; bir veri setini anlamak ve içerdiği bilgilere ulaşmak için kullanılan bir olgudur. Genellikle bir veri setinin yapısını, dağılımını, ilişkilerini ve özelliklerini keşfetmek için kullanılan bir dizi teknik ve araç içermektedir.\nKeşifsel Veri Analizi temel olarak aşağıdaki adımları içerebilir:\n-Veri Toplama ve Temizleme: Veri setini inceleyip düzenlemek, eksik veya yanlış verileri düzeltmek, gereksiz sütunları kaldırmak veya gerekirse veriye yeni sütunlar eklemek gibi işlemlerin yapıldığı adımdır.\n-Veri Görselleştirme: Veri setinin yapısını ve ilişkilerini görsel olarak analiz etmek için çeşitli grafikler ve görselleştirmelerin yapıldığı adımdır. Örneğin, histogramlar, kutu grafikleri, saçılım grafikleri ve sıcaklık haritaları gibi araçlardan faydalanılabilir.\n-Özellik Mühendisliği: Veri setindeki değişkenlerin ve özelliklerin incelenmesi ve analiz edilmesiyle yeni özelliklerin oluşturulduğu adımda, model performansını artırmak veya veri setindeki gizli yapıları ortaya çıkarmak amaçlanmaktadır.\n-İstatistiksel Analiz: Veri setinin istatistiksel özellikleri, dağılımları ve ilişkileri incelenerek; ortalamalar, standart sapmalar, korelasyonlar ve varyanslar gibi istatistiksel metriklerin hesaplaması yapılmaktadır\n-Modelleme ve Tahmin: Keşifsel veri analizi aynı zamanda, veri setinin yapısal özelliklerini anlamak için basit modellerin oluşturulmasını içerebilir. Tahmin yapmak ve veri setindeki kalıpları ortaya çıkarmak için değerlidir.\nKeşifsel Veri Analizi, veri setinin doğasını daha iyi anlamak ve sonraki analiz ve modelleme adımları için bir temel oluşturmak için öneme sahiptir.\nBu yöntem, veri bilimi projelerinin başlangıç noktasını oluşturarak veri setini keşfetme ve anlama sürecinde kritik bir rol oynamaktadır.\nBu proje kapsamında bu yöntemden yararlanılarak, projenin hedeflerini daha iyi anlayabilmek, veri setinizdeki önemli ilişkileri belirleyebilmek ve veriye dayalı stratejiler geliştirebilmek hedeflenmiştir."
   },
   {
     "objectID": "proje.html#sonuclar",
     "href": "proje.html#sonuclar",
-    "title": "Proje Adı",
+    "title": "İSTANBUL’DA SÜRDÜRÜLEBİLİRLİK HARİTASI: NÜFUS, ATIK VE ENERJİ TÜKETİMİ ANALİZİ",
     "section": "3.4 SonuC’lar",
     "text": "3.4 SonuC’lar\nxxxxxx"
   },
@@ -756,5 +756,12 @@
     "title": "SELİN ÖKSÜZ",
     "section": "",
     "text": "Egitim\n\nLisans, Kimya Muhendisligi, ODTÜ, Ankara, 2013 - 2019.\nLisans(Erasmus), Köln Üniversitesi, Köln/Almanya, 2018\nYuksek Lisans, Muhendislik Yonetimi, Hacettepe Universitesi, Ankara, 2024 - devam ediyor.\n\n\n\nIs Deneyimi\n\nEczacıbaşı Tüketim Ürünleri - Kalite Güvence, Yalova, 2019-2021\nHayat Kimya - Ürün Geliştirme, Kocaeli, 2022-2023\nRoketsan - Proje Takip ve Koordinasyon, Ankara, 2023-devam ediyor\n\n\n\nStajlar\n\nŞişecam - Üretim, Ankara, 2016\nUnilever - Tedarik Zinciri, Konya, 2017\n\n\n\nProjeler\n\nAB Youth Change in Action Project, Kokkola/Fİnland, 2014\nSour Water Treatment, ODTÜ Kimya Mühendisliği Bitirme Projesi, 2019\n\n\n\nYetkinlikler\n-SAP S4 HANA, SAP ME/MII ERP Management Systems, QDMS, Jira, MS Office Programları, Keycreator, Matlab\n\n\nHobiler\n-Seyahat, Yemek, Müzik, Reformer Pilates, Organizasyon Yapmak\n\n\nSertifikalar\n\nProje YÖnetimi Sertifikası, 2023\nİleri Seviye Excel Eğitimi, 2022\nIFS HPC Eğitim Sertifikası, 2022\nISO9001:2015 ve ISO19011:2018 Sertifiaları, 2015 , 2021\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "proje.html#cn-düzenleme",
+    "href": "proje.html#cn-düzenleme",
+    "title": "İSTANBUL’DA SÜRDÜRÜLEBİLİRLİK HARİTASI: NÜFUS, ATIK VE ENERJİ TÜKETİMİ ANALİZİ",
+    "section": "2.4 C\u0016n Düzenleme",
+    "text": "2.4 C\u0016n Düzenleme\nxxxxxx"
   }
 ]

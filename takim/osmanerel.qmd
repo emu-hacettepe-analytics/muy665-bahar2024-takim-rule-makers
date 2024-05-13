@@ -2,7 +2,7 @@
 title: "Osman Erel"
 ---
 
-![](images/Osman Erel.PNG){fig-align="center" width="122"}
+![](images/Osman%20Erel.PNG){fig-align="center" width="122"}
 
 # Eğitim
 
