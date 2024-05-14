@@ -258,8 +258,28 @@ c1 <- corrplot(corr_matrix, method = "circle")
 
 #korelasyon matrisi çizdirme 2
 library(plotly)
-c2 <- plot_ly(z = corr_matrix, type = "heatmap")
-print(c2)
+heatmap(corr_matrix, 
+        col = colorRampPalette(c("blue", "white", "red"))(20),
+        symm = TRUE, 
+        margins = c(5, 5))
+
+library(RColorBrewer) 
+my_palette <- colorRampPalette(brewer.pal(11, "RdYlBu"))(20)
+
+heatmap(corr_matrix, 
+        col = my_palette,
+        symm = TRUE, 
+        margins = c(5, 5),
+        labRow = colnames(corr_matrix),  
+        labCol = colnames(corr_matrix), 
+        main = "Korelasyon Matrisi Isı Haritası")
+
+legend("topright", 
+       legend = c("Düşük", "Yüksek"),  
+       fill = my_palette[c(1, length(my_palette))],  
+       title = "Korelasyon")  
+
+
 
 
 #Grafikler
@@ -290,6 +310,138 @@ proje_data %>% ggplot(aes(İlçe, evsel_atık_ortalaması)) + geom_point() + the
 proje_data  %>% ggplot(aes(nüfus_ortalaması/10^6,
 evsel_atık_ortalaması/10^6)) + geom_jitter(aes(color
 = hanehalki_buyuklugu), alpha = 0.5) + theme_bw()+ theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+
+#Barplot şeklinde İlçelere göre nüfus ortalamasını gösterelim.
+proje_data_sorted <- proje_data[order(proje_data$nüfus_ortalaması, decreasing = TRUE), ]
+ggplot(proje_data_sorted, aes(x = reorder(İlçe, nüfus_ortalaması), y = nüfus_ortalaması/10^6)) +
+  geom_bar(stat = "identity", fill="skyblue") +
+  labs(title = "İlçelere Göre Nüfus Ortalaması", x = "İlçe", y = "Nüfus Ortalaması (Milyon)") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+
+ggplot(proje_data, aes(x = reorder(İlçe, nüfus_ortalaması), y = nüfus_ortalaması/10^6)) +
+  geom_boxplot() +
+  labs(title = "İlçelere Göre Nüfus Ortalaması", x = "İlçe", y = "Nüfus Ortalaması (Milyon)") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1),
+        plot.width = unit(10, "cm"),
+        plot.height = unit(6, "cm"))
+
+# İlçeleri ortadan ikiye bölme ve facet_wrap() kullanarak iki ayrı grafik oluşturmaya çalışalım. Boxplot belki daha iyi görünür
+ggplot(proje_data, aes(x = reorder(İlçe, nüfus_ortalaması), y = nüfus_ortalaması/10^6)) +
+  geom_boxplot() +
+  labs(title = "İlçelere Göre Nüfus Ortalaması", y = "Nüfus Ortalaması (Milyon)") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  facet_wrap(~ ifelse(as.numeric(reorder(proje_data$İlçe, proje_data$nüfus_ortalaması)) <= length(proje_data$nüfus_ortalaması)/2, "Grup 2", "Grup 1"), scales = "free_x")
+
+# İlçeleri dörde bölseydik
+ggplot(proje_data, aes(x = reorder(İlçe, nüfus_ortalaması), y = nüfus_ortalaması/10^6)) +
+  geom_boxplot() +
+  labs(title = "İlçelere Göre Nüfus Ortalaması", y = "Nüfus Ortalaması (Milyon)") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  facet_wrap(~ ifelse(as.numeric(reorder(proje_data$İlçe, proje_data$nüfus_ortalaması)) <= length(proje_data$nüfus_ortalaması)/4, "Grup 1",
+                     ifelse(as.numeric(reorder(proje_data$İlçe, proje_data$nüfus_ortalaması)) <= length(proje_data$nüfus_ortalaması)*2/4, "Grup 2",
+                            ifelse(as.numeric(reorder(proje_data$İlçe, proje_data$nüfus_ortalaması)) <= length(proje_data$nüfus_ortalaması)*3/4, "Grup 3", "Grup 4"))), scales = "free_x")
+
+
+
+#Boxplot ile teknolojik gelişim ve okur yazarlık oranını ilçelere göre gösterelim.
+ggplot(proje_data, aes(x = reorder(İlçe, teknolojik_erisim_degeri_normalize), y = okuma_yazma_oranı)) +
+  geom_boxplot() +
+  labs(title = "İlçelere Göre Teknolojik Erişim", x = "Teknolojik Erişim", y = "Okur Yazarlık") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+plot(proje_data$teknolojik_erisim_degeri_normalize, proje_data$okuma_yazma_oranı, xlab = "Teknolojik Erişim", 
+     ylab = "Okuma Yazma", 
+     main = "Teknolojik Erişim vs Okuma Yazma")
+
+
+# Violin plot denemesi
+ggplot(proje_data, aes(x = İlçe, y = teknolojik_erisim_degeri_normalize)) +
+  geom_violin(fill = "skyblue", color = "black", alpha = 0.7) +
+  geom_boxplot(width = 0.1, fill = "gray", color = "black", outlier.shape = NA) +
+  labs(title = "Violin Plot Örneği", x = "İlçe", y = "Teknolojik Erişim") +
+  theme_minimal()+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+
+# Okuma yazmaya göre kategorilendirip pasta plot yapamak
+proje_data$Okuma_Yazma_Grup <- cut(proje_data$okuma_yazma_oranı, breaks = 5, labels = c("Çok Düşük", "Düşük", "Orta", "Yüksek","Çok Yüksek"))
+
+ggplot(proje_data, aes(x = "", fill = Okuma_Yazma_Grup)) +
+  geom_bar(width = 1) +
+  coord_polar(theta = "y") +
+  labs(title = "Okuma Yazma Oranı Kategorilerine Göre Dağılım") +
+  scale_fill_brewer(palette = "Set3") +
+  geom_text(aes(label = paste0(round((..count..)/sum(..count..)*100), "%")),
+            stat = "count", position = position_stack(vjust = 0.5)) +
+  theme_void()
+
+# İlçelere göre su ve doğalgaz kullanımı
+ggplot(proje_data, aes(x = İlçe)) +
+  geom_point(aes(y = kişi_başı_su_tüketim_miktarı, color = "Su Tüketimi"), position = "dodge", size = 2) +
+  geom_point(aes(y = kişi_başı_dogalgaz_tüketim_miktarı, color = "Doğalgaz Tüketimi"), position = "dodge", size = 2) +
+  labs(title = "İlçelere Göre Kişi Başına Düşen Su ve Doğalgaz Tüketimi Karşılaştırması", x = "İlçe", y = "Kişi Başına Tüketim Miktarı (Litre)", color = "Tüketim Türü") +
+  scale_color_manual(values = c("Su Tüketimi" = "skyblue", "Doğalgaz Tüketimi" = "lightgreen")) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+
+# İlçelere göre su ve doğalgaz kullanımı ve evsel atık
+ggplot(proje_data, aes(x = İlçe)) +
+  geom_point(aes(y = kişi_başı_su_tüketim_miktarı/100, color = "Su Tüketimi"), position = "dodge", size = 1) +
+  geom_point(aes(y = kişi_başı_dogalgaz_tüketim_miktarı/100, color = "Doğalgaz Tüketimi"), position = "dodge", size = 1) +geom_point(aes(y = kişi_başı_atık_miktarı, color = "Evsel Atık"), position = "dodge", size = 1)+
+  labs(title = "İlçelere Göre Kişi Başına Düşen Su ve Doğalgaz Tüketimi ve Evsel Atık Miktarı Karşılaştırması", x = "İlçe", y = "Kişi Başına Tüketim Miktarı (Litre)", color = "Tüketim Türü") +
+  scale_color_manual(values = c("Su Tüketimi" = "skyblue", "Doğalgaz Tüketimi" = "lightgreen", "Evsel Atık"="red")) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+
+# İlçelere göre ev sahiplik oranı ve okur yazarlık oranı
+
+# Ev sahiplik oranına göre verileri büyükten küçüğe sıralayarak bakalım
+proje_data <- proje_data[order(proje_data$ev_sahiplik_oranı, decreasing = TRUE), ]
+
+ggplot(proje_data, aes(x = reorder(İlçe, ev_sahiplik_oranı), y = ev_sahiplik_oranı, color = "Ev Sahiplik")) +
+  geom_point(size = 2) +
+  geom_point(aes(y = okuma_yazma_oranı, color = "Okuma Yazma"), position = "dodge", size = 2) +
+  labs(title = "İlçelere Göre Okuma Yazma Oranı ile Ev Sahiplik Oranı Karşılaştırması",x = "İlçe", y = "Oran", color = "Tür") +
+  scale_color_manual(values = c("Ev Sahiplik" = "skyblue", "Okuma Yazma" = "pink")) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+# İlçelere doğalgaz su atık üçgen kare daire
+
+ggplot(proje_data, aes(x = İlçe)) +
+  geom_point(aes(y = kişi_başı_su_tüketim_miktarı/100, shape = "Su Tüketimi"), color = "skyblue", position = "dodge", size = 1) +
+  geom_point(aes(y = kişi_başı_dogalgaz_tüketim_miktarı/100, shape = "Doğalgaz Tüketimi"), color = "lightgreen", position = "dodge", size = 1) +
+  geom_point(aes(y = kişi_başı_atık_miktarı, shape = "Evsel Atık"), color = "pink", position = "dodge", size = 1) +
+  labs(title = "İlçelere Göre Kişi Başına Düşen Su ve Doğalgaz Tüketimi ve Evsel Atık Miktarı Karşılaştırması", x = "İlçe", y = "Kişi Başına Tüketim Miktarı (Litre)", shape = "Tüketim Türü") +
+  scale_shape_manual(values = c("Su Tüketimi" = 2, "Doğalgaz Tüketimi" = 15, "Evsel Atık" = 16)) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+
+# İlçelere göre ev büyüklüğü ve ortalama oturma süresi
+# Ev büyüklüğüne göre verileri büyükten küçüğe sıralayarak bakalım
+proje_data <- proje_data[order(proje_data$hanehalki_buyuklugu,proje_data$ortalama_ikamet_suresi, decreasing = TRUE), ]
+
+proje_data |> ggplot(aes(hanehalki_buyuklugu, 
+ortalama_ikamet_suresi, label = ilçe_kısaltma)) + geom_point() +
+geom_text_repel() + theme_economist()+
+  labs(title = "İlçelere Göre Ev Büyüklüğü ile Oturma Süresi Karşılaştırması", x = "Ev Büyüklüğü", y = "Ortalama Oturma")
+
+
+
+# Su tüketimine göre doğal gaz tüketimi arasında bir regresyon modeli oluşturup grafik yapma
+model <- lm(kişi_başı_dogalgaz_tüketim_miktarı ~ kişi_başı_su_tüketim_miktarı, data = proje_data)
+
+ggplot(proje_data, aes(x = kişi_başı_su_tüketim_miktarı, y = kişi_başı_dogalgaz_tüketim_miktarı)) +
+  geom_point(color = "lightgreen", size = 2) +
+  geom_smooth(method = "lm", se = FALSE, color = "pink", formula = y ~ x, data = proje_data) +
+  labs(title = "Su ve Doğal Gaz Tüketimi İlişkisi", x = "Kişi Başına Su Tüketim Miktarı (Litre)", y = "Kişi Başına Doğal Gaz Tüketim Miktarı (Litre)") +
+  theme_minimal()
+
 
 
 
