@@ -2,7 +2,7 @@
 title: "Beril Aksoy"
 ---
 
-![](/assets/images/vesikalik.jpg){fig-align="center"}
+![](images/vesikalik_beril.jpg){fig-align="center" width="214"}
 
 # Egitim
 

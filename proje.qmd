@@ -108,6 +108,7 @@ library(stringr)
 library(scales)
 library(plotly)
 library(ggrepel)
+library(ggthemes)
 
 path = getwd()
 nüfus_path <- "nufuslar.xlsx"
@@ -281,7 +282,7 @@ proje_data |> ggplot(aes(nüfus_ortalaması/10^6,
 evsel_atık_ortalaması/10^6, label = ilçe_kısaltma, color= proje_data_kategori)) + geom_point() +
 geom_text_repel() +
 geom_smooth(method = "lm"
-, se = FALSE)
+, se = FALSE) + theme_economist()
 
 proje_data %>% ggplot(aes(İlçe, evsel_atık_ortalaması)) + geom_point() + theme_bw()
 

@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -62,8 +96,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -134,9 +166,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#sonuçlar" id="toc-sonuçlar" class="nav-link" data-scroll-target="#sonuçlar"><span class="header-section-number">3.4</span> Sonuçlar</a></li>
   </ul></li>
   <li><a href="#sonuçlar-ve-ana-çıkarımlar" id="toc-sonuçlar-ve-ana-çıkarımlar" class="nav-link" data-scroll-target="#sonuçlar-ve-ana-çıkarımlar"><span class="header-section-number">4</span> Sonuçlar ve Ana Çıkarımlar</a></li>
-  <li><a href="#ilçeye-göre-ortalama-nüfusları-tablo-şeklinde-gösterilim" id="toc-ilçeye-göre-ortalama-nüfusları-tablo-şeklinde-gösterilim" class="nav-link" data-scroll-target="#ilçeye-göre-ortalama-nüfusları-tablo-şeklinde-gösterilim"><span class="header-section-number">5</span> İlçeye göre ortalama nüfusları tablo şeklinde gösterilim</a></li>
-  <li><a href="#ilçeye-göre-ortalama-nüfusları-grafik-şeklinde-gösterilim" id="toc-ilçeye-göre-ortalama-nüfusları-grafik-şeklinde-gösterilim" class="nav-link" data-scroll-target="#ilçeye-göre-ortalama-nüfusları-grafik-şeklinde-gösterilim"><span class="header-section-number">6</span> İlçeye göre ortalama nüfusları grafik şeklinde gösterilim</a></li>
-  <li><a href="#ilçeye-göre-çöp-tüketim-verisini-birleştirelim" id="toc-ilçeye-göre-çöp-tüketim-verisini-birleştirelim" class="nav-link" data-scroll-target="#ilçeye-göre-çöp-tüketim-verisini-birleştirelim"><span class="header-section-number">7</span> İlçeye göre çöp tüketim verisini birleştirelim</a></li>
   </ul>
 </nav>
 </nav>
@@ -239,58 +268,387 @@ ul.task-list li input[type="checkbox"] {
 <section id="sonuçlar-ve-ana-çıkarımlar" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Sonuçlar ve Ana Çıkarımlar</h1>
 <p>xxxxxx</p>
-<p>library(readxl) library(ggplot2) library(dplyr) library(tidyr) library(stringr) library(scales)</p>
-<p>path = getwd() nüfus_path &lt;- “nufuslar.xlsx” nüfus_data &lt;- read_excel(nüfus_path) head(nüfus_data)</p>
-<p>nüfus_data &lt;- nüfus_data |&gt; pivot_longer(‘2008’:‘2023’, names_to = ‘yıl’, values_to = ‘nüfus’) head(nüfus_data) str(nüfus_data)</p>
-</section>
-<section id="ilçeye-göre-ortalama-nüfusları-tablo-şeklinde-gösterilim" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> İlçeye göre ortalama nüfusları tablo şeklinde gösterilim</h1>
-<p>nüfus_data<span class="math inline">\(yıl &lt;- as.numeric(nüfus_data\)</span>yıl) nüfus_data<span class="math inline">\(nüfus &lt;- as.numeric(nüfus_data\)</span>nüfus)</p>
-<p>ilçe_nüfus_ortalama &lt;- nüfus_data |&gt; group_by(İlçe) |&gt; summarise(nüfus_ortalaması = mean(nüfus))</p>
-<p>print(ilçe_nüfus_ortalama)</p>
-</section>
-<section id="ilçeye-göre-ortalama-nüfusları-grafik-şeklinde-gösterilim" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> İlçeye göre ortalama nüfusları grafik şeklinde gösterilim</h1>
-<p>ilçe_ortalama_plot &lt;- ggplot(ilçe_nüfus_ortalama, aes(x =İlçe, y=nüfus_ortalaması/1000)) + geom_point() + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + xlab(” “) + scale_y_continuous(trans =”log2”)</p>
-</section>
-<section id="ilçeye-göre-çöp-tüketim-verisini-birleştirelim" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> İlçeye göre çöp tüketim verisini birleştirelim</h1>
-<p>evsel_atık_path &lt;- “evsel_atik.xlsx” evsel_atık_data &lt;- read_excel(evsel_atık_path)</p>
-<p>evsel_atık_data &lt;- evsel_atık_data |&gt; pivot_longer(‘2008’:‘2023’, names_to = ‘yıl’, values_to = ‘evsel_atık’) head(evsel_atık_data) str(evsel_atık_data) evsel_atık_data[evsel_atık_data == 0] &lt;- NA</p>
-<p>ilçe_atık_ortalama &lt;- evsel_atık_data |&gt; group_by(İlçe) |&gt; summarise( evsel_atık_ortalaması = mean(evsel_atık, na.rm = TRUE))</p>
-<p>print(ilçe_atık_ortalama)</p>
-<p>ilçe_nüfus_ortalama %&gt;% arrange(desc(nüfus_ortalaması)) %&gt;% head() ilçe_atık_ortalama %&gt;% arrange(desc(evsel_atık_ortalaması)) %&gt;% head()</p>
-<p>proje_data &lt;- left_join(ilçe_nüfus_ortalama, ilçe_atık_ortalama, by = “İlçe”)</p>
-<p>proje_data &lt;- proje_data %&gt;% mutate(kişi_başı_atık_miktarı = evsel_atık_ortalaması/nüfus_ortalaması)</p>
-<p>p1 &lt;- proje_data %&gt;% ggplot() + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + xlab(” “) + scale_y_continuous(trans =”log2”) p1 + geom_point(aes(İlçe, kişi_başı_atık_miktarı, fill = factor(İlçe)))</p>
-<p>su_tüketim_path &lt;- “su_tuketim.xlsx” su_tüketim_data &lt;- read_excel(su_tüketim_path) head(su_tüketim_data)</p>
-<p>su_tüketim_data &lt;- su_tüketim_data |&gt; pivot_longer(‘2015’:‘2023’, names_to = ‘yıl’, values_to = ‘su_tüketim’)</p>
-<p>ilçe_su_ortalama &lt;- su_tüketim_data |&gt; group_by(İlçe) |&gt; summarise( su_tüketim_ortalaması = mean(su_tüketim, na.rm = TRUE))</p>
-<p>proje_data &lt;- left_join(proje_data, ilçe_su_ortalama[, c(“İlçe”, “su_tüketim_ortalaması”)], by = “İlçe”)</p>
-<p>proje_data &lt;- proje_data %&gt;% mutate(kişi_başı_su_tüketim_miktarı = su_tüketim_ortalaması/nüfus_ortalaması)</p>
-<p>dogalgaz_tüketim_path &lt;- “dogalgaz_tuketim.xlsx” dogalgaz_tüketim_data &lt;- read_excel(dogalgaz_tüketim_path)</p>
-<p>dogalgaz_tüketim_data &lt;- dogalgaz_tüketim_data %&gt;% group_by(İlçe,Yıl) %&gt;% summarise(yıllık_tüketim= sum(<code>Dogalgaz Tüketim Miktarı (m3)</code>))</p>
-<p>dogalgaz_tüketim_data &lt;- dogalgaz_tüketim_data %&gt;% filter(Yıl != 2023)</p>
-<p>ilçe_dogalgaz_ortalama &lt;- dogalgaz_tüketim_data |&gt; group_by(İlçe) |&gt; summarise( dogalgaz_tüketim_ortalaması = mean(yıllık_tüketim, na.rm = TRUE))</p>
-<p>proje_data &lt;- left_join(proje_data, ilçe_dogalgaz_ortalama[, c(“İlçe”, “dogalgaz_tüketim_ortalaması”)], by = “İlçe”)</p>
-<p>proje_data &lt;- proje_data %&gt;% mutate(kişi_başı_dogalgaz_tüketim_miktarı = dogalgaz_tüketim_ortalaması/nüfus_ortalaması)</p>
-<p>okuma_yazma_orani_path &lt;- “okuma_yazma_orani.xlsx” okuma_yazma_orani_data &lt;- read_excel(okuma_yazma_orani_path) okuma_yazma_orani_data &lt;- okuma_yazma_orani_data %&gt;% mutate(okuma_yazma_oranı = <code>Okuma Yazma Bilen</code>/(<code>Okuma Yazma Bilmeyen</code>+<code>Okuma Yazma Bilen</code>)*100)</p>
-<p>proje_data &lt;- left_join(proje_data, okuma_yazma_orani_data[, c(“İlçe”, “okuma_yazma_oranı”)], by = “İlçe”)</p>
-<p>teknolojik_erisim_path &lt;- “teknolojik_erisim.xlsx” teknolojik_erisim_data &lt;- read_excel(teknolojik_erisim_path) head(teknolojik_erisim_data)</p>
-<p>#tek veriye indirgeme sütun_ortalamaları &lt;- sapply(teknolojik_erisim_data[,-1],mean) toplam_ortalama &lt;- sum(sütun_ortalamaları) katsayı = 1/(sütun_ortalamaları/toplam_ortalama) katsayı[10] &lt;- katsayı[10]<em>(-3) teknolojik_erisim_data$teknolojik_erisim_degeri &lt;- rowSums(teknolojik_erisim_data[,-1]</em>katsayı) teknolojik_erisim_data &lt;- teknolojik_erisim_data %&gt;% mutate(teknolojik_erisim_degeri_normalize = (teknolojik_erisim_degeri - min(teknolojik_erisim_degeri)) / max(teknolojik_erisim_degeri))</p>
-<p>proje_data &lt;- left_join(proje_data, teknolojik_erisim_data[, c(“İlçe”, “teknolojik_erisim_degeri_normalize”)], by = “İlçe”)</p>
-<p>mulkiyet_durumu_path &lt;- “mulkiyet_durumu.xlsx” mulkiyet_durumu_data &lt;- read_excel(mulkiyet_durumu_path) mulkiyet_durumu_data &lt;- mulkiyet_durumu_data %&gt;% mutate(ev_sahiplik_oranı = <code>Ev Sahibi</code>/(<code>Ev Sahibi</code>+<code>Ev Sahibi Değil</code>)*100)</p>
-<p>proje_data &lt;- left_join(proje_data, mulkiyet_durumu_data[, c(“İlçe”, “ev_sahiplik_oranı”)], by = “İlçe”)</p>
-<p>#ilçelere kısaltma ekleyelim proje_data<span class="math inline">\(ilçe_kısaltma &lt;- toupper(substring(abbreviate(proje_data\)</span>İlçe, minlength=3),1,4)) #aynı kısaltmaları düzeltme proje_data[proje_data<span class="math inline">\(İlçe == "Sultangazi", "ilçe_kısaltma"] &lt;- "SLTG" proje_data[proje_data\)</span>İlçe == “Sultanbeyli”, “ilçe_kısaltma”] &lt;- “SLTB”</p>
-<p>ikamet_suresi_path &lt;- “ikamet_suresi.xlsx” ikamet_suresi_data &lt;- read_excel(ikamet_suresi_path) ikamet_suresi_data &lt;- ikamet_suresi_data %&gt;% rename(ortalama_ikamet_suresi=<code>Ortalama Yıl</code>)</p>
-<p>proje_data &lt;- left_join(proje_data, ikamet_suresi_data[, c(“İlçe”, “ortalama_ikamet_suresi”)], by = “İlçe”)</p>
-<p>hanehalki_buyukluk_path &lt;- “hanehalki_buyukluk.xlsx” hanehalki_buyukluk_data &lt;- read_excel(hanehalki_buyukluk_path) hanehalki_buyukluk_data &lt;- hanehalki_buyukluk_data %&gt;% rename(hanehalki_buyuklugu=<code>Ortalama Hanehalkı Büyüklüğü 2022</code>) proje_data &lt;- left_join(proje_data, hanehalki_buyukluk_data[, c(“İlçe”, “hanehalki_buyuklugu”)], by = “İlçe”)</p>
-<p>#korelasyon matrisi çizdirme 1 cor_data &lt;- proje_data[,c(“kişi_başı_atık_miktarı”, “kişi_başı_su_tüketim_miktarı”, “kişi_başı_dogalgaz_tüketim_miktarı”, “okuma_yazma_oranı”,“teknolojik_erisim_degeri_normalize”,“ev_sahiplik_oranı”,“ortalama_ikamet_suresi”,“hanehalki_buyuklugu”)] corr_matrix &lt;- cor(cor_data, use=“complete.obs”)</p>
-<p>library(corrplot) c1 &lt;- corrplot(corr_matrix, method = “circle”)</p>
-<p>#korelasyon matrisi çizdirme 2 library(plotly) c2 &lt;- plot_ly(z = corr_matrix, type = “heatmap”) print(c2)</p>
-<p>#Grafikler proje_data %&gt;% filter(İlçe %in% c(“Adalar”, “Beşiktaş”, “Küçükçekmece”)) %&gt;% ggplot(aes(kişi_başı_atık_miktarı, hanehalki_buyuklugu, color = nüfus_ortalaması)) + geom_point() + facet_grid(nüfus_ortalaması/1000 ~ İlçe)</p>
-<p>p &lt;- proje_data %&gt;% ggplot(aes(nüfus_ortalaması, evsel_atık_ortalaması, fill = İlçe)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + xlab(““)</p>
-<p>p + scale_x_continuous(trans = log_trans(base = 5))+ scale_y_continuous(trans = log_trans(base = 5))+ geom_point(show.legend = FALSE)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'plotly'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:ggplot2':
+
+    last_plot</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:stats':
+
+    filter</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:graphics':
+
+    layout</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>path <span class="ot">=</span> <span class="fu">getwd</span>()</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>nüfus_path <span class="ot">&lt;-</span> <span class="st">"nufuslar.xlsx"</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>nüfus_data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(nüfus_path)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(nüfus_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 17
+  İlçe     `2008` `2009` `2010` `2011` `2012` `2013` `2014` `2015` `2016` `2017`
+  &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+1 Adalar    14072  14341  14221  13883  14552  16166  16052  15623  14478  14907
+2 Arnavut… 156333 168121 180080 190247 198165 215531 225670 236222 247507 261655
+3 Ataşehir 351046 361615 375208 387502 395758 405974 408986 419368 422513 423372
+4 Avcılar  333944 348635 364682 383736 395274 407240 417852 425228 430770 435682
+5 Bağcılar 720819 724268 738809 746650 749024 752250 754623 757162 751510 748483
+6 Bahçeli… 571683 576799 590063 600900 600162 602931 599027 602040 598097 598454
+# ℹ 6 more variables: `2018` &lt;dbl&gt;, `2019` &lt;dbl&gt;, `2020` &lt;dbl&gt;, `2021` &lt;dbl&gt;,
+#   `2022` &lt;dbl&gt;, `2023` &lt;dbl&gt;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>nüfus_data <span class="ot">&lt;-</span> nüfus_data <span class="sc">|&gt;</span> <span class="fu">pivot_longer</span>(<span class="st">'2008'</span><span class="sc">:</span><span class="st">'2023'</span>, <span class="at">names_to =</span> <span class="st">'yıl'</span>, <span class="at">values_to =</span> <span class="st">'nüfus'</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(nüfus_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+  İlçe   yıl   nüfus
+  &lt;chr&gt;  &lt;chr&gt; &lt;dbl&gt;
+1 Adalar 2008  14072
+2 Adalar 2009  14341
+3 Adalar 2010  14221
+4 Adalar 2011  13883
+5 Adalar 2012  14552
+6 Adalar 2013  16166</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(nüfus_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [624 × 3] (S3: tbl_df/tbl/data.frame)
+ $ İlçe : chr [1:624] "Adalar" "Adalar" "Adalar" "Adalar" ...
+ $ yıl  : chr [1:624] "2008" "2009" "2010" "2011" ...
+ $ nüfus: num [1:624] 14072 14341 14221 13883 14552 ...</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># İlçeye göre ortalama nüfusları tablo şeklinde gösterilim</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>nüfus_data<span class="sc">$</span>yıl  <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(nüfus_data<span class="sc">$</span>yıl)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>nüfus_data<span class="sc">$</span>nüfus  <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(nüfus_data<span class="sc">$</span>nüfus)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>ilçe_nüfus_ortalama <span class="ot">&lt;-</span> nüfus_data <span class="sc">|&gt;</span> </span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(İlçe) <span class="sc">|&gt;</span> </span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(nüfus_ortalaması <span class="ot">=</span> <span class="fu">mean</span>(nüfus))</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>                                             </span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(ilçe_nüfus_ortalama)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 39 × 2
+   İlçe         nüfus_ortalaması
+   &lt;chr&gt;                   &lt;dbl&gt;
+ 1 Adalar                 15317 
+ 2 Arnavutköy            243988.
+ 3 Ataşehir              405139.
+ 4 Avcılar               413236.
+ 5 Bahçelievler          594071.
+ 6 Bakırköy              222437.
+ 7 Bayrampaşa            271292.
+ 8 Bağcılar              741487.
+ 9 Başakşehir            371738.
+10 Beykoz                239655.
+# ℹ 29 more rows</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># İlçeye göre ortalama nüfusları grafik şeklinde gösterilim</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>ilçe_ortalama_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(ilçe_nüfus_ortalama, <span class="fu">aes</span>(<span class="at">x =</span>İlçe, <span class="at">y=</span>nüfus_ortalaması<span class="sc">/</span><span class="dv">1000</span>)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">" "</span>) <span class="sc">+</span> <span class="fu">scale_y_continuous</span>(<span class="at">trans =</span> <span class="st">"log2"</span>)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co"># İlçeye göre çöp tüketim verisini birleştirelim</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>evsel_atık_path <span class="ot">&lt;-</span> <span class="st">"evsel_atik.xlsx"</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>evsel_atık_data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(evsel_atık_path)</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>evsel_atık_data <span class="ot">&lt;-</span> evsel_atık_data <span class="sc">|&gt;</span> <span class="fu">pivot_longer</span>(<span class="st">'2008'</span><span class="sc">:</span><span class="st">'2023'</span>, <span class="at">names_to =</span> <span class="st">'yıl'</span>, <span class="at">values_to =</span> <span class="st">'evsel_atık'</span>)</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(evsel_atık_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+  İlçe   yıl   evsel_atık
+  &lt;chr&gt;  &lt;chr&gt;      &lt;dbl&gt;
+1 Adalar 2008      12232 
+2 Adalar 2009      13228 
+3 Adalar 2010      11884.
+4 Adalar 2011      12109.
+5 Adalar 2012      12077 
+6 Adalar 2013      12886 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(evsel_atık_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [624 × 3] (S3: tbl_df/tbl/data.frame)
+ $ İlçe      : chr [1:624] "Adalar" "Adalar" "Adalar" "Adalar" ...
+ $ yıl       : chr [1:624] "2008" "2009" "2010" "2011" ...
+ $ evsel_atık: num [1:624] 12232 13228 11884 12109 12077 ...</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>evsel_atık_data[evsel_atık_data <span class="sc">==</span> <span class="dv">0</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>ilçe_atık_ortalama <span class="ot">&lt;-</span> evsel_atık_data <span class="sc">|&gt;</span> </span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(İlçe) <span class="sc">|&gt;</span> </span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>( evsel_atık_ortalaması <span class="ot">=</span> <span class="fu">mean</span>(evsel_atık, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>                                             </span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(ilçe_atık_ortalama)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 39 × 2
+   İlçe         evsel_atık_ortalaması
+   &lt;chr&gt;                        &lt;dbl&gt;
+ 1 Adalar                      13250.
+ 2 Arnavutköy                  78419.
+ 3 Ataşehir                   157869.
+ 4 Avcılar                    142046.
+ 5 Bahçelievler               251647.
+ 6 Bakırköy                   123939.
+ 7 Bayrampaşa                 119017.
+ 8 Bağcılar                   212092.
+ 9 Başakşehir                 168045.
+10 Beykoz                     110291.
+# ℹ 29 more rows</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>ilçe_nüfus_ortalama <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(nüfus_ortalaması)) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 2
+  İlçe         nüfus_ortalaması
+  &lt;chr&gt;                   &lt;dbl&gt;
+1 Küçükçekmece          751196.
+2 Bağcılar              741487.
+3 Esenyurt              732204.
+4 Ümraniye              670082.
+5 Pendik                665999.
+6 Bahçelievler          594071.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>ilçe_atık_ortalama <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(evsel_atık_ortalaması)) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 2
+  İlçe         evsel_atık_ortalaması
+  &lt;chr&gt;                        &lt;dbl&gt;
+1 Küçükçekmece               288031.
+2 Esenyurt                   274772.
+3 Bahçelievler               251647.
+4 Ümraniye                   240612.
+5 Fatih                      237674.
+6 Pendik                     219020.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>proje_data <span class="ot">&lt;-</span> <span class="fu">left_join</span>(ilçe_nüfus_ortalama, ilçe_atık_ortalama, <span class="at">by =</span> <span class="st">"İlçe"</span>)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>proje_data <span class="ot">&lt;-</span> proje_data <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(kişi_başı_atık_miktarı <span class="ot">=</span> evsel_atık_ortalaması<span class="sc">/</span>nüfus_ortalaması)</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> proje_data <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">" "</span>) <span class="sc">+</span> <span class="fu">scale_y_continuous</span>(<span class="at">trans =</span> <span class="st">"log2"</span>)</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(İlçe, kişi_başı_atık_miktarı, <span class="at">fill =</span> <span class="fu">factor</span>(İlçe))) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>su_tüketim_path <span class="ot">&lt;-</span> <span class="st">"su_tuketim.xlsx"</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>su_tüketim_data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(su_tüketim_path)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(su_tüketim_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 10
+  İlçe           `2015`  `2016` `2017` `2018` `2019` `2020` `2021` `2022` `2023`
+  &lt;chr&gt;           &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+1 Adalar        1432494  1.47e6 1.37e6 1.40e6 1.37e6 1.51e6 1.44e6 1.54e6 1.41e6
+2 Arnavutköy    8002123  9.18e6 1.02e7 1.14e7 1.38e7 1.56e7 1.71e7 1.89e7 2.09e7
+3 Ataşehir     18597049  2.00e7 2.12e7 2.15e7 2.24e7 2.37e7 2.43e7 2.44e7 2.48e7
+4 Avcılar      16220476  1.71e7 1.76e7 1.83e7 1.95e7 2.08e7 2.07e7 2.16e7 2.17e7
+5 Bağcılar      9915435  1.08e7 1.12e7 1.22e7 1.36e7 1.60e7 1.62e7 1.74e7 1.83e7
+6 Bahçelievler 23610609  2.43e7 2.49e7 2.62e7 2.78e7 2.90e7 2.77e7 2.92e7 2.88e7</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>su_tüketim_data <span class="ot">&lt;-</span> su_tüketim_data <span class="sc">|&gt;</span> <span class="fu">pivot_longer</span>(<span class="st">'2015'</span><span class="sc">:</span><span class="st">'2023'</span>, <span class="at">names_to =</span> <span class="st">'yıl'</span>, <span class="at">values_to =</span> <span class="st">'su_tüketim'</span>)</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>ilçe_su_ortalama <span class="ot">&lt;-</span> su_tüketim_data <span class="sc">|&gt;</span> </span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(İlçe) <span class="sc">|&gt;</span> </span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>( su_tüketim_ortalaması <span class="ot">=</span> <span class="fu">mean</span>(su_tüketim, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>proje_data <span class="ot">&lt;-</span> <span class="fu">left_join</span>(proje_data, ilçe_su_ortalama[, <span class="fu">c</span>(<span class="st">"İlçe"</span>, <span class="st">"su_tüketim_ortalaması"</span>)], <span class="at">by =</span> <span class="st">"İlçe"</span>)</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>proje_data <span class="ot">&lt;-</span> proje_data <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(kişi_başı_su_tüketim_miktarı <span class="ot">=</span> su_tüketim_ortalaması<span class="sc">/</span>nüfus_ortalaması)</span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>dogalgaz_tüketim_path <span class="ot">&lt;-</span> <span class="st">"dogalgaz_tuketim.xlsx"</span></span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>dogalgaz_tüketim_data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(dogalgaz_tüketim_path)</span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>dogalgaz_tüketim_data <span class="ot">&lt;-</span> dogalgaz_tüketim_data <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(İlçe,Yıl) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(yıllık_tüketim<span class="ot">=</span> <span class="fu">sum</span>(<span class="st">`</span><span class="at">Dogalgaz Tüketim Miktarı (m3)</span><span class="st">`</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'İlçe'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>dogalgaz_tüketim_data <span class="ot">&lt;-</span> dogalgaz_tüketim_data <span class="sc">%&gt;%</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Yıl <span class="sc">!=</span> <span class="dv">2023</span>)</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>ilçe_dogalgaz_ortalama <span class="ot">&lt;-</span> dogalgaz_tüketim_data <span class="sc">|&gt;</span> </span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(İlçe) <span class="sc">|&gt;</span> </span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>( dogalgaz_tüketim_ortalaması <span class="ot">=</span> <span class="fu">mean</span>(yıllık_tüketim, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>proje_data <span class="ot">&lt;-</span> <span class="fu">left_join</span>(proje_data, ilçe_dogalgaz_ortalama[, <span class="fu">c</span>(<span class="st">"İlçe"</span>, <span class="st">"dogalgaz_tüketim_ortalaması"</span>)], <span class="at">by =</span> <span class="st">"İlçe"</span>)</span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>proje_data <span class="ot">&lt;-</span> proje_data <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(kişi_başı_dogalgaz_tüketim_miktarı <span class="ot">=</span> dogalgaz_tüketim_ortalaması<span class="sc">/</span>nüfus_ortalaması)</span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>okuma_yazma_orani_path <span class="ot">&lt;-</span> <span class="st">"okuma_yazma_orani.xlsx"</span></span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>okuma_yazma_orani_data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(okuma_yazma_orani_path)</span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>okuma_yazma_orani_data <span class="ot">&lt;-</span> okuma_yazma_orani_data <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(okuma_yazma_oranı <span class="ot">=</span> <span class="st">`</span><span class="at">Okuma Yazma Bilen</span><span class="st">`</span><span class="sc">/</span>(<span class="st">`</span><span class="at">Okuma Yazma Bilmeyen</span><span class="st">`</span><span class="sc">+</span><span class="st">`</span><span class="at">Okuma Yazma Bilen</span><span class="st">`</span>)<span class="sc">*</span><span class="dv">100</span>)</span>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>proje_data <span class="ot">&lt;-</span> <span class="fu">left_join</span>(proje_data, okuma_yazma_orani_data[, <span class="fu">c</span>(<span class="st">"İlçe"</span>, <span class="st">"okuma_yazma_oranı"</span>)], <span class="at">by =</span> <span class="st">"İlçe"</span>)</span>
+<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a>teknolojik_erisim_path <span class="ot">&lt;-</span> <span class="st">"teknolojik_erisim.xlsx"</span></span>
+<span id="cb33-19"><a href="#cb33-19" aria-hidden="true" tabindex="-1"></a>teknolojik_erisim_data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(teknolojik_erisim_path)</span>
+<span id="cb33-20"><a href="#cb33-20" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(teknolojik_erisim_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 11
+  İlçe      Kendi kendine ev süp…¹ Ücretli TV yayını (D…² TV Dijital platformu…³
+  &lt;chr&gt;                      &lt;dbl&gt;                  &lt;dbl&gt;                  &lt;dbl&gt;
+1 Adalar                        45                     23                     79
+2 Arnavutk…                    223                     77                     67
+3 Ataşehir                      60                    366                    459
+4 Avcılar                      135                    368                    419
+5 Bağcılar                     106                    170                    212
+6 Bahçelie…                    336                    641                    527
+# ℹ abbreviated names: ¹​`Kendi kendine ev süpüren robot elektrik süpürgesi`,
+#   ²​`Ücretli TV yayını (Digiturk, DSmart, Tivibu vb.)`,
+#   ³​`TV Dijital platformu  (Netflix, BluTV, Exxen vb.)`
+# ℹ 7 more variables: `Dizüstü bilgisayar` &lt;dbl&gt;, Tablet &lt;dbl&gt;,
+#   `Masaüstü bilgisayar` &lt;dbl&gt;, `Playstation/Xbox/Wii oyun platformu` &lt;dbl&gt;,
+#   `İnternet bağlantısı` &lt;dbl&gt;, `Alarm (Yangın)` &lt;dbl&gt;, Hiçbiri &lt;dbl&gt;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">#tek veriye indirgeme</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>sütun_ortalamaları <span class="ot">&lt;-</span> <span class="fu">sapply</span>(teknolojik_erisim_data[,<span class="sc">-</span><span class="dv">1</span>],mean)</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>toplam_ortalama <span class="ot">&lt;-</span> <span class="fu">sum</span>(sütun_ortalamaları)</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>katsayı <span class="ot">=</span> <span class="dv">1</span><span class="sc">/</span>(sütun_ortalamaları<span class="sc">/</span>toplam_ortalama)</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>katsayı[<span class="dv">10</span>] <span class="ot">&lt;-</span> katsayı[<span class="dv">10</span>]<span class="sc">*</span>(<span class="sc">-</span><span class="dv">3</span>)</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>teknolojik_erisim_data<span class="sc">$</span>teknolojik_erisim_degeri <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(teknolojik_erisim_data[,<span class="sc">-</span><span class="dv">1</span>]<span class="sc">*</span>katsayı)</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>teknolojik_erisim_data <span class="ot">&lt;-</span> teknolojik_erisim_data <span class="sc">%&gt;%</span></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">teknolojik_erisim_degeri_normalize =</span> (teknolojik_erisim_degeri <span class="sc">-</span> <span class="fu">min</span>(teknolojik_erisim_degeri)) <span class="sc">/</span> <span class="fu">max</span>(teknolojik_erisim_degeri))</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>proje_data <span class="ot">&lt;-</span> <span class="fu">left_join</span>(proje_data, teknolojik_erisim_data[, <span class="fu">c</span>(<span class="st">"İlçe"</span>, <span class="st">"teknolojik_erisim_degeri_normalize"</span>)], <span class="at">by =</span> <span class="st">"İlçe"</span>)</span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>mulkiyet_durumu_path <span class="ot">&lt;-</span> <span class="st">"mulkiyet_durumu.xlsx"</span></span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>mulkiyet_durumu_data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(mulkiyet_durumu_path)</span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>mulkiyet_durumu_data <span class="ot">&lt;-</span> mulkiyet_durumu_data <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(ev_sahiplik_oranı <span class="ot">=</span> <span class="st">`</span><span class="at">Ev Sahibi</span><span class="st">`</span><span class="sc">/</span>(<span class="st">`</span><span class="at">Ev Sahibi</span><span class="st">`</span><span class="sc">+</span><span class="st">`</span><span class="at">Ev Sahibi Değil</span><span class="st">`</span>)<span class="sc">*</span><span class="dv">100</span>)</span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a>proje_data <span class="ot">&lt;-</span> <span class="fu">left_join</span>(proje_data, mulkiyet_durumu_data[, <span class="fu">c</span>(<span class="st">"İlçe"</span>, <span class="st">"ev_sahiplik_oranı"</span>)], <span class="at">by =</span> <span class="st">"İlçe"</span>)</span>
+<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a><span class="co">#ilçelere kısaltma ekleyelim</span></span>
+<span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a>proje_data<span class="sc">$</span>ilçe_kısaltma <span class="ot">&lt;-</span> <span class="fu">toupper</span>(<span class="fu">substring</span>(<span class="fu">abbreviate</span>(proje_data<span class="sc">$</span>İlçe, <span class="at">minlength=</span><span class="dv">3</span>),<span class="dv">1</span>,<span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in abbreviate(proje_data$İlçe, minlength = 3): abbreviate used with
+non-ASCII chars
+
+Warning in abbreviate(proje_data$İlçe, minlength = 3): abbreviate used with
+non-ASCII chars
+
+Warning in abbreviate(proje_data$İlçe, minlength = 3): abbreviate used with
+non-ASCII chars</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co">#aynı kısaltmaları düzeltme</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>proje_data[proje_data<span class="sc">$</span>İlçe <span class="sc">==</span> <span class="st">"Sultangazi"</span>, <span class="st">"ilçe_kısaltma"</span>] <span class="ot">&lt;-</span> <span class="st">"SLTG"</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>proje_data[proje_data<span class="sc">$</span>İlçe <span class="sc">==</span> <span class="st">"Sultanbeyli"</span>, <span class="st">"ilçe_kısaltma"</span>] <span class="ot">&lt;-</span> <span class="st">"SLTB"</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>ikamet_suresi_path <span class="ot">&lt;-</span> <span class="st">"ikamet_suresi.xlsx"</span></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>ikamet_suresi_data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(ikamet_suresi_path)</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>ikamet_suresi_data <span class="ot">&lt;-</span> ikamet_suresi_data <span class="sc">%&gt;%</span> <span class="fu">rename</span>(<span class="at">ortalama_ikamet_suresi=</span><span class="st">`</span><span class="at">Ortalama Yıl</span><span class="st">`</span>)</span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>proje_data <span class="ot">&lt;-</span> <span class="fu">left_join</span>(proje_data, ikamet_suresi_data[, <span class="fu">c</span>(<span class="st">"İlçe"</span>, <span class="st">"ortalama_ikamet_suresi"</span>)], <span class="at">by =</span> <span class="st">"İlçe"</span>)</span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a>hanehalki_buyukluk_path <span class="ot">&lt;-</span> <span class="st">"hanehalki_buyukluk.xlsx"</span></span>
+<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a>hanehalki_buyukluk_data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(hanehalki_buyukluk_path)</span>
+<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a>hanehalki_buyukluk_data <span class="ot">&lt;-</span> hanehalki_buyukluk_data <span class="sc">%&gt;%</span> <span class="fu">rename</span>(<span class="at">hanehalki_buyuklugu=</span><span class="st">`</span><span class="at">Ortalama Hanehalkı Büyüklüğü 2022</span><span class="st">`</span>)</span>
+<span id="cb37-17"><a href="#cb37-17" aria-hidden="true" tabindex="-1"></a>proje_data <span class="ot">&lt;-</span> <span class="fu">left_join</span>(proje_data, hanehalki_buyukluk_data[, <span class="fu">c</span>(<span class="st">"İlçe"</span>, <span class="st">"hanehalki_buyuklugu"</span>)], <span class="at">by =</span> <span class="st">"İlçe"</span>)</span>
+<span id="cb37-18"><a href="#cb37-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-19"><a href="#cb37-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-20"><a href="#cb37-20" aria-hidden="true" tabindex="-1"></a><span class="co">#korelasyon matrisi çizdirme 1</span></span>
+<span id="cb37-21"><a href="#cb37-21" aria-hidden="true" tabindex="-1"></a>cor_data <span class="ot">&lt;-</span> proje_data[,<span class="fu">c</span>(<span class="st">"kişi_başı_atık_miktarı"</span>, <span class="st">"kişi_başı_su_tüketim_miktarı"</span>, <span class="st">"kişi_başı_dogalgaz_tüketim_miktarı"</span>, <span class="st">"okuma_yazma_oranı"</span>,<span class="st">"teknolojik_erisim_degeri_normalize"</span>,<span class="st">"ev_sahiplik_oranı"</span>,<span class="st">"ortalama_ikamet_suresi"</span>,<span class="st">"hanehalki_buyuklugu"</span>)]</span>
+<span id="cb37-22"><a href="#cb37-22" aria-hidden="true" tabindex="-1"></a>corr_matrix <span class="ot">&lt;-</span> <span class="fu">cor</span>(cor_data, <span class="at">use=</span><span class="st">"complete.obs"</span>)</span>
+<span id="cb37-23"><a href="#cb37-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-24"><a href="#cb37-24" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>corrplot 0.92 loaded</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>c1 <span class="ot">&lt;-</span> <span class="fu">corrplot</span>(corr_matrix, <span class="at">method =</span> <span class="st">"circle"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-1-2.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">#korelasyon matrisi çizdirme 2</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>c2 <span class="ot">&lt;-</span> <span class="fu">plot_ly</span>(<span class="at">z =</span> corr_matrix, <span class="at">type =</span> <span class="st">"heatmap"</span>)</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(c2)</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="co">#Grafikler</span></span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> proje_data <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(nüfus_ortalaması))<span class="sc">%&gt;%</span> <span class="fu">top_n</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Selecting by hanehalki_buyuklugu</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>proje_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(İlçe <span class="sc">%in%</span> x<span class="sc">$</span>İlçe) <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(kişi_başı_atık_miktarı, hanehalki_buyuklugu,</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="at">color =</span> nüfus_ortalaması<span class="sc">/</span><span class="dv">10</span><span class="sc">^</span><span class="dv">6</span>)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="fu">facet_grid</span>(nüfus_ortalaması<span class="sc">/</span><span class="dv">10</span><span class="sc">^</span><span class="dv">6</span> <span class="sc">~</span> İlçe)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-1-3.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>proje_data_kategori <span class="ot">&lt;-</span> <span class="fu">ntile</span>(proje_data<span class="sc">$</span>ortalama_ikamet_suresi, <span class="dv">3</span>)</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>proje_data_kategori <span class="ot">&lt;-</span> <span class="fu">recode</span>(proje_data_kategori,</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>                              <span class="st">'1'</span> <span class="ot">=</span> <span class="st">'Kötü'</span>,</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>                              <span class="st">'2'</span> <span class="ot">=</span> <span class="st">'Orta'</span>,</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>                              <span class="st">'3'</span> <span class="ot">=</span> <span class="st">'İyi'</span>)</span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>proje_data <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(nüfus_ortalaması<span class="sc">/</span><span class="dv">10</span><span class="sc">^</span><span class="dv">6</span>, </span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>evsel_atık_ortalaması<span class="sc">/</span><span class="dv">10</span><span class="sc">^</span><span class="dv">6</span>, <span class="at">label =</span> ilçe_kısaltma, <span class="at">color=</span> proje_data_kategori)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_text_repel</span>() <span class="sc">+</span></span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span></span>
+<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> <span class="fu">theme_economist</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: The following aesthetics were dropped during statistical transformation: label.
+ℹ This can happen when ggplot fails to infer the correct grouping structure in
+  the data.
+ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+  variable into a factor?</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-1-4.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>proje_data <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(İlçe, evsel_atık_ortalaması)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-1-5.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>proje_data  <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(nüfus_ortalaması<span class="sc">/</span><span class="dv">10</span><span class="sc">^</span><span class="dv">6</span>,</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>evsel_atık_ortalaması<span class="sc">/</span><span class="dv">10</span><span class="sc">^</span><span class="dv">6</span>)) <span class="sc">+</span> <span class="fu">geom_jitter</span>(<span class="fu">aes</span>(color</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="ot">=</span> hanehalki_buyuklugu), <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>()<span class="sc">+</span> <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-1-6.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 
 
 </section>
