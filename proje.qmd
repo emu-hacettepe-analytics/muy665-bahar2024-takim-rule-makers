@@ -511,7 +511,7 @@ Proje kapsamında elde edilen sonuçlar ve temel çıkarımlar aşağıdaki gibi
 
 ggplot(proje_data, aes(x = reorder(İlçe, nüfus_ortalaması), y = su_tüketim_ortalaması/10^6)) +
   geom_boxplot() +
-  labs(title = "İlçelere Göre Su Tüketim Ortalaması", y = "Su Tüketim Miktarı") +
+  labs(title = "İlçelere Göre Su Tüketim Ortalaması", y = "Su Tüketim Miktarı", x="Nüfus Ortalaması") +
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
   facet_wrap(~ ifelse(as.numeric(reorder(proje_data$İlçe, proje_data$nüfus_ortalaması)) <= length(proje_data$nüfus_ortalaması)/2, "Az Yoğun Nüfus", "Yoğun Nüfus"), scales = "free_x")
 
@@ -524,7 +524,7 @@ ggplot(proje_data, aes(x = reorder(İlçe, nüfus_ortalaması), y = su_tüketim_
 
 ggplot(proje_data, aes(x = reorder(İlçe, nüfus_ortalaması), y = dogalgaz_tüketim_ortalaması/10^6)) +
   geom_boxplot() +
-  labs(title = "İlçelere Göre Doğalgaz Tüketim Ortalaması", y = "Doğalgaz Tüketim Miktarı") +
+  labs(title = "İlçelere Göre Doğalgaz Tüketim Ortalaması", y = "Doğalgaz Tüketim Miktarı", x="Nüfus Ortalaması") +
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
   facet_wrap(~ ifelse(as.numeric(reorder(proje_data$İlçe, proje_data$nüfus_ortalaması)) <= length(proje_data$nüfus_ortalaması)/2, "Az Yoğun Nüfus", "Yoğun Nüfus"), scales = "free_x")
 
@@ -542,7 +542,7 @@ Evsel atık üretimi, bir ilçenin nüfusu ve yaşam tarzıyla doğrudan ilişki
 
 ggplot(proje_data, aes(x = reorder(İlçe, nüfus_ortalaması), y = evsel_atık_ortalaması/10^4)) +
   geom_boxplot() +
-  labs(title = "İlçelere Göre Evsel Atık Ortalaması", y = "Evsel Atık Miktarı") +
+  labs(title = "İlçelere Göre Evsel Atık Ortalaması", y = "Evsel Atık Miktarı", x="Nüfus Ortalaması") +
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
   facet_wrap(~ ifelse(as.numeric(reorder(proje_data$İlçe, proje_data$nüfus_ortalaması)) <= length(proje_data$nüfus_ortalaması)/2, "Az Yoğun Nüfus", "Yoğun Nüfus"), scales = "free_x")
 
@@ -560,7 +560,7 @@ Hanehalkı büyüklüğü, bir ilçenin demografik yapısını ve yaşam tarzın
 
 ggplot(proje_data, aes(x = reorder(İlçe, nüfus_ortalaması), y = hanehalki_buyuklugu)) +
   geom_point(size=1, color="purple") +
-  labs(title = "İlçelere Göre Hanehalki Büyüklüğü", y = "Evsel Atık Miktarı") +
+  labs(title = "İlçelere Göre Hanehalki Büyüklüğü", y = "Evsel Atık Miktarı", x="Nüfus Ortalaması") +
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
   facet_wrap(~ ifelse(as.numeric(reorder(proje_data$İlçe, proje_data$nüfus_ortalaması)) <= length(proje_data$nüfus_ortalaması)/2, "Az Yoğun Nüfus", "Yoğun Nüfus"), scales = "free_x")
 
@@ -613,7 +613,7 @@ Araç kullanımı, bir ilçenin ulaşım altyapısını, trafik durumunu ve çev
 
 ggplot(proje_data, aes(x = reorder(İlçe, nüfus_ortalaması), y = arac_sahiplik_oranı)) +
   geom_point(size=1, color="purple") +
-  labs(title = "İlçelere Göre Araç Sahiplik Oranı", y = "Araç Sahiplik Oranı") +
+  labs(title = "İlçelere Göre Araç Sahiplik Oranı", y = "Araç Sahiplik Oranı", x="Nüfus Ortalaması") +
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
   facet_wrap(~ ifelse(as.numeric(reorder(proje_data$İlçe, proje_data$nüfus_ortalaması)) <= length(proje_data$nüfus_ortalaması)/2, "Az Yoğun Nüfus", "Yoğun Nüfus"), scales = "free_x")
 
