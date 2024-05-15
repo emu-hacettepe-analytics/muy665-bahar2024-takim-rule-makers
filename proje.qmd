@@ -1,105 +1,20 @@
 ---
-title: "İSTANBUL'DA SÜRDÜRÜLEBİLİRLİK HARİTASI: NÜFUS, ATIK VE ENERJİ TÜKETİMİ ANALİZİ"
+title: "İSTANBUL'DA SÜRDÜRÜLEBİLİRLİK HARİTASI: NÜFUS, EVSEL ATIK VE KAYNAK TÜKETİMİ ANALİZİ"
 number-sections: true
+code-fold: true
 ---
 
 # Projeye Genel Bakış ve Kapsam
 
-**Çöp**, bir süreç sonucunda sistemin istenmeyen, verim alınamayan, israf edilen veya bir başka sisteme girdi olamayan çıktısı, diğer bir deyişle bir *artık* olarak ifade edilebilir. Çöpler, guruplanarak incelendiğinde sanayi atığı, tıbbi atık, inşaat atığı gibi farklı şekillerde karşımıza çıkabilir. Aslında her bir atık miktarı, ilgili sürecin ne derece işletildiği ile doğru ve verimi ile ters orantılıdır. Peki, "Geri dönüşüm ve verimlilik kavramından uzak görülen, ekonomik bir değeri olmadığı gibi incelenmekten de geri durulan bir çöp türü olan *evsel atıklar* acaba bizlere bir şeyler söyler mi?" sorusunu sorarsak, nasıl bir cevap alırız? Bu projede, evsel atık miktarının ortalaması ve değişimi ile ilgili veriler ile diğer *bazı* göstergeler arasında İstanbul ilçeri özelinde belirli ilişkiler arıyor olacağız.
+**Kaynaklar ve atıklar**, birarada yaşayan insanlar için tüketimi ve yönetimi önemli iki unsurdur. İstanbul genelinde ilçe bazlı olarak İstanbul Büyükşehir Belediyesi 2008 ve sonrası için su tüketimi, doğalgaz tüketimi ve ortaya çıkan evsel atık miktarını veri olarak paylaşmaktadır. Ayrıca ilçe bazlı olarak diğer bazı istatistikler de tutulmuştur. Bu projede amaç, kişi başına düşen su ve doğalgaz tüketimi ile ortaya çıkan evsel atık miktarının *diğer* bazı ilçe bazlı istatistiklerle ilişkilerini gözlemlemek ve ilişkiler üzerine tartışmaktır.
 
 ![](assets/images/proje_gorsel_2.jpg){fig-align="center" width="539"}
 
-# Veri
+# Veri Açma ve Ön İşleme
 
-## Veri Kaynağı
+Veri setlerindeki veriler excel dosyalarından çekilerek düzenlenmiş ve ilgilenilen parametrelerin sütunlarda, ilçelerin satırlarda yer aldığı tek bir veri çerçevesinde toplanmıştır.
 
-Veri kaynağı olarak İstanbul Büyükşehir Belediyesi (İBB) Açık Veri Portalı ve Türkiye İstatistik Kurumu (TÜİK) Veri Tabanı kullanılmıştır.
-
-## Veri Hakkında Genel Bilgiler
-
--Çeşitli kaynaklardan elde edilebilen ve belirli bir konu veya problem üzerinde analiz yapmak için kullanılabilen örneklere veri ya da veriseti denmektedir.
-
--Genellikle belirli bir formatta ve belirli bir konu ya da alanla ilgili bilgileri içeren veriler, veri analizi alanlarında kullanılan önemli araçlardır.
-
--İstanbul, Türkiye'nin en kalabalık ve en dinamik şehirlerinden biri olarak göze çarpmaktadır. Bu büyük metropolde yaşayan nüfusun demografik yapıları, tüketim alışkanlıkları ve yaşam tarzları, hem akademik araştırmaların hem de iş dünyasının için ilgi çekici veriler barındırmaktadır.
-
--Bu bağlamda, hazırlanan bu proje kapsamında İstanbul'da yaşayan nüfusun tüketim alışkanlıklarına yönelik bir araştırma ve analiz çalışması gerçekleştirilmiştir.
-
-## Tercih Sebebi
-
--İstanbul'daki nüfus ve tüketim alışkanlıklarına odaklanan bir veri seti, çeşitli sektörlerde faaliyet gösteren işletmeler, araştırmacılar ve hükümetler için aşağıda belirtilen nedenlerden ötürü değerlidir.
-
-\-**Nüfus Yoğunluğu:** İstanbul, Türkiye'nin en kalabalık şehri ve dünyanın en kalabalık nüfuslu metropollerinden biridir. Bu nedenle, İstanbul'daki nüfusun demografik yapısı ve tüketim alışkanlıkları, geniş bir örnekleme dayalı olarak incelenebilmektedir.Genel tüketici eğilimleri hakkında önemli içgörüler sunabilmesi bu verisetinin incelenmesini daha cazip hale getirmektedir.
-
-\-**Ekonomik Önem:** Türkiye'nin ekonomik başkenti olarak kabul edilebilecek olan İstanbuş, ülkenin gayri safi yurtiçi hasılasının büyük bir kısmını oluşturmaktadır. Bu şehirdeki tüketim alışkanlıkları, perakende sektörü ve ekonominin genel sağlığı hakkında bilgi edinmenin, işletmeler ve hükümetler için stratejik öneme sahip olabileceği değerlendirilmektedir.
-
-\-**Çeşitlilik:** İstanbul, farklı kültürel, ekonomik ve demografik yapıları bünyesinde barındıran bir şehir olarak, tüketici tercihlerinde ve alışkanlıklarında çeşitlilik içermektedir. Şehirdeki nüfus ve tüketim alışkanlıklarını anlamak, farklı segmentlerdeki tüketici davranışlarını analiz etmek ve özel pazarlama stratejileri geliştirmek için önemli görülmektedir.
-
-\-**Büyüme Potansiyeli:** İstanbul, sürekli olarak büyüyen ve değişen bir şehirdir. Nüfus artışı, göç hareketleri, altyapı projeleri ve ekonomik değişimler, tüketim alışkanlıklarını etkileyebilir. Bu nedenle, İstanbul'daki nüfus ve tüketim verilerini düzenli olarak izlemek ve analiz etmek, gelecekteki trendleri tahmin etmek ve uygun stratejiler geliştirmek için önemlidir.
-
-\-**Karşılaşılan Zorluklar:** İstanbul gibi büyük bir şehirde yaşamak, çeşitli zorlukları da beraberinde getirir. Trafik, altyapı sorunları, çevresel endişeler gibi faktörler, tüketici davranışlarını etkileyebilir. Bu zorluklarla başa çıkabilmek için, nüfus ve tüketim alışkanlıklarını anlamak önemlidir.
-
--İstanbul'daki nüfus ve tüketim alışkanlıklarını incelemek, sadece şehirdeki yaşamı anlamakla kalmaz, aynı zamanda farklı sektörler, pazarlama ve şehir planlaması gibi alanlar için de önemli içgörüler sağlar. Bu nedenle, bu konuya odaklanan bir veri seti oldukça ilgi çekicidir.
-
-## Cn Düzenleme
-
-xxxxxx
-
-# Analiz
-
-Veri setini analiz etmek, veri bilimi ve istatistik alanlarında önemli bir yetenek olarak göze çarpmaktadır.
-
-## Keşifsel Veri Analizi
-
-Keşifsel Veri Analizi, Veri Bilimi, İstatistik ve Makine Öğrenmesi gibi disiplinlerde yararlanılan; bir veri setini anlamak ve içerdiği bilgilere ulaşmak için kullanılan bir olgudur. Genellikle bir veri setinin yapısını, dağılımını, ilişkilerini ve özelliklerini keşfetmek için kullanılan bir dizi teknik ve araç içermektedir.
-
-Keşifsel Veri Analizi temel olarak aşağıdaki adımları içerebilir:
-
-\-**Veri Toplama ve Temizleme:** Veri setini inceleyip düzenlemek, eksik veya yanlış verileri düzeltmek, gereksiz sütunları kaldırmak veya gerekirse veriye yeni sütunlar eklemek gibi işlemlerin yapıldığı adımdır.
-
-\-**Veri Görselleştirme:** Veri setinin yapısını ve ilişkilerini görsel olarak analiz etmek için çeşitli grafikler ve görselleştirmelerin yapıldığı adımdır. Örneğin, histogramlar, kutu grafikleri, saçılım grafikleri ve sıcaklık haritaları gibi araçlardan faydalanılabilir.
-
-\-**Özellik Mühendisliği:** Veri setindeki değişkenlerin ve özelliklerin incelenmesi ve analiz edilmesiyle yeni özelliklerin oluşturulduğu adımda, model performansını artırmak veya veri setindeki gizli yapıları ortaya çıkarmak amaçlanmaktadır.
-
-\-**İstatistiksel Analiz:** Veri setinin istatistiksel özellikleri, dağılımları ve ilişkileri incelenerek; ortalamalar, standart sapmalar, korelasyonlar ve varyanslar gibi istatistiksel metriklerin hesaplaması yapılmaktadır
-
-\-**Modelleme ve Tahmin:** Keşifsel veri analizi aynı zamanda, veri setinin yapısal özelliklerini anlamak için basit modellerin oluşturulmasını içerebilir. Tahmin yapmak ve veri setindeki kalıpları ortaya çıkarmak için değerlidir.
-
-Keşifsel Veri Analizi, veri setinin doğasını daha iyi anlamak ve sonraki analiz ve modelleme adımları için bir temel oluşturmak için öneme sahiptir.
-
-Bu yöntem, veri bilimi projelerinin başlangıç noktasını oluşturarak veri setini keşfetme ve anlama sürecinde kritik bir rol oynamaktadır.
-
-Bu proje kapsamında bu yöntemden yararlanılarak, projenin hedeflerini daha iyi anlayabilmek, veri setinizdeki önemli ilişkileri belirleyebilmek ve veriye dayalı stratejiler geliştirebilmek hedeflenmiştir.
-
-## Trend Analizi
-
-Trend Analizi, zaman içindeki veri değişimlerini inceleyerek belirli bir eğilimi tanımlamayı amaçlayan bir analiz yöntemi oalrak karşımıza çıkmaktadır. Geçmiş veri noktalarının bir dizisini kullanarak gelecekteki davranışları tahmin etmek için kullanılabilen Trend Analizi yöntemi, genellikle keşifsel veri analizinin bir parçası olarak uygulanmaktadır.
-
-Trend Analizi aşağıdaki adımları içerebilir:
-
-\-**Veri Görselleştirme:** Trend analizi için veri setinizin zaman serisi verilerini görselleştirerek zaman boyunca değişen bir değişkenin trendini gösteren bir çizgi grafiği veya nokta grafiği oluşturmak mümkündür.
-
-\-**Trendin Tanımlanması:** Veri setinizdeki zaman serisi verilerini inceleyerek belirli bir eğilimi tanımlanabilir. Bu, verinin genel eğilimini, artışları veya azalışları, belirli bir periyotta tekrar eden desenleri veya diğer önemli özellikleri içerebilir.
-
-\-**Trendin Modelleme:** Belirlenen trendin matematiksel bir modelini oluşturularak; doğrusal bir trend çizgisi, ikinci dereceden bir polinom veya başka bir regresyon modeli hazırlanabilir. Bu model, trendin gelecekte nasıl devam edebileceği hakkında tahminler yapmak için kullanılabilir.
-
-\-**Trendin Değerlendirilmesi:** Oluşturulan modeli kullanarak gelecekteki trendin tahminlerini modelin ne kadar iyi uyarlandığını ve tahminlerin ne kadar güvenilir olduğunu değerlendirmeyi içerir.
-
-Trend Analizi, birçok farklı alanda kullanılabilecek bir yöntem olarak göze çarpmaktadır.
-
-## Model Uydurma
-
-xxxxxx
-
-## Sonuçlar
-
-xxxxxx
-
-# Sonuçlar ve Ana Çıkarımlar
-
-xxxxxx
-
-```{r}
+```{r output=FALSE}
 library(readxl)
 library(ggplot2)
 library(dplyr)
@@ -109,19 +24,17 @@ library(scales)
 library(plotly)
 library(ggrepel)
 library(ggthemes)
+library(kableExtra)
 
-path = getwd()
+#nüfus verisini açma
 nüfus_path <- "nufuslar.xlsx"
 nüfus_data <- read_excel(nüfus_path)
-head(nüfus_data)
 
 
 nüfus_data <- nüfus_data |> pivot_longer('2008':'2023', names_to = 'yıl', values_to = 'nüfus')
-head(nüfus_data)
-str(nüfus_data)
+
 
 # İlçeye göre ortalama nüfusları tablo şeklinde gösterilim
-
 nüfus_data$yıl  <- as.numeric(nüfus_data$yıl)
 nüfus_data$nüfus  <- as.numeric(nüfus_data$nüfus)
 
@@ -130,31 +43,23 @@ ilçe_nüfus_ortalama <- nüfus_data |>
   group_by(İlçe) |> 
   summarise(nüfus_ortalaması = mean(nüfus))
                                              
-print(ilçe_nüfus_ortalama)
 
-
-# İlçeye göre ortalama nüfusları grafik şeklinde gösterilim
-
-ilçe_ortalama_plot <- ggplot(ilçe_nüfus_ortalama, aes(x =İlçe, y=nüfus_ortalaması/1000)) + geom_point() + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + xlab(" ") + scale_y_continuous(trans = "log2")
-
-# İlçeye göre çöp tüketim verisini birleştirelim
+#evsel atık verisini açma
 
 evsel_atık_path <- "evsel_atik.xlsx"
 evsel_atık_data <- read_excel(evsel_atık_path)
 
 evsel_atık_data <- evsel_atık_data |> pivot_longer('2008':'2023', names_to = 'yıl', values_to = 'evsel_atık')
-head(evsel_atık_data)
-str(evsel_atık_data)
 evsel_atık_data[evsel_atık_data == 0] <- NA
 
 ilçe_atık_ortalama <- evsel_atık_data |> 
   group_by(İlçe) |> 
   summarise( evsel_atık_ortalaması = mean(evsel_atık, na.rm = TRUE))
                                              
-print(ilçe_atık_ortalama)
 
-ilçe_nüfus_ortalama %>% arrange(desc(nüfus_ortalaması)) %>% head()
-ilçe_atık_ortalama %>% arrange(desc(evsel_atık_ortalaması)) %>% head()
+
+ilçe_nüfus_ortalama %>% arrange(desc(nüfus_ortalaması)) 
+ilçe_atık_ortalama %>% arrange(desc(evsel_atık_ortalaması)) 
 
 proje_data <- left_join(ilçe_nüfus_ortalama, ilçe_atık_ortalama, by = "İlçe")
 
@@ -162,14 +67,10 @@ proje_data <- left_join(ilçe_nüfus_ortalama, ilçe_atık_ortalama, by = "İlç
 proje_data <- proje_data %>% mutate(kişi_başı_atık_miktarı = evsel_atık_ortalaması/nüfus_ortalaması)
 
 
-p1 <- proje_data %>% ggplot() + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + xlab(" ") + scale_y_continuous(trans = "log2")
-p1 + geom_point(aes(İlçe, kişi_başı_atık_miktarı, fill = factor(İlçe))) 
-
-
 
 su_tüketim_path <- "su_tuketim.xlsx"
 su_tüketim_data <- read_excel(su_tüketim_path)
-head(su_tüketim_data)
+
 
 
 su_tüketim_data <- su_tüketim_data |> pivot_longer('2015':'2023', names_to = 'yıl', values_to = 'su_tüketim')
@@ -202,8 +103,9 @@ proje_data <- proje_data %>% mutate(kişi_başı_dogalgaz_tüketim_miktarı = do
 okuma_yazma_orani_path <- "okuma_yazma_orani.xlsx"
 okuma_yazma_orani_data <- read_excel(okuma_yazma_orani_path)
 okuma_yazma_orani_data <- okuma_yazma_orani_data %>% mutate(okuma_yazma_oranı = `Okuma Yazma Bilen`/(`Okuma Yazma Bilmeyen`+`Okuma Yazma Bilen`)*100)
+okuma_yazma_orani_data <- okuma_yazma_orani_data %>% mutate(okuma_yazma_oranı_normalize = (okuma_yazma_oranı - min(okuma_yazma_oranı)) / max(okuma_yazma_oranı))
 
-proje_data <- left_join(proje_data, okuma_yazma_orani_data[, c("İlçe", "okuma_yazma_oranı")], by = "İlçe")
+proje_data <- left_join(proje_data, okuma_yazma_orani_data[, c("İlçe", "okuma_yazma_oranı_normalize")], by = "İlçe")
 
 teknolojik_erisim_path <- "teknolojik_erisim.xlsx"
 teknolojik_erisim_data <- read_excel(teknolojik_erisim_path)
@@ -248,203 +150,123 @@ hanehalki_buyukluk_data <- hanehalki_buyukluk_data %>% rename(hanehalki_buyuklug
 proje_data <- left_join(proje_data, hanehalki_buyukluk_data[, c("İlçe", "hanehalki_buyuklugu")], by = "İlçe")
 
 
-#korelasyon matrisi çizdirme 1
-cor_data <- proje_data[,c("kişi_başı_atık_miktarı", "kişi_başı_su_tüketim_miktarı", "kişi_başı_dogalgaz_tüketim_miktarı", "okuma_yazma_oranı","teknolojik_erisim_degeri_normalize","ev_sahiplik_oranı","ortalama_ikamet_suresi","hanehalki_buyuklugu")]
-corr_matrix <- cor(cor_data, use="complete.obs")
+hane_buyukluk_path <- "hane_buyukluk.xlsx"
+hane_buyukluk_data <- read_excel(hane_buyukluk_path)
+hane_buyukluk_data <- hane_buyukluk_data %>% rename(hane_buyuklugu=`Ortalama Net (m2)`)
 
-library(corrplot)
-c1 <- corrplot(corr_matrix, method = "circle")
-
-
-#korelasyon matrisi çizdirme 2
-library(plotly)
-heatmap(corr_matrix, 
-        col = colorRampPalette(c("blue", "white", "red"))(20),
-        symm = TRUE, 
-        margins = c(5, 5))
-
-library(RColorBrewer) 
-my_palette <- colorRampPalette(brewer.pal(11, "RdYlBu"))(20)
-
-heatmap(corr_matrix, 
-        col = my_palette,
-        symm = TRUE, 
-        margins = c(5, 5),
-        labRow = colnames(corr_matrix),  
-        labCol = colnames(corr_matrix), 
-        main = "Korelasyon Matrisi Isı Haritası")
-
-legend("topright", 
-       legend = c("Düşük", "Yüksek"),  
-       fill = my_palette[c(1, length(my_palette))],  
-       title = "Korelasyon")  
+proje_data <- left_join(proje_data, hane_buyukluk_data[, c("İlçe", "hane_buyuklugu")], by = "İlçe")
 
 
-
-
-#Grafikler
-
-x <- proje_data %>% arrange(desc(nüfus_ortalaması))%>% top_n(5)
-
-proje_data %>% filter(İlçe %in% x$İlçe) %>% ggplot(aes(kişi_başı_atık_miktarı, hanehalki_buyuklugu,
-color = nüfus_ortalaması/10^6)) + geom_point() + 
-facet_grid(nüfus_ortalaması/10^6 ~ İlçe)
-
-proje_data_kategori <- ntile(proje_data$ortalama_ikamet_suresi, 3)
-
-proje_data_kategori <- recode(proje_data_kategori,
-                              '1' = 'Kötü',
-                              '2' = 'Orta',
-                              '3' = 'İyi')
-
-
-proje_data |> ggplot(aes(nüfus_ortalaması/10^6, 
-evsel_atık_ortalaması/10^6, label = ilçe_kısaltma, color= proje_data_kategori)) + geom_point() +
-geom_text_repel() +
-geom_smooth(method = "lm"
-, se = FALSE) + theme_economist()
-
-proje_data %>% ggplot(aes(İlçe, evsel_atık_ortalaması)) + geom_point() + theme_bw()
-
-
-proje_data  %>% ggplot(aes(nüfus_ortalaması/10^6,
-evsel_atık_ortalaması/10^6)) + geom_jitter(aes(color
-= hanehalki_buyuklugu), alpha = 0.5) + theme_bw()+ theme(axis.text.x = element_text(angle = 90, hjust = 1))
-
-
-#Barplot şeklinde İlçelere göre nüfus ortalamasını gösterelim.
-proje_data_sorted <- proje_data[order(proje_data$nüfus_ortalaması, decreasing = TRUE), ]
-ggplot(proje_data_sorted, aes(x = reorder(İlçe, nüfus_ortalaması), y = nüfus_ortalaması/10^6)) +
-  geom_bar(stat = "identity", fill="skyblue") +
-  labs(title = "İlçelere Göre Nüfus Ortalaması", x = "İlçe", y = "Nüfus Ortalaması (Milyon)") +
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))
-
-
-ggplot(proje_data, aes(x = reorder(İlçe, nüfus_ortalaması), y = nüfus_ortalaması/10^6)) +
-  geom_boxplot() +
-  labs(title = "İlçelere Göre Nüfus Ortalaması", x = "İlçe", y = "Nüfus Ortalaması (Milyon)") +
-  theme(axis.text.x = element_text(angle = 90, hjust = 1),
-        plot.width = unit(10, "cm"),
-        plot.height = unit(6, "cm"))
-
-# İlçeleri ortadan ikiye bölme ve facet_wrap() kullanarak iki ayrı grafik oluşturmaya çalışalım. Boxplot belki daha iyi görünür
-ggplot(proje_data, aes(x = reorder(İlçe, nüfus_ortalaması), y = nüfus_ortalaması/10^6)) +
-  geom_boxplot() +
-  labs(title = "İlçelere Göre Nüfus Ortalaması", y = "Nüfus Ortalaması (Milyon)") +
-  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
-  facet_wrap(~ ifelse(as.numeric(reorder(proje_data$İlçe, proje_data$nüfus_ortalaması)) <= length(proje_data$nüfus_ortalaması)/2, "Grup 2", "Grup 1"), scales = "free_x")
-
-# İlçeleri dörde bölseydik
-ggplot(proje_data, aes(x = reorder(İlçe, nüfus_ortalaması), y = nüfus_ortalaması/10^6)) +
-  geom_boxplot() +
-  labs(title = "İlçelere Göre Nüfus Ortalaması", y = "Nüfus Ortalaması (Milyon)") +
-  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
-  facet_wrap(~ ifelse(as.numeric(reorder(proje_data$İlçe, proje_data$nüfus_ortalaması)) <= length(proje_data$nüfus_ortalaması)/4, "Grup 1",
-                     ifelse(as.numeric(reorder(proje_data$İlçe, proje_data$nüfus_ortalaması)) <= length(proje_data$nüfus_ortalaması)*2/4, "Grup 2",
-                            ifelse(as.numeric(reorder(proje_data$İlçe, proje_data$nüfus_ortalaması)) <= length(proje_data$nüfus_ortalaması)*3/4, "Grup 3", "Grup 4"))), scales = "free_x")
-
-
-
-#Boxplot ile teknolojik gelişim ve okur yazarlık oranını ilçelere göre gösterelim.
-ggplot(proje_data, aes(x = reorder(İlçe, teknolojik_erisim_degeri_normalize), y = okuma_yazma_oranı)) +
-  geom_boxplot() +
-  labs(title = "İlçelere Göre Teknolojik Erişim", x = "Teknolojik Erişim", y = "Okur Yazarlık") +
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))
-
-plot(proje_data$teknolojik_erisim_degeri_normalize, proje_data$okuma_yazma_oranı, xlab = "Teknolojik Erişim", 
-     ylab = "Okuma Yazma", 
-     main = "Teknolojik Erişim vs Okuma Yazma")
-
-
-# Violin plot denemesi
-ggplot(proje_data, aes(x = İlçe, y = teknolojik_erisim_degeri_normalize)) +
-  geom_violin(fill = "skyblue", color = "black", alpha = 0.7) +
-  geom_boxplot(width = 0.1, fill = "gray", color = "black", outlier.shape = NA) +
-  labs(title = "Violin Plot Örneği", x = "İlçe", y = "Teknolojik Erişim") +
-  theme_minimal()+
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))
-
-
-# Okuma yazmaya göre kategorilendirip pasta plot yapamak
-proje_data$Okuma_Yazma_Grup <- cut(proje_data$okuma_yazma_oranı, breaks = 5, labels = c("Çok Düşük", "Düşük", "Orta", "Yüksek","Çok Yüksek"))
-
-ggplot(proje_data, aes(x = "", fill = Okuma_Yazma_Grup)) +
-  geom_bar(width = 1) +
-  coord_polar(theta = "y") +
-  labs(title = "Okuma Yazma Oranı Kategorilerine Göre Dağılım") +
-  scale_fill_brewer(palette = "Set3") +
-  geom_text(aes(label = paste0(round((..count..)/sum(..count..)*100), "%")),
-            stat = "count", position = position_stack(vjust = 0.5)) +
-  theme_void()
-
-# İlçelere göre su ve doğalgaz kullanımı
-ggplot(proje_data, aes(x = İlçe)) +
-  geom_point(aes(y = kişi_başı_su_tüketim_miktarı, color = "Su Tüketimi"), position = "dodge", size = 2) +
-  geom_point(aes(y = kişi_başı_dogalgaz_tüketim_miktarı, color = "Doğalgaz Tüketimi"), position = "dodge", size = 2) +
-  labs(title = "İlçelere Göre Kişi Başına Düşen Su ve Doğalgaz Tüketimi Karşılaştırması", x = "İlçe", y = "Kişi Başına Tüketim Miktarı (Litre)", color = "Tüketim Türü") +
-  scale_color_manual(values = c("Su Tüketimi" = "skyblue", "Doğalgaz Tüketimi" = "lightgreen")) +
-  theme_minimal() +
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))
-
-
-# İlçelere göre su ve doğalgaz kullanımı ve evsel atık
-ggplot(proje_data, aes(x = İlçe)) +
-  geom_point(aes(y = kişi_başı_su_tüketim_miktarı/100, color = "Su Tüketimi"), position = "dodge", size = 1) +
-  geom_point(aes(y = kişi_başı_dogalgaz_tüketim_miktarı/100, color = "Doğalgaz Tüketimi"), position = "dodge", size = 1) +geom_point(aes(y = kişi_başı_atık_miktarı, color = "Evsel Atık"), position = "dodge", size = 1)+
-  labs(title = "İlçelere Göre Kişi Başına Düşen Su ve Doğalgaz Tüketimi ve Evsel Atık Miktarı Karşılaştırması", x = "İlçe", y = "Kişi Başına Tüketim Miktarı (Litre)", color = "Tüketim Türü") +
-  scale_color_manual(values = c("Su Tüketimi" = "skyblue", "Doğalgaz Tüketimi" = "lightgreen", "Evsel Atık"="red")) +
-  theme_minimal() +
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))
-
-
-# İlçelere göre ev sahiplik oranı ve okur yazarlık oranı
-
-# Ev sahiplik oranına göre verileri büyükten küçüğe sıralayarak bakalım
-proje_data <- proje_data[order(proje_data$ev_sahiplik_oranı, decreasing = TRUE), ]
-
-ggplot(proje_data, aes(x = reorder(İlçe, ev_sahiplik_oranı), y = ev_sahiplik_oranı, color = "Ev Sahiplik")) +
-  geom_point(size = 2) +
-  geom_point(aes(y = okuma_yazma_oranı, color = "Okuma Yazma"), position = "dodge", size = 2) +
-  labs(title = "İlçelere Göre Okuma Yazma Oranı ile Ev Sahiplik Oranı Karşılaştırması",x = "İlçe", y = "Oran", color = "Tür") +
-  scale_color_manual(values = c("Ev Sahiplik" = "skyblue", "Okuma Yazma" = "pink")) +
-  theme_minimal() +
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))
-
-# İlçelere doğalgaz su atık üçgen kare daire
-
-ggplot(proje_data, aes(x = İlçe)) +
-  geom_point(aes(y = kişi_başı_su_tüketim_miktarı/100, shape = "Su Tüketimi"), color = "skyblue", position = "dodge", size = 1) +
-  geom_point(aes(y = kişi_başı_dogalgaz_tüketim_miktarı/100, shape = "Doğalgaz Tüketimi"), color = "lightgreen", position = "dodge", size = 1) +
-  geom_point(aes(y = kişi_başı_atık_miktarı, shape = "Evsel Atık"), color = "pink", position = "dodge", size = 1) +
-  labs(title = "İlçelere Göre Kişi Başına Düşen Su ve Doğalgaz Tüketimi ve Evsel Atık Miktarı Karşılaştırması", x = "İlçe", y = "Kişi Başına Tüketim Miktarı (Litre)", shape = "Tüketim Türü") +
-  scale_shape_manual(values = c("Su Tüketimi" = 2, "Doğalgaz Tüketimi" = 15, "Evsel Atık" = 16)) +
-  theme_minimal() +
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))
-
-
-# İlçelere göre ev büyüklüğü ve ortalama oturma süresi
-# Ev büyüklüğüne göre verileri büyükten küçüğe sıralayarak bakalım
-proje_data <- proje_data[order(proje_data$hanehalki_buyuklugu,proje_data$ortalama_ikamet_suresi, decreasing = TRUE), ]
-
-proje_data |> ggplot(aes(hanehalki_buyuklugu, 
-ortalama_ikamet_suresi, label = ilçe_kısaltma)) + geom_point() +
-geom_text_repel() + theme_economist()+
-  labs(title = "İlçelere Göre Ev Büyüklüğü ile Oturma Süresi Karşılaştırması", x = "Ev Büyüklüğü", y = "Ortalama Oturma")
-
-
-
-# Su tüketimine göre doğal gaz tüketimi arasında bir regresyon modeli oluşturup grafik yapma
-model <- lm(kişi_başı_dogalgaz_tüketim_miktarı ~ kişi_başı_su_tüketim_miktarı, data = proje_data)
-
-ggplot(proje_data, aes(x = kişi_başı_su_tüketim_miktarı, y = kişi_başı_dogalgaz_tüketim_miktarı)) +
-  geom_point(color = "lightgreen", size = 2) +
-  geom_smooth(method = "lm", se = FALSE, color = "pink", formula = y ~ x, data = proje_data) +
-  labs(title = "Su ve Doğal Gaz Tüketimi İlişkisi", x = "Kişi Başına Su Tüketim Miktarı (Litre)", y = "Kişi Başına Doğal Gaz Tüketim Miktarı (Litre)") +
-  theme_minimal()
-
-
-
+arac_sahiplik_path <- "arac_sahiplik.xlsx"
+arac_sahiplik_data <- read_excel(arac_sahiplik_path)
+arac_sahiplik_data <- arac_sahiplik_data %>% mutate(arac_sahiplik_oranı = `Özel otomobil/Araç_Var`/(`Özel otomobil/Araç_Var`+`Özel otomobil/Araç_Yok`)*100)
+proje_data <- left_join(proje_data, arac_sahiplik_data[, c("İlçe", "arac_sahiplik_oranı")], by = "İlçe")
 
 
 ```
 
+```{r}
+kable(head(proje_data, 10), caption="Data")
+```
+
+Su ve doğalgaz tüketimi ile evsel atık miktarını görselleştirdik.
+
+```{r}
+# İlçelere göre su ve doğalgaz kullanımı ve evsel atık
+ggplot(proje_data, aes(x = İlçe)) +
+  geom_point(aes(y = kişi_başı_su_tüketim_miktarı, color = "Su Tüketimi (m^3)"), position = "dodge", size = 1) +
+  geom_point(aes(y = kişi_başı_dogalgaz_tüketim_miktarı, color = "Doğalgaz Tüketimi (m^3)"), position = "dodge", size = 1) +geom_point(aes(y = kişi_başı_atık_miktarı*100, color = "Evsel Atık (10 kg)"), position = "dodge", size = 1)+
+  labs(title = "İlçelere Göre Kişi Başına Düşen Su ve Doğalgaz Tüketimi ve Evsel Atık Miktarı Karşılaştırması", x = "İlçe", y = "Kişi Başına Miktar", color = "Tüketim Türü") +
+  scale_color_manual(values = c("Su Tüketimi (m^3)" = "blue", "Doğalgaz Tüketimi (m^3)" = "lightgreen", "Evsel Atık (10 kg)"="red")) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+```
+
+Sonrasında, ilçe bazlı verilerin birbirleri ile doğrusal ilişkilerini görmek adına bir korelasyon matrisi çizdirdik.
+
+```{r}
+#korelasyon matrisi çizdirme
+cor_data <- proje_data[,c("kişi_başı_atık_miktarı", "kişi_başı_su_tüketim_miktarı", "kişi_başı_dogalgaz_tüketim_miktarı", "okuma_yazma_oranı_normalize","teknolojik_erisim_degeri_normalize","ev_sahiplik_oranı","ortalama_ikamet_suresi","hanehalki_buyuklugu","hane_buyuklugu","arac_sahiplik_oranı")]
+corr_matrix <- cor(cor_data, use="complete.obs")
+
+library(corrplot)
+c1 <- corrplot(corr_matrix, method = "circle")
+```
+
+Korelasyon matrisi üzerinde evsel atık miktarı, su ve doğalgaz tüketimi ile diğer verilerin ilişkilerini yorumlamak için, bu üç parametre ile diğer parametreleri görselleştirdik. İlk olarak okuma yazma oranının ilişkisini gözlemledik. Oranlar %99 civarında kümelendiği için veriyi normalize ederek kullandık.
+
+```{r}
+#okuma yazma oranı vs tüketimler kod gelcek
+```
+
+Devamında teknolojik ürün sahipliği ile olan tüketim ilişkilerini gözlemledik.
+
+```{r}
+scale_factor <- 300
+proje_data <- proje_data[order(proje_data$teknolojik_erisim_degeri_normalize, decreasing = TRUE), ]
+
+ggplot(proje_data, aes(reorder(İlçe, teknolojik_erisim_degeri_normalize))) +
+  geom_point(aes(y = kişi_başı_su_tüketim_miktarı, color = "Su Tüketimi m^3"), position = "dodge", size = 2) +
+  geom_point(aes(y = teknolojik_erisim_degeri_normalize*scale_factor, color = "Teknolojik Ürün Erişimi"), position = "dodge", size = 2) +
+  labs(title = "Kişi Başı Su Tüketimi ve Teknolojik Ürün Erişimi Karşılaştırması", x = "İlçe", y = "Miktar", color = "Tüketim Türü") +
+  scale_color_manual(values = c("Su Tüketimi m^3" = "skyblue", "Teknolojik Ürün Erişimi" = "pink")) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+
+
+
+ggplot(proje_data, aes(reorder(İlçe, teknolojik_erisim_degeri_normalize))) +
+  geom_point(aes(y = kişi_başı_dogalgaz_tüketim_miktarı, color = "Doğalgaz Tüketimi m^3"), position = "dodge", size = 2) +
+  geom_point(aes(y = teknolojik_erisim_degeri_normalize*scale_factor, color = "Teknolojik Ürün Erişimi"), position = "dodge", size = 2) +
+  labs(title = "Kişi Başı Doğalgaz Tüketimi ve Teknolojik Ürün Erişimi Karşılaştırması", x = "İlçe", y = "Miktar", color = "Tüketim Türü") +
+  scale_color_manual(values = c("Doğalgaz Tüketimi m^3" = "skyblue", "Teknolojik Ürün Erişimi" = "pink")) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+
+
+scale_factor <- 10
+ggplot(proje_data, aes(reorder(İlçe, teknolojik_erisim_degeri_normalize))) +
+  geom_point(aes(y = kişi_başı_atık_miktarı, color = "Su Tüketimi"), position = "dodge", size = 2) +
+  geom_point(aes(y = teknolojik_erisim_degeri_normalize*scale_factor, color = "Teknolojik Ürün Erişimi"), position = "dodge", size = 2) +
+  labs(title = "Kişi Başı Evsel Atık ve Teknolojik Ürün Erişimi Karşılaştırması", x = "İlçe", y = "Miktar", color = "Tüketim Türü") +
+  scale_color_manual(values = c("Su Tüketimi" = "skyblue", "Teknolojik Ürün Erişimi" = "pink")) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+```
+
+Sonrasında ev sahiplik oranı ile olan tüketim ilişkilerini gözlemledik.
+
+```{r}
+#ev sahiplik vs tüketimler kod gelecek
+```
+
+Akabinde hanede ortalama ikamet süresi ile olan tüketim ilişkilerini gözlemledik.
+
+```{r}
+#hanede ortalama ikamet süresi vs tüketimler kod gelecek
+```
+
+Hanehalkı büyüklüğü ile olan tüketim ilişkilerini gözlemleyerek devam ettik.
+
+```{r}
+#Hanehalkı büyüklüğü vs tüketimler kod gelecek
+```
+
+Hane büyüklüğünün tüketim ile olan ilişkilerini gözlemledik.
+
+```{r}
+#Hane büyüklüğü vs tüketimler kod gelecek
+```
+
+Nihayetinde son verimiz olan araç sahiplik durumunun tüketim ilişkilerini gözlemledik.
+
+```{r}
+#araç sahiplik durumu vs tüketimler kod gelecek
+```
+
+# Sonuçlar ve Ana Çıkarımlar
+
+xxxxxx

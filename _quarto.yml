@@ -1,6 +1,7 @@
 project:
   type: website
   output-dir: docs
+  
 
 website:
   title: "What R We Doing Takımı Analitik Labı"

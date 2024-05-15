@@ -27,21 +27,43 @@ Lütfen faaliyetlerimizi görmek için için bizi takipte kalın.
 
 ## Proje Adı
 
-İstanbul’da Sürdürülebilirlik Haritası: Nüfus, Atık ve Enerji Tüketimi Analizi
+İstanbul’da Sürdürülebilirlik Haritası: Nüfus, Evsel Atık ve Kaynak Tüketimi Analizi
 
 ## Proje Konusu
 
-İstanbul, hem Türkiye'nin hem de dünyanın en dinamik ve karmaşık şehirlerinden biri oalrak araştırmacıların karşısına çıkmaktadır. Proje kapsamında, İstanbul'daki nüfus ve tüketim alışkanlıklarına odaklanarak şehirdeki yaşamı anlamak, farklı sektörler, pazarlama ve şehir planlaması gibi alanlar için de önemli içgörüler kazanmak hedeflenmektedir.
+İstanbul, hem Türkiye'nin hem de dünyanın en dinamik ve kalabalık şehirlerinden biri olarak araştırmacıların karşısına çıkmaktadır. Milyonlarca insanın bir arada yaşadığı bu kalabalık şehirde, su ve doğalgaz kaynağı belediye tarafından sağlanmakta, ortaya çıkan evsel atıklar yine belediye tarafından toplanarak şehrin idamesi sağlanmaktadır. Bu proje kapsamında, İstanbul'da ilçe bazlı su ve doğalgaz tüketimi ile ortaya çıkan evsel atık miktarının İBB'nin istatistik olarak tuttuğu diğer *bazı ilçe bazlı* verilerle ilişkisi incelenmiştir.
 
 ## Veri Seti Hakkında Özet Bilgi
 
 İstanbul Büyükşehir Belediyesi (İBB) Açık Veri Portalı ve Türkiye İstatistik Kurumu (TÜİK) Veri Tabanı üzerinden elde edilen İstanbul'un ilçe bazlı;
 
--   2008-2023 evsel atık miktarı ($ton$)
--   2008-2023 nüfus
--   2015-2023 su tüketimi ($m^3$)
--   2015-2023 doğalgaz tüketimi ($m^3$)
--   Ortalama hane büyüklüğü
+-   [2008-2023 evsel atık miktarı ($ton$)](https://data.ibb.gov.tr/dataset/evsel-atik-miktari)
+-   [2008-2023 nüfus](https://data.tuik.gov.tr/Kategori/GetKategori?p=Nufus-ve-Demografi-109)
+-   [2015-2023 su tüketimi ($m^3$)](https://data.ibb.gov.tr/dataset/ilce-bazinda-su-tuketim-miktari)
+-   [2015-2023 doğalgaz tüketimi ($m^3$)](https://data.ibb.gov.tr/dataset/ilce-bazinda-aylik-dogalgaz-tuketim-miktari)
+-   [Ortalama hane büyüklüğü](https://data.ibb.gov.tr/dataset/vdym-ilce-bazli-ortalama-hane-buyuklukleri-m2) [($m^2$)](https://data.ibb.gov.tr/dataset/ilce-bazinda-aylik-dogalgaz-tuketim-miktari)
+-   [Ortalama hanehalkı büyüklüğü (kişi)](https://data.ibb.gov.tr/dataset/ilce-bazli-ortalama-hane-halki-buyuklugu)
+-   [Hanede ortalama ikamet süresi (yıl)](https://data.ibb.gov.tr/dataset/vdym-ilce-bazinda-yasanilan-konutta-ortalama-ikamet-suresi-ortalama-yil)
+-   [Araç sahiplik durumu](https://data.ibb.gov.tr/dataset/vdym-ilce-bazinda-hanelerdeki-arac-sahipligi-durumu)
+-   [Ev sahiplik durumu](https://data.ibb.gov.tr/dataset/vdym-ilce-bazinda-hanelerdeki-mulkiyet-durumu)
+-   [Okuma-yazma bilme durumu](https://data.ibb.gov.tr/dataset/ilce-bazli-okuma-yazma-bilen-bilmeyen-kisi-sayisi)
+-   [Teknolojik araç sahiplik durumu](https://data.ibb.gov.tr/dataset/vdym-ilce-bazinda-hanelerdeki-teknolojik-arac-sayilari)
+
+## Tercih Sebebi
+
+-İstanbul'daki nüfus ve tüketim alışkanlıklarına odaklanan bir veri seti, çeşitli sektörlerde faaliyet gösteren işletmeler, araştırmacılar ve hükümetler için aşağıda belirtilen nedenlerden ötürü değerlidir.
+
+\-**Nüfus Yoğunluğu:** İstanbul, Türkiye'nin en kalabalık şehri ve dünyanın en kalabalık nüfuslu metropollerinden biridir. Bu nedenle, İstanbul'daki nüfusun demografik yapısı ve tüketim alışkanlıkları, geniş bir örnekleme dayalı olarak incelenebilmektedir.Genel tüketici eğilimleri hakkında önemli içgörüler sunabilmesi bu verisetinin incelenmesini daha cazip hale getirmektedir.
+
+\-**Ekonomik Önem:** Türkiye'nin ekonomik başkenti olarak kabul edilebilecek olan İstanbuş, ülkenin gayri safi yurtiçi hasılasının büyük bir kısmını oluşturmaktadır. Bu şehirdeki tüketim alışkanlıkları, perakende sektörü ve ekonominin genel sağlığı hakkında bilgi edinmenin, işletmeler ve hükümetler için stratejik öneme sahip olabileceği değerlendirilmektedir.
+
+\-**Çeşitlilik:** İstanbul, farklı kültürel, ekonomik ve demografik yapıları bünyesinde barındıran bir şehir olarak, tüketici tercihlerinde ve alışkanlıklarında çeşitlilik içermektedir. Şehirdeki nüfus ve tüketim alışkanlıklarını anlamak, farklı segmentlerdeki tüketici davranışlarını analiz etmek ve özel pazarlama stratejileri geliştirmek için önemli görülmektedir.
+
+\-**Büyüme Potansiyeli:** İstanbul, sürekli olarak büyüyen ve değişen bir şehirdir. Nüfus artışı, göç hareketleri, altyapı projeleri ve ekonomik değişimler, tüketim alışkanlıklarını etkileyebilir. Bu nedenle, İstanbul'daki nüfus ve tüketim verilerini düzenli olarak izlemek ve analiz etmek, gelecekteki trendleri tahmin etmek ve uygun stratejiler geliştirmek için önemlidir.
+
+\-**Karşılaşılan Zorluklar:** İstanbul gibi büyük bir şehirde yaşamak, çeşitli zorlukları da beraberinde getirir. Trafik, altyapı sorunları, çevresel endişeler gibi faktörler, tüketici davranışlarını etkileyebilir. Bu zorluklarla başa çıkabilmek için, nüfus ve tüketim alışkanlıklarını anlamak önemlidir.
+
+-İstanbul'daki nüfus ve tüketim alışkanlıklarını incelemek, sadece şehirdeki yaşamı anlamakla kalmaz, aynı zamanda farklı sektörler, pazarlama ve şehir planlaması gibi alanlar için de önemli içgörüler sağlar. Bu nedenle, bu konuya odaklanan bir veri seti oldukça ilgi çekicidir.
 
 ## Sonuçlar
 
