@@ -995,10 +995,55 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Su</strong> <strong>Tüketimi ve Doğalgaz Tüketimi:</strong></li>
 </ul>
 <p>İstanbul’un farklı ilçelerinde su ve doğalgaz tüketimi arasında belirli eğilimler olduğu görülmüştür. Yoğun nüfuslu ilçeler genellikle daha yüksek su ve doğalgaz tüketimine sahiptir.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># İlçeleri ortadan ikiye bölelim. Nüfus ve su tüketimini karşılaştıralım. </span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(proje_data, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(İlçe, nüfus_ortalaması), <span class="at">y =</span> su_tüketim_ortalaması)) <span class="sc">+</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"İlçelere Göre Su Tüketim Ortalaması"</span>, <span class="at">y =</span> <span class="st">"Su Tüketim Miktarı"</span>) <span class="sc">+</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> <span class="fu">ifelse</span>(<span class="fu">as.numeric</span>(<span class="fu">reorder</span>(proje_data<span class="sc">$</span>İlçe, proje_data<span class="sc">$</span>nüfus_ortalaması)) <span class="sc">&lt;=</span> <span class="fu">length</span>(proje_data<span class="sc">$</span>nüfus_ortalaması)<span class="sc">/</span><span class="dv">2</span>, <span class="st">"Az Yoğun Nüfus"</span>, <span class="st">"Yoğun Nüfus"</span>), <span class="at">scales =</span> <span class="st">"free_x"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># İlçeleri ortadan ikiye bölelim. Nüfus ve doğalgaz tüketimini karşılaştıralım. </span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(proje_data, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(İlçe, nüfus_ortalaması), <span class="at">y =</span> dogalgaz_tüketim_ortalaması)) <span class="sc">+</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"İlçelere Göre Doğalgaz Tüketim Ortalaması"</span>, <span class="at">y =</span> <span class="st">"Doğalgaz Tüketim Miktarı"</span>) <span class="sc">+</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> <span class="fu">ifelse</span>(<span class="fu">as.numeric</span>(<span class="fu">reorder</span>(proje_data<span class="sc">$</span>İlçe, proje_data<span class="sc">$</span>nüfus_ortalaması)) <span class="sc">&lt;=</span> <span class="fu">length</span>(proje_data<span class="sc">$</span>nüfus_ortalaması)<span class="sc">/</span><span class="dv">2</span>, <span class="st">"Az Yoğun Nüfus"</span>, <span class="st">"Yoğun Nüfus"</span>), <span class="at">scales =</span> <span class="st">"free_x"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 <ul>
 <li><strong>Evsel Atık Üretimi:</strong></li>
 </ul>
 <p>Evsel atık üretimi, bir ilçenin nüfusu ve yaşam tarzıyla doğrudan ilişkilidir. Büyük ilçelerde daha fazla evsel atık üretilme eğilimi vardır.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># İlçe bazlı evsel atık ve nüfus karşılaştıması </span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(proje_data, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(İlçe, nüfus_ortalaması), <span class="at">y =</span> evsel_atık_ortalaması)) <span class="sc">+</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"İlçelere Göre Evsel Atık Ortalaması"</span>, <span class="at">y =</span> <span class="st">"Evsel Atık Miktarı"</span>) <span class="sc">+</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> <span class="fu">ifelse</span>(<span class="fu">as.numeric</span>(<span class="fu">reorder</span>(proje_data<span class="sc">$</span>İlçe, proje_data<span class="sc">$</span>nüfus_ortalaması)) <span class="sc">&lt;=</span> <span class="fu">length</span>(proje_data<span class="sc">$</span>nüfus_ortalaması)<span class="sc">/</span><span class="dv">2</span>, <span class="st">"Az Yoğun Nüfus"</span>, <span class="st">"Yoğun Nüfus"</span>), <span class="at">scales =</span> <span class="st">"free_x"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 <ul>
 <li><strong>Hanehalkı Büyüklüğü:</strong></li>
 </ul>
@@ -1020,6 +1065,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>Hanehalkı büyüklüğü ile evsel atık üretimi arasında pozitif bir korelasyon olabilir, çünkü daha büyük haneler genellikle daha fazla atık üretirler.</p>
 <p>Okuma yazma oranı ile teknolojik cihazlara erişim arasında da güçlü bir pozitif korelasyon olabilir, çünkü daha eğitimli insanlar genellikle daha fazla teknolojik cihaza sahiptirler.</p>
+<p>Okuma yazma oranı ile hane büyüklüğü arasında pozitif bir ilişki mevcuttur, çünkü daha eğitimli insanlar genellikle daha büyük evlere sahiptirler.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Okuryazarlık ve Hane büyüklüğünü karşılaştıralım. </span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>proje_data <span class="ot">&lt;-</span> proje_data[<span class="fu">order</span>(proje_data<span class="sc">$</span>hane_buyuklugu,proje_data<span class="sc">$</span>okuma_yazma_oranı_normalize, <span class="at">decreasing =</span> <span class="cn">TRUE</span>), ]</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>proje_data <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(hane_buyuklugu, </span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>okuma_yazma_oranı_normalize, <span class="at">label =</span> ilçe_kısaltma)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_text_repel</span>()<span class="sc">+</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"İlçelere Göre Okuma Yazma Oranı ile Hane Büyüklüğü Karşılaştırması"</span>, <span class="at">x =</span> <span class="st">"Hane Büyüklüğü"</span>, <span class="at">y =</span> <span class="st">"Okuma Yazma Oranı"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 <p>Sonuç olarak, İstanbul’un farklı ilçelerinin bu parametreler açısından farklılık göstereceği ve bu verilerin toplu olarak incelenmesi, şehir planlaması, kaynak yönetimi ve sosyal politika oluşturma gibi çeşitli alanlarda faydalı olabilir.</p>
 
 

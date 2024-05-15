@@ -26,6 +26,7 @@ library(ggrepel)
 library(ggthemes)
 library(kableExtra)
 
+
 #nüfus verisini açma
 nüfus_path <- "nufuslar.xlsx"
 nüfus_data <- read_excel(nüfus_path)
@@ -458,7 +459,6 @@ ggplot(proje_data, aes(reorder(İlçe, hane_buyuklugu))) +
 
 Son olarak, araç sahiplik oranı ile atık ve tüketimler arasındaki ilişkiden bahsedilmektedir.
 
-
 ```{r warning=FALSE}
 
 scale_factor <- 2
@@ -504,31 +504,142 @@ Proje kapsamında elde edilen sonuçlar ve temel çıkarımlar aşağıdaki gibi
 
 İstanbul'un farklı ilçelerinde su ve doğalgaz tüketimi arasında belirli eğilimler olduğu görülmüştür. Yoğun nüfuslu ilçeler genellikle daha yüksek su ve doğalgaz tüketimine sahiptir.
 
+```{r warning=FALSE}
+
+
+# İlçeleri ortadan ikiye bölelim. Nüfus ve su tüketimini karşılaştıralım. 
+
+ggplot(proje_data, aes(x = reorder(İlçe, nüfus_ortalaması), y = su_tüketim_ortalaması/10^6)) +
+  geom_boxplot() +
+  labs(title = "İlçelere Göre Su Tüketim Ortalaması", y = "Su Tüketim Miktarı") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  facet_wrap(~ ifelse(as.numeric(reorder(proje_data$İlçe, proje_data$nüfus_ortalaması)) <= length(proje_data$nüfus_ortalaması)/2, "Az Yoğun Nüfus", "Yoğun Nüfus"), scales = "free_x")
+
+
+```
+```{r warning=FALSE}
+
+
+# İlçeleri ortadan ikiye bölelim. Nüfus ve doğalgaz tüketimini karşılaştıralım. 
+
+ggplot(proje_data, aes(x = reorder(İlçe, nüfus_ortalaması), y = dogalgaz_tüketim_ortalaması/10^6)) +
+  geom_boxplot() +
+  labs(title = "İlçelere Göre Doğalgaz Tüketim Ortalaması", y = "Doğalgaz Tüketim Miktarı") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  facet_wrap(~ ifelse(as.numeric(reorder(proje_data$İlçe, proje_data$nüfus_ortalaması)) <= length(proje_data$nüfus_ortalaması)/2, "Az Yoğun Nüfus", "Yoğun Nüfus"), scales = "free_x")
+
+
+```
 
 -   **Evsel Atık Üretimi:**
 
 Evsel atık üretimi, bir ilçenin nüfusu ve yaşam tarzıyla doğrudan ilişkilidir. Büyük ilçelerde daha fazla evsel atık üretilme eğilimi vardır.
 
+```{r warning=FALSE}
+
+
+# İlçe bazlı evsel atık ve nüfus karşılaştıması 
+
+ggplot(proje_data, aes(x = reorder(İlçe, nüfus_ortalaması), y = evsel_atık_ortalaması/10^4)) +
+  geom_boxplot() +
+  labs(title = "İlçelere Göre Evsel Atık Ortalaması", y = "Evsel Atık Miktarı") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  facet_wrap(~ ifelse(as.numeric(reorder(proje_data$İlçe, proje_data$nüfus_ortalaması)) <= length(proje_data$nüfus_ortalaması)/2, "Az Yoğun Nüfus", "Yoğun Nüfus"), scales = "free_x")
+
+
+
+```
+
 -   **Hanehalkı Büyüklüğü:**
 
 Hanehalkı büyüklüğü, bir ilçenin demografik yapısını ve yaşam tarzını yansıtır. Yoğun nüfuslu bölgelerde genellikle daha büyük hanehalkı büyüklüğü görülürken, daha varlıklı bölgelerde daha küçük hanehalkı büyüklükleri olabilir.
 
--   **Okuma Yazma Oranı:**
+```{r warning=FALSE}
 
-Okuma yazma oranı, bir ilçenin eğitim seviyesini yansıtır. Daha yüksek okuma yazma oranları genellikle daha iyi eğitim ve sosyo-ekonomik koşullarla ilişkilidir.
+# İlçe bazlı evsel atık ve nüfus karşılaştıması 
 
--   **Teknolojik Cihazlara Erişim:**
+ggplot(proje_data, aes(x = reorder(İlçe, nüfus_ortalaması), y = hanehalki_buyuklugu)) +
+  geom_point(size=1, color="purple") +
+  labs(title = "İlçelere Göre Hanehalki Büyüklüğü", y = "Evsel Atık Miktarı") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  facet_wrap(~ ifelse(as.numeric(reorder(proje_data$İlçe, proje_data$nüfus_ortalaması)) <= length(proje_data$nüfus_ortalaması)/2, "Az Yoğun Nüfus", "Yoğun Nüfus"), scales = "free_x")
 
-Teknolojik cihazlara erişim, bir ilçenin yaşam standardını ve teknolojik altyapısını yansıtır. Daha yüksek gelir düzeyine sahip ilçelerde genellikle daha fazla teknolojik cihaza erişim vardır.
+```
+-   **Okuma Yazma Oranı ve Teknolojik Cihazlara Erişim:**
+
+Okuma yazma oranı, bir ilçenin eğitim seviyesini yansıtır. Daha yüksek okuma yazma oranları genellikle daha iyi eğitim ve sosyo-ekonomik koşullarla ilişkilidir. Eknolojik cihazlara erişim, bir ilçenin yaşam standardını ve teknolojik altyapısını yansıtır. Daha yüksek gelir düzeyine sahip ilçelerde genellikle daha fazla teknolojik cihaza erişim vardır. Bu sebeple okuma yazma oranı ile teknolojik erişim arasında popzitif yönlü bir ilişki vardır.
+
+```{r warning=FALSE}
+# Okuma Yazma vs Teknolojik Erişim
+
+model <- lm(okuma_yazma_oranı_normalize ~ teknolojik_erisim_degeri_normalize, data = proje_data)
+
+ggplot(proje_data, aes(x = okuma_yazma_oranı_normalize, y = teknolojik_erisim_degeri_normalize)) +
+  geom_point(color = "lightgreen", size = 2) +
+  geom_smooth(method = "auto", se = TRUE, color = "pink") +
+  labs(title = "Okuma Yazma Oranı ve Teknolojik Erişim Durumu İlişkisi", x = "Okuma Yazma Oranı", y = "Teknolojik Erişim Oranı") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+ geom_text(aes(label = ilçe_kısaltma), vjust = -0.5, hjust = 1, size = 3, color = "black")
+
+
+```
+-   **Evsel Atık Miktarı ve Hanehalkı Büyüklüğü:**
+
+Hanehalkı büyüklüğünün artması ile evsel atık miktarının da artması beklenmektedir.
+
+```{r warning=FALSE}
+
+# Evsel Atık ve Hanehalkı Büyüklüğü
+
+model <- lm(evsel_atık_ortalaması ~ hanehalki_buyuklugu, data = proje_data)
+
+ggplot(proje_data, aes(x = evsel_atık_ortalaması/10^6, y = hanehalki_buyuklugu)) +
+  geom_point(color = "lightgreen", size = 2) +
+  geom_smooth(method = "auto", se = TRUE, color = "pink") +
+  labs(title = "Evsel Atık Miktarı ve Hanehalkı Büyüklüğü İlişkisi", x = "Evsel Atık Miktarı", y = "Hanehalkı Büyüklüğü") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+ geom_text(aes(label = ilçe_kısaltma), vjust = -0.5, hjust = 1, size = 3, color = "black")
+
+
+
+```
 
 -   **Araç Kullanımı:**
 
-Araç kullanımı, bir ilçenin ulaşım altyapısını, trafik durumunu ve çevresel etkilerini yansıtır. Yoğun trafik bölgelerinde ve daha az ulaşım seçeneği olan yerlerde daha fazla araç kullanımı görülebilir.
+Araç kullanımı, bir ilçenin ulaşım altyapısını, trafik durumunu ve çevresel etkilerini yansıtır. Yoğun nüfuslu bölgelerde toplu taşıma  kullanımının fazla olması beklenmekte olup bireysel araç kullanımı oranının az olacağı öngörülmektedir.
+
+```{r warning=FALSE}
+# İlçelere Göre Nüfus ve Araç Kullanımı
+
+ggplot(proje_data, aes(x = reorder(İlçe, nüfus_ortalaması), y = arac_sahiplik_oranı)) +
+  geom_point(size=1, color="purple") +
+  labs(title = "İlçelere Göre Araç Sahiplik Oranı", y = "Araç Sahiplik Oranı") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  facet_wrap(~ ifelse(as.numeric(reorder(proje_data$İlçe, proje_data$nüfus_ortalaması)) <= length(proje_data$nüfus_ortalaması)/2, "Az Yoğun Nüfus", "Yoğun Nüfus"), scales = "free_x")
+
+```
 
 -   **Korelasyonlar:**
 
 Hanehalkı büyüklüğü ile evsel atık üretimi arasında pozitif bir korelasyon olabilir, çünkü daha büyük haneler genellikle daha fazla atık üretirler.
 
 Okuma yazma oranı ile teknolojik cihazlara erişim arasında da güçlü bir pozitif korelasyon olabilir, çünkü daha eğitimli insanlar genellikle daha fazla teknolojik cihaza sahiptirler.
+
+Okuma yazma oranı ile hane büyüklüğü arasında pozitif bir ilişki mevcuttur, çünkü daha eğitimli insanlar genellikle daha büyük evlere sahiptirler.
+
+```{r warning=FALSE}
+
+
+# Okuryazarlık ve Hane büyüklüğünü karşılaştıralım. 
+
+proje_data <- proje_data[order(proje_data$hane_buyuklugu,proje_data$okuma_yazma_oranı_normalize, decreasing = TRUE), ]
+
+proje_data |> ggplot(aes(hane_buyuklugu, 
+okuma_yazma_oranı_normalize, label = ilçe_kısaltma)) + geom_point() +
+geom_text_repel()+
+  labs(title = "İlçelere Göre Okuma Yazma Oranı ile Hane Büyüklüğü Karşılaştırması", x = "Hane Büyüklüğü", y = "Okuma Yazma Oranı")
+
+
+```
 
 Sonuç olarak, İstanbul'un farklı ilçelerinin bu parametreler açısından farklılık göstereceği ve bu verilerin toplu olarak incelenmesi, şehir planlaması, kaynak yönetimi ve sosyal politika oluşturma gibi çeşitli alanlarda faydalı olabilir.
