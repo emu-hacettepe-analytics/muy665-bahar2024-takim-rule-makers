@@ -594,9 +594,9 @@ Hanehalkı büyüklüğünün artması ile evsel atık miktarının da artması 
 
 # Evsel Atık ve Hanehalkı Büyüklüğü
 
-model <- lm(hane_buyuklugu ~ kişi_başı_atık_miktarı, data = proje_data)
+model <- lm(hanehalki_buyuklugu ~ kişi_başı_atık_miktarı, data = proje_data)
 
-ggplot(proje_data, aes(x = hane_buyuklugu, y = kişi_başı_atık_miktarı)) +
+ggplot(proje_data, aes(x = hanehalki_buyuklugu, y = kişi_başı_atık_miktarı)) +
   geom_point(color = "lightgreen", size = 2) +
   geom_smooth(method = "auto", se = TRUE, color = "pink") +
   labs(title = "Evsel Atık Miktarı ve Hanehalkı Büyüklüğü İlişkisi", x = "Hanehalkı Büyüklüğü", y = "Evsel Atık") +
