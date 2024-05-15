@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -81,13 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
+  "limit": 20,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -96,7 +90,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -111,9 +104,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
+      <div class="navbar-brand-container">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">What R We Doing Takımı Analitik Labı</span>
     </a>
@@ -125,45 +118,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Ana Sayfa</span></a>
+    <a class="nav-link" href="./index.html" rel="" target="">
+ <span class="menu-text">Ana Sayfa</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./takim.html"> 
-<span class="menu-text">Takım Üyeleri</span></a>
+    <a class="nav-link" href="./takim.html" rel="" target="">
+ <span class="menu-text">Takım Üyeleri</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./portfolyo.html"> 
-<span class="menu-text">Porfolyo</span></a>
+    <a class="nav-link" href="./portfolyo.html" rel="" target="">
+ <span class="menu-text">Porfolyo</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./proje.html" aria-current="page"> 
-<span class="menu-text">Proje</span></a>
+    <a class="nav-link active" href="./proje.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Proje</span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
-    <a href="https://github.com" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+            <div class="quarto-navbar-tools ms-auto">
+    <a href="https://github.com" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
+          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
   <li><a href="#projeye-genel-bakış-ve-kapsam" id="toc-projeye-genel-bakış-ve-kapsam" class="nav-link active" data-scroll-target="#projeye-genel-bakış-ve-kapsam"><span class="header-section-number">1</span> Projeye Genel Bakış ve Kapsam</a></li>
-  <li><a href="#veri-açma-ve-ön-işleme" id="toc-veri-açma-ve-ön-işleme" class="nav-link" data-scroll-target="#veri-açma-ve-ön-işleme"><span class="header-section-number">2</span> Veri Açma ve Ön İşleme</a></li>
+  <li><a href="#veri-okuma-ve-düzenleme" id="toc-veri-okuma-ve-düzenleme" class="nav-link" data-scroll-target="#veri-okuma-ve-düzenleme"><span class="header-section-number">2</span> Veri Okuma ve Düzenleme</a></li>
   <li><a href="#sonuçlar-ve-ana-çıkarımlar" id="toc-sonuçlar-ve-ana-çıkarımlar" class="nav-link" data-scroll-target="#sonuçlar-ve-ana-çıkarımlar"><span class="header-section-number">3</span> Sonuçlar ve Ana Çıkarımlar</a></li>
   </ul>
 </nav>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
@@ -185,24 +178,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
-
 </header>
-
 
 <section id="projeye-genel-bakış-ve-kapsam" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Projeye Genel Bakış ve Kapsam</h1>
 <p><strong>Kaynaklar ve atıklar</strong>, birarada yaşayan insanlar için tüketimi ve yönetimi önemli iki unsurdur. İstanbul genelinde ilçe bazlı olarak İstanbul Büyükşehir Belediyesi 2008 ve sonrası için su tüketimi, doğalgaz tüketimi ve ortaya çıkan evsel atık miktarını veri olarak paylaşmaktadır. Ayrıca ilçe bazlı olarak diğer bazı istatistikler de tutulmuştur. Bu projede amaç, kişi başına düşen su ve doğalgaz tüketimi ile ortaya çıkan evsel atık miktarının <em>diğer</em> bazı ilçe bazlı istatistiklerle ilişkilerini gözlemlemek ve ilişkiler üzerine tartışmaktır.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="assets/images/proje_gorsel_2.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="539"></p>
+<p><img src="assets/images/proje_gorsel_2.jpg" class="img-fluid figure-img" width="539"></p>
 </figure>
 </div>
 </section>
-<section id="veri-açma-ve-ön-işleme" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Veri Açma ve Ön İşleme</h1>
-<p>Veri setlerindeki veriler excel dosyalarından çekilerek düzenlenmiş ve ilgilenilen parametrelerin sütunlarda, ilçelerin satırlarda yer aldığı tek bir veri çerçevesinde toplanmıştır.</p>
+<section id="veri-okuma-ve-düzenleme" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Veri Okuma ve Düzenleme</h1>
+<p>Veri analizi sürecinde, farklı Excel dosyalarından verileri okumak ve bu verileri tek bir düzenli veri çerçevesinde toplamak sağlıklı bir analiz süreci yürütmek açısından önemli bir adımdır. Bu proje kapsamında, veri setlerindeki veriler farklı Excel dosyalarından okunup düzenlenerek, tek bir veri çerçevesi oluşturulmuştur. Oluşturulan bu veri çerçevesinde, parametreler sütunlarda ve ilçeler satırlarda yer almaktadır</p>
 <div class="cell">
-<details class="code-fold">
+<details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
@@ -353,7 +344,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 <div class="cell">
-<details class="code-fold">
+<details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(proje_data, <span class="dv">10</span>), <span class="at">caption=</span><span class="st">"Data"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -583,38 +574,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 </div>
-<p>Su ve doğalgaz tüketimi ile evsel atık miktarını görselleştirdik.</p>
+<p>Veri analizi sürecinde, su ve doğalgaz tüketimi ile evsel atık miktarını görselleştirerek anlamlı çıkarımlar elde edebilmek amaçlanmıştır. Bu görselleştirmelerle, çeşitli ilçelerdeki tüketim ve atık miktarlarını karşılaştırmak ve bu veriler arasındaki olası ilişkileri incelemek amaçlanmıştır.</p>
 <div class="cell">
-<details class="code-fold">
+<details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># İlçelere göre su ve doğalgaz kullanımı ve evsel atık</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(proje_data, <span class="fu">aes</span>(<span class="at">x =</span> İlçe)) <span class="sc">+</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> kişi_başı_su_tüketim_miktarı, <span class="at">color =</span> <span class="st">"Su Tüketimi (m^3)"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> kişi_başı_dogalgaz_tüketim_miktarı, <span class="at">color =</span> <span class="st">"Doğalgaz Tüketimi (m^3)"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span><span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> kişi_başı_atık_miktarı<span class="sc">*</span><span class="dv">100</span>, <span class="at">color =</span> <span class="st">"Evsel Atık (10 kg)"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">1</span>)<span class="sc">+</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"İlçelere Göre Kişi Başına Düşen Su ve Doğalgaz Tüketimi ve Evsel Atık Miktarı Karşılaştırması"</span>, <span class="at">x =</span> <span class="st">"İlçe"</span>, <span class="at">y =</span> <span class="st">"Kişi Başına Miktar"</span>, <span class="at">color =</span> <span class="st">"Tüketim Türü"</span>) <span class="sc">+</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Su Tüketimi (m^3)"</span> <span class="ot">=</span> <span class="st">"blue"</span>, <span class="st">"Doğalgaz Tüketimi (m^3)"</span> <span class="ot">=</span> <span class="st">"lightgreen"</span>, <span class="st">"Evsel Atık (10 kg)"</span><span class="ot">=</span><span class="st">"red"</span>)) <span class="sc">+</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#İlçeler ve nüfus ortalamaları</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>proje_data_sorted <span class="ot">&lt;-</span> proje_data[<span class="fu">order</span>(proje_data<span class="sc">$</span>nüfus_ortalaması, <span class="at">decreasing =</span> <span class="cn">TRUE</span>), ]</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(proje_data_sorted, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(İlçe, nüfus_ortalaması), <span class="at">y =</span> nüfus_ortalaması<span class="sc">/</span><span class="dv">10</span><span class="sc">^</span><span class="dv">6</span>)) <span class="sc">+</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"skyblue"</span>) <span class="sc">+</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"İlçelere Göre Nüfus Ortalaması"</span>, <span class="at">x =</span> <span class="st">"İlçe"</span>, <span class="at">y =</span> <span class="st">"Nüfus Ortalaması (Milyon)"</span>) <span class="sc">+</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Width not defined
-ℹ Set with `position_dodge(width = ...)`
-Width not defined
-ℹ Set with `position_dodge(width = ...)`
-Width not defined
-ℹ Set with `position_dodge(width = ...)`</code></pre>
-</div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="proje_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<p><img src="proje_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-</div>
-<p>Sonrasında, ilçe bazlı verilerin birbirleri ile doğrusal ilişkilerini görmek adına bir korelasyon matrisi çizdirdik.</p>
 <div class="cell">
-<details class="code-fold">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># İlçelere göre su ve doğalgaz kullanımı ve evsel atık</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(proje_data, <span class="fu">aes</span>(<span class="at">x =</span> İlçe)) <span class="sc">+</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> kişi_başı_su_tüketim_miktarı, <span class="at">color =</span> <span class="st">"Su Tüketimi (m^3)"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> kişi_başı_dogalgaz_tüketim_miktarı, <span class="at">color =</span> <span class="st">"Doğalgaz Tüketimi (m^3)"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span><span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> kişi_başı_atık_miktarı<span class="sc">*</span><span class="dv">100</span>, <span class="at">color =</span> <span class="st">"Evsel Atık (10 kg)"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"İlçelere Göre Kişi Başı Su ve Doğalgaz Tüketimi ve Evsel Atık Miktarı Karşılaştırması"</span>, <span class="at">x =</span> <span class="st">"İlçe"</span>, <span class="at">y =</span> <span class="st">"Kişi Başına Miktar"</span>, <span class="at">color =</span> <span class="st">"Tüketim Türü"</span>) <span class="sc">+</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Su Tüketimi (m^3)"</span> <span class="ot">=</span> <span class="st">"blue"</span>, <span class="st">"Doğalgaz Tüketimi (m^3)"</span> <span class="ot">=</span> <span class="st">"lightgreen"</span>, <span class="st">"Evsel Atık (10 kg)"</span><span class="ot">=</span><span class="st">"red"</span>)) <span class="sc">+</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Korelasyon matrisi, bir veri setinde yer alan çok sayıda değişken arasındaki doğrusal ilişkileri gösteren bir tablodur. Korelasyon katsayısı, iki değişken arasındaki doğrusal ilişkiyi ölçer ve genellikle Pearson korelasyon katsayısı kullanılmaktadır.</p>
+<ul>
+<li>+1 değeri, iki değişken arasında mükemmel pozitif doğrusal ilişki olduğunu gösterir.</li>
+<li>-1 değeri, iki değişken arasında mükemmel negatif doğrusal ilişki olduğunu gösterir.</li>
+<li>0 değeri, iki değişken arasında doğrusal ilişki olmadığını gösterir.</li>
+</ul>
+<p>Ayrıca, ilçeler bazında verilerin birbirleri ile doğrusal ilişkilerini anlamak için korelasyon matrisi de oluşturabiliriz.</p>
+<div class="cell">
+<details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#korelasyon matrisi çizdirme</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>cor_data <span class="ot">&lt;-</span> proje_data[,<span class="fu">c</span>(<span class="st">"kişi_başı_atık_miktarı"</span>, <span class="st">"kişi_başı_su_tüketim_miktarı"</span>, <span class="st">"kişi_başı_dogalgaz_tüketim_miktarı"</span>, <span class="st">"okuma_yazma_oranı_normalize"</span>,<span class="st">"teknolojik_erisim_degeri_normalize"</span>,<span class="st">"ev_sahiplik_oranı"</span>,<span class="st">"ortalama_ikamet_suresi"</span>,<span class="st">"hanehalki_buyuklugu"</span>,<span class="st">"hane_buyuklugu"</span>,<span class="st">"arac_sahiplik_oranı"</span>)]</span>
@@ -625,140 +624,403 @@ Width not defined
 <div class="cell-output cell-output-stderr">
 <pre><code>corrplot 0.92 loaded</code></pre>
 </div>
-<details class="code-fold">
+<details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>c1 <span class="ot">&lt;-</span> <span class="fu">corrplot</span>(corr_matrix, <span class="at">method =</span> <span class="st">"circle"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="proje_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<p><img src="proje_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-</div>
-<p>Korelasyon matrisi üzerinde evsel atık miktarı, su ve doğalgaz tüketimi ile diğer verilerin ilişkilerini yorumlamak için, bu üç parametre ile diğer parametreleri görselleştirdik. İlk olarak okuma yazma oranının ilişkisini gözlemledik. Oranlar %99 civarında kümelendiği için veriyi normalize ederek kullandık.</p>
+<p>Korelasyon matrisi,değişkenler arasındaki ilişkileri inceleme, özellik seçimi ve çoklu doğrusal bağlantının etkilerini incelemek için faydalı bir araçtır.</p>
+<p>Evsel atık miktarı, su ve doğalgaz tüketimi ile diğer verilerin ilişkilerini yorumlamak için, bu üç parametre ile diğer parametreler arasındaki ilişki ilçelere göre görsel hale getirilmiştir.</p>
+<p>Öncelikle, okuma yazma oranı ile atık ve tüketimler arasındaki ilişki gözlemlenmektedir. Oranlar %99 civarında kümelendiği için veri normalize edilerek kullanılmıştır.</p>
 <div class="cell">
-<details class="code-fold">
+<details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#okuma yazma oranı vs tüketimler kod gelcek</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Okuma Yazma vs Su Tüketimi</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>scale_factor <span class="ot">&lt;-</span> <span class="dv">5000</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>proje_data <span class="ot">&lt;-</span> proje_data[<span class="fu">order</span>(proje_data<span class="sc">$</span>okuma_yazma_oranı_normalize, <span class="at">decreasing =</span> <span class="cn">TRUE</span>), ]</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(proje_data, <span class="fu">aes</span>(<span class="fu">reorder</span>(İlçe, okuma_yazma_oranı_normalize))) <span class="sc">+</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> kişi_başı_su_tüketim_miktarı, <span class="at">color =</span> <span class="st">"Su Tüketimi m^3"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> okuma_yazma_oranı_normalize<span class="sc">*</span>scale_factor, <span class="at">color =</span> <span class="st">"Okuma Yazma Oranı"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Kişi Başı Su Tüketimi ve Okuma Yazma Oranı Karşılaştırması"</span>, <span class="at">x =</span> <span class="st">"İlçe"</span>, <span class="at">y =</span> <span class="st">"Miktar"</span>, <span class="at">color =</span> <span class="st">"Tüketim Türü"</span>) <span class="sc">+</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Su Tüketimi m^3"</span> <span class="ot">=</span> <span class="st">"skyblue"</span>, <span class="st">"Okuma Yazma Oranı"</span> <span class="ot">=</span> <span class="st">"pink"</span>)) <span class="sc">+</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-</div>
-<p>Devamında teknolojik ürün sahipliği ile olan tüketim ilişkilerini gözlemledik.</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>scale_factor <span class="ot">&lt;-</span> <span class="dv">300</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>proje_data <span class="ot">&lt;-</span> proje_data[<span class="fu">order</span>(proje_data<span class="sc">$</span>teknolojik_erisim_degeri_normalize, <span class="at">decreasing =</span> <span class="cn">TRUE</span>), ]</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(proje_data, <span class="fu">aes</span>(<span class="fu">reorder</span>(İlçe, teknolojik_erisim_degeri_normalize))) <span class="sc">+</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> kişi_başı_su_tüketim_miktarı, <span class="at">color =</span> <span class="st">"Su Tüketimi m^3"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> teknolojik_erisim_degeri_normalize<span class="sc">*</span>scale_factor, <span class="at">color =</span> <span class="st">"Teknolojik Ürün Erişimi"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Kişi Başı Su Tüketimi ve Teknolojik Ürün Erişimi Karşılaştırması"</span>, <span class="at">x =</span> <span class="st">"İlçe"</span>, <span class="at">y =</span> <span class="st">"Miktar"</span>, <span class="at">color =</span> <span class="st">"Tüketim Türü"</span>) <span class="sc">+</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Su Tüketimi m^3"</span> <span class="ot">=</span> <span class="st">"skyblue"</span>, <span class="st">"Teknolojik Ürün Erişimi"</span> <span class="ot">=</span> <span class="st">"pink"</span>)) <span class="sc">+</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Width not defined
-ℹ Set with `position_dodge(width = ...)`
-Width not defined
-ℹ Set with `position_dodge(width = ...)`</code></pre>
-</div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="proje_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<p><img src="proje_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
 </div>
-</div>
-<details class="code-fold">
+<details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(proje_data, <span class="fu">aes</span>(<span class="fu">reorder</span>(İlçe, teknolojik_erisim_degeri_normalize))) <span class="sc">+</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> kişi_başı_dogalgaz_tüketim_miktarı, <span class="at">color =</span> <span class="st">"Doğalgaz Tüketimi m^3"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> teknolojik_erisim_degeri_normalize<span class="sc">*</span>scale_factor, <span class="at">color =</span> <span class="st">"Teknolojik Ürün Erişimi"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Kişi Başı Doğalgaz Tüketimi ve Teknolojik Ürün Erişimi Karşılaştırması"</span>, <span class="at">x =</span> <span class="st">"İlçe"</span>, <span class="at">y =</span> <span class="st">"Miktar"</span>, <span class="at">color =</span> <span class="st">"Tüketim Türü"</span>) <span class="sc">+</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Doğalgaz Tüketimi m^3"</span> <span class="ot">=</span> <span class="st">"skyblue"</span>, <span class="st">"Teknolojik Ürün Erişimi"</span> <span class="ot">=</span> <span class="st">"pink"</span>)) <span class="sc">+</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Okuma Yazma vs Doğalgaz Tüketimi</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>scale_factor <span class="ot">&lt;-</span> <span class="dv">5000</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>proje_data <span class="ot">&lt;-</span> proje_data[<span class="fu">order</span>(proje_data<span class="sc">$</span>okuma_yazma_oranı_normalize, <span class="at">decreasing =</span> <span class="cn">TRUE</span>), ]</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(proje_data, <span class="fu">aes</span>(<span class="fu">reorder</span>(İlçe, okuma_yazma_oranı_normalize))) <span class="sc">+</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> kişi_başı_dogalgaz_tüketim_miktarı, <span class="at">color =</span> <span class="st">"Doğalgaz Tüketimi"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> okuma_yazma_oranı_normalize<span class="sc">*</span>scale_factor, <span class="at">color =</span> <span class="st">"Okuma Yazma Oranı"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Kişi Başı Doğalgaz Tüketimi ve Okuma Yazma Oranı Karşılaştırması"</span>, <span class="at">x =</span> <span class="st">"İlçe"</span>, <span class="at">y =</span> <span class="st">"Miktar"</span>, <span class="at">color =</span> <span class="st">"Tüketim Türü"</span>) <span class="sc">+</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Doğalgaz Tüketimi"</span> <span class="ot">=</span> <span class="st">"skyblue"</span>, <span class="st">"Okuma Yazma Oranı"</span> <span class="ot">=</span> <span class="st">"pink"</span>)) <span class="sc">+</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Width not defined
-ℹ Set with `position_dodge(width = ...)`
-Width not defined
-ℹ Set with `position_dodge(width = ...)`</code></pre>
-</div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="proje_files/figure-html/unnamed-chunk-6-2.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<p><img src="proje_files/figure-html/unnamed-chunk-6-2.png" class="img-fluid" width="672"></p>
 </div>
-</div>
-<details class="code-fold">
+<details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>scale_factor <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(proje_data, <span class="fu">aes</span>(<span class="fu">reorder</span>(İlçe, teknolojik_erisim_degeri_normalize))) <span class="sc">+</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> kişi_başı_atık_miktarı, <span class="at">color =</span> <span class="st">"Su Tüketimi"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> teknolojik_erisim_degeri_normalize<span class="sc">*</span>scale_factor, <span class="at">color =</span> <span class="st">"Teknolojik Ürün Erişimi"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Kişi Başı Evsel Atık ve Teknolojik Ürün Erişimi Karşılaştırması"</span>, <span class="at">x =</span> <span class="st">"İlçe"</span>, <span class="at">y =</span> <span class="st">"Miktar"</span>, <span class="at">color =</span> <span class="st">"Tüketim Türü"</span>) <span class="sc">+</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Su Tüketimi"</span> <span class="ot">=</span> <span class="st">"skyblue"</span>, <span class="st">"Teknolojik Ürün Erişimi"</span> <span class="ot">=</span> <span class="st">"pink"</span>)) <span class="sc">+</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Okuma Yazma vs Evsel Atık</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>scale_factor <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>proje_data <span class="ot">&lt;-</span> proje_data[<span class="fu">order</span>(proje_data<span class="sc">$</span>okuma_yazma_oranı_normalize, <span class="at">decreasing =</span> <span class="cn">TRUE</span>), ]</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(proje_data, <span class="fu">aes</span>(<span class="fu">reorder</span>(İlçe, okuma_yazma_oranı_normalize))) <span class="sc">+</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> kişi_başı_atık_miktarı, <span class="at">color =</span> <span class="st">"Kişi Başı Evsel Atık"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> okuma_yazma_oranı_normalize<span class="sc">*</span>scale_factor, <span class="at">color =</span> <span class="st">"Okuma Yazma Oranı"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Kişi Başı Evsel Atık ve Okuma Yazma Oranı Karşılaştırması"</span>, <span class="at">x =</span> <span class="st">"İlçe"</span>, <span class="at">y =</span> <span class="st">"Miktar"</span>, <span class="at">color =</span> <span class="st">"Tüketim Türü"</span>) <span class="sc">+</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Kişi Başı Evsel Atık"</span> <span class="ot">=</span> <span class="st">"skyblue"</span>, <span class="st">"Okuma Yazma Oranı"</span> <span class="ot">=</span> <span class="st">"pink"</span>)) <span class="sc">+</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Width not defined
-ℹ Set with `position_dodge(width = ...)`
-Width not defined
-ℹ Set with `position_dodge(width = ...)`</code></pre>
-</div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="proje_files/figure-html/unnamed-chunk-6-3.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<p><img src="proje_files/figure-html/unnamed-chunk-6-3.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-</div>
-<p>Sonrasında ev sahiplik oranı ile olan tüketim ilişkilerini gözlemledik.</p>
+<p>Ardından, teknolojik ürün sahipliği ile atık ve tüketimler arasındaki ilişki görülmektedir.</p>
 <div class="cell">
-<details class="code-fold">
+<details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#ev sahiplik vs tüketimler kod gelecek</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>scale_factor <span class="ot">&lt;-</span> <span class="dv">300</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>proje_data <span class="ot">&lt;-</span> proje_data[<span class="fu">order</span>(proje_data<span class="sc">$</span>teknolojik_erisim_degeri_normalize, <span class="at">decreasing =</span> <span class="cn">TRUE</span>), ]</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Teknolojik Erişim vs Su Tüketimi</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(proje_data, <span class="fu">aes</span>(<span class="fu">reorder</span>(İlçe, teknolojik_erisim_degeri_normalize))) <span class="sc">+</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> kişi_başı_su_tüketim_miktarı, <span class="at">color =</span> <span class="st">"Su Tüketimi m^3"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> teknolojik_erisim_degeri_normalize<span class="sc">*</span>scale_factor, <span class="at">color =</span> <span class="st">"Teknolojik Ürün Erişimi"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Kişi Başı Su Tüketimi ve Teknolojik Ürün Erişimi Karşılaştırması"</span>, <span class="at">x =</span> <span class="st">"İlçe"</span>, <span class="at">y =</span> <span class="st">"Miktar"</span>, <span class="at">color =</span> <span class="st">"Tüketim Türü"</span>) <span class="sc">+</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Su Tüketimi m^3"</span> <span class="ot">=</span> <span class="st">"skyblue"</span>, <span class="st">"Teknolojik Ürün Erişimi"</span> <span class="ot">=</span> <span class="st">"pink"</span>)) <span class="sc">+</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
 </div>
-<p>Akabinde hanede ortalama ikamet süresi ile olan tüketim ilişkilerini gözlemledik.</p>
-<div class="cell">
-<details class="code-fold">
+<details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#hanede ortalama ikamet süresi vs tüketimler kod gelecek</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Teknolojik Erişim vs Doğalgaz Tüketimi</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(proje_data, <span class="fu">aes</span>(<span class="fu">reorder</span>(İlçe, teknolojik_erisim_degeri_normalize))) <span class="sc">+</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> kişi_başı_dogalgaz_tüketim_miktarı, <span class="at">color =</span> <span class="st">"Doğalgaz Tüketimi m^3"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> teknolojik_erisim_degeri_normalize<span class="sc">*</span>scale_factor, <span class="at">color =</span> <span class="st">"Teknolojik Ürün Erişimi"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Kişi Başı Doğalgaz Tüketimi ve Teknolojik Ürün Erişimi Karşılaştırması"</span>, <span class="at">x =</span> <span class="st">"İlçe"</span>, <span class="at">y =</span> <span class="st">"Miktar"</span>, <span class="at">color =</span> <span class="st">"Tüketim Türü"</span>) <span class="sc">+</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Doğalgaz Tüketimi m^3"</span> <span class="ot">=</span> <span class="st">"skyblue"</span>, <span class="st">"Teknolojik Ürün Erişimi"</span> <span class="ot">=</span> <span class="st">"pink"</span>)) <span class="sc">+</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-7-2.png" class="img-fluid" width="672"></p>
 </div>
-<p>Hanehalkı büyüklüğü ile olan tüketim ilişkilerini gözlemleyerek devam ettik.</p>
-<div class="cell">
-<details class="code-fold">
+<details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Hanehalkı büyüklüğü vs tüketimler kod gelecek</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Teknolojik Erişim vs Kişi Başı Atık</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>scale_factor <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(proje_data, <span class="fu">aes</span>(<span class="fu">reorder</span>(İlçe, teknolojik_erisim_degeri_normalize))) <span class="sc">+</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> kişi_başı_atık_miktarı, <span class="at">color =</span> <span class="st">"Kişi Başı Evsel Atık"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> teknolojik_erisim_degeri_normalize<span class="sc">*</span>scale_factor, <span class="at">color =</span> <span class="st">"Teknolojik Ürün Erişimi"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Kişi Başı Evsel Atık ve Teknolojik Ürün Erişimi Karşılaştırması"</span>, <span class="at">x =</span> <span class="st">"İlçe"</span>, <span class="at">y =</span> <span class="st">"Miktar"</span>, <span class="at">color =</span> <span class="st">"Tüketim Türü"</span>) <span class="sc">+</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Kişi Başı Evsel Atık"</span> <span class="ot">=</span> <span class="st">"skyblue"</span>, <span class="st">"Teknolojik Ürün Erişimi"</span> <span class="ot">=</span> <span class="st">"pink"</span>)) <span class="sc">+</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-7-3.png" class="img-fluid" width="672"></p>
 </div>
-<p>Hane büyüklüğünün tüketim ile olan ilişkilerini gözlemledik.</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Hane büyüklüğü vs tüketimler kod gelecek</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
-<p>Nihayetinde son verimiz olan araç sahiplik durumunun tüketim ilişkilerini gözlemledik.</p>
+<p>Sonrasında, ev sahiplik oranı ile atık ve tüketimler arasındaki ilişki incelenmektedir.</p>
 <div class="cell">
-<details class="code-fold">
+<details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">#araç sahiplik durumu vs tüketimler kod gelecek</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>scale_factor <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>proje_data <span class="ot">&lt;-</span> proje_data[<span class="fu">order</span>(proje_data<span class="sc">$</span>ev_sahiplik_oranı, <span class="at">decreasing =</span> <span class="cn">TRUE</span>), ]</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Ev Sahiplik Oranı vs Su Tüketimi</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(proje_data, <span class="fu">aes</span>(<span class="fu">reorder</span>(İlçe, ev_sahiplik_oranı))) <span class="sc">+</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> kişi_başı_su_tüketim_miktarı, <span class="at">color =</span> <span class="st">"Su Tüketimi m^3"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> ev_sahiplik_oranı<span class="sc">*</span>scale_factor, <span class="at">color =</span> <span class="st">"Ev Sahiplik Oranı"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Kişi Başı Su Tüketimi ve Ev Sahiplik Oranı Karşılaştırması"</span>, <span class="at">x =</span> <span class="st">"İlçe"</span>, <span class="at">y =</span> <span class="st">"Miktar"</span>, <span class="at">color =</span> <span class="st">"Tüketim Türü"</span>) <span class="sc">+</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Su Tüketimi m^3"</span> <span class="ot">=</span> <span class="st">"skyblue"</span>, <span class="st">"Ev Sahiplik Oranı"</span> <span class="ot">=</span> <span class="st">"pink"</span>)) <span class="sc">+</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ev Sahiplik Oranı vs Doğalgaz Tüketimi</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>scale_factor <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(proje_data, <span class="fu">aes</span>(<span class="fu">reorder</span>(İlçe, ev_sahiplik_oranı))) <span class="sc">+</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> kişi_başı_dogalgaz_tüketim_miktarı, <span class="at">color =</span> <span class="st">"Doğalgaz Tüketimi"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> ev_sahiplik_oranı<span class="sc">*</span>scale_factor, <span class="at">color =</span> <span class="st">"Ev Sahiplik Oranı"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Kişi Başı Doğalgaz Tüketimi ve Ev Sahiplik Oranı Karşılaştırması"</span>, <span class="at">x =</span> <span class="st">"İlçe"</span>, <span class="at">y =</span> <span class="st">"Miktar"</span>, <span class="at">color =</span> <span class="st">"Tüketim Türü"</span>) <span class="sc">+</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Doğalgaz Tüketimi"</span> <span class="ot">=</span> <span class="st">"skyblue"</span>, <span class="st">"Ev Sahiplik Oranı"</span> <span class="ot">=</span> <span class="st">"pink"</span>)) <span class="sc">+</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-8-2.png" class="img-fluid" width="672"></p>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ev Sahiplik Oranı vs Kişi Başı Atık</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>scale_factor <span class="ot">&lt;-</span> <span class="dv">50</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(proje_data, <span class="fu">aes</span>(<span class="fu">reorder</span>(İlçe, ev_sahiplik_oranı))) <span class="sc">+</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> kişi_başı_atık_miktarı<span class="sc">*</span>scale_factor, <span class="at">color =</span> <span class="st">"Kişi Başı Evsel Atık"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> ev_sahiplik_oranı, <span class="at">color =</span> <span class="st">"Ev Sahiplik Oranı"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Kişi Başı Evsel Atık ve Ev Sahiplik Oranı Karşılaştırması"</span>, <span class="at">x =</span> <span class="st">"İlçe"</span>, <span class="at">y =</span> <span class="st">"Miktar"</span>, <span class="at">color =</span> <span class="st">"Tüketim Türü"</span>) <span class="sc">+</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Kişi Başı Evsel Atık"</span> <span class="ot">=</span> <span class="st">"skyblue"</span>, <span class="st">"Ev Sahiplik Oranı"</span> <span class="ot">=</span> <span class="st">"pink"</span>)) <span class="sc">+</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-8-3.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Akabinde, hanede ortalama ikamet süresi ile atık ve tüketimler arasındaki ilişki belirtilmektedir.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>scale_factor <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>proje_data <span class="ot">&lt;-</span> proje_data[<span class="fu">order</span>(proje_data<span class="sc">$</span>ortalama_ikamet_suresi, <span class="at">decreasing =</span> <span class="cn">TRUE</span>), ]</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Ortalama İkamet Süresi vs Su Tüketimi</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(proje_data, <span class="fu">aes</span>(<span class="fu">reorder</span>(İlçe, ortalama_ikamet_suresi))) <span class="sc">+</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> kişi_başı_su_tüketim_miktarı, <span class="at">color =</span> <span class="st">"Su Tüketimi m^3"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> ortalama_ikamet_suresi<span class="sc">*</span>scale_factor, <span class="at">color =</span> <span class="st">"Ortalama İkamet Süresi"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Kişi Başı Su Tüketimi ve Ortalama İkamet Süresi Karşılaştırması"</span>, <span class="at">x =</span> <span class="st">"İlçe"</span>, <span class="at">y =</span> <span class="st">"Miktar"</span>, <span class="at">color =</span> <span class="st">"Tüketim Türü"</span>) <span class="sc">+</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Su Tüketimi m^3"</span> <span class="ot">=</span> <span class="st">"skyblue"</span>, <span class="st">"Ortalama İkamet Süresi"</span> <span class="ot">=</span> <span class="st">"pink"</span>)) <span class="sc">+</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ortalama İkamet Süresi vs Doğalgaz Tüketimi</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>scale_factor <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(proje_data, <span class="fu">aes</span>(<span class="fu">reorder</span>(İlçe, ortalama_ikamet_suresi))) <span class="sc">+</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> kişi_başı_dogalgaz_tüketim_miktarı, <span class="at">color =</span> <span class="st">"Doğalgaz Tüketimi"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> ortalama_ikamet_suresi<span class="sc">*</span>scale_factor, <span class="at">color =</span> <span class="st">"Ortalama İkamet Süresi"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Kişi Başı Doğalgaz Tüketimi ve Ortalama İkamet Süresi Karşılaştırması"</span>, <span class="at">x =</span> <span class="st">"İlçe"</span>, <span class="at">y =</span> <span class="st">"Miktar"</span>, <span class="at">color =</span> <span class="st">"Tüketim Türü"</span>) <span class="sc">+</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Doğalgaz Tüketimi"</span> <span class="ot">=</span> <span class="st">"skyblue"</span>, <span class="st">"Ortalama İkamet Süresi"</span> <span class="ot">=</span> <span class="st">"pink"</span>)) <span class="sc">+</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-9-2.png" class="img-fluid" width="672"></p>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ortalama İkamet Süresi vs Kişi Başı Atık</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>scale_factor <span class="ot">&lt;-</span> <span class="dv">60</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(proje_data, <span class="fu">aes</span>(<span class="fu">reorder</span>(İlçe, ortalama_ikamet_suresi))) <span class="sc">+</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> kişi_başı_atık_miktarı<span class="sc">*</span>scale_factor, <span class="at">color =</span> <span class="st">"Kişi Başı Evsel Atık"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> ortalama_ikamet_suresi, <span class="at">color =</span> <span class="st">"Ortalama İkamet Süresi"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Kişi Başı Evsel Atık ve Ortalama İkamet Süresi Karşılaştırması"</span>, <span class="at">x =</span> <span class="st">"İlçe"</span>, <span class="at">y =</span> <span class="st">"Miktar"</span>, <span class="at">color =</span> <span class="st">"Tüketim Türü"</span>) <span class="sc">+</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Kişi Başı Evsel Atık"</span> <span class="ot">=</span> <span class="st">"skyblue"</span>, <span class="st">"Ortalama İkamet Süresi"</span> <span class="ot">=</span> <span class="st">"pink"</span>)) <span class="sc">+</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-9-3.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Hanehalkı büyüklüğü ile atık ve tüketimler arasındaki ilişki incelenmektedir.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>scale_factor <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>proje_data <span class="ot">&lt;-</span> proje_data[<span class="fu">order</span>(proje_data<span class="sc">$</span>hanehalki_buyuklugu, <span class="at">decreasing =</span> <span class="cn">TRUE</span>), ]</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Hanehalkı Büyüklüğü vs Su Tüketimi</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(proje_data, <span class="fu">aes</span>(<span class="fu">reorder</span>(İlçe, hanehalki_buyuklugu))) <span class="sc">+</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> kişi_başı_su_tüketim_miktarı, <span class="at">color =</span> <span class="st">"Su Tüketimi m^3"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> hanehalki_buyuklugu<span class="sc">*</span>scale_factor, <span class="at">color =</span> <span class="st">"Hanehalkı Büyüklüğü"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Kişi Başı Su Tüketimi ve Hanehalkı Büyüklüğü Karşılaştırması"</span>, <span class="at">x =</span> <span class="st">"İlçe"</span>, <span class="at">y =</span> <span class="st">"Miktar"</span>, <span class="at">color =</span> <span class="st">"Tüketim Türü"</span>) <span class="sc">+</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Su Tüketimi m^3"</span> <span class="ot">=</span> <span class="st">"skyblue"</span>, <span class="st">"Hanehalkı Büyüklüğü"</span> <span class="ot">=</span> <span class="st">"pink"</span>)) <span class="sc">+</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Hanehalkı Büyüklüğü vs Doğalgaz Tüketimi</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>scale_factor <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(proje_data, <span class="fu">aes</span>(<span class="fu">reorder</span>(İlçe, hanehalki_buyuklugu))) <span class="sc">+</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> kişi_başı_dogalgaz_tüketim_miktarı, <span class="at">color =</span> <span class="st">"Doğalgaz Tüketimi"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> hanehalki_buyuklugu<span class="sc">*</span>scale_factor, <span class="at">color =</span> <span class="st">"Hanehalkı Büyüklüğü"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Kişi Başı Doğalgaz Tüketimi ve Hanehalkı Büyüklüğü Karşılaştırması"</span>, <span class="at">x =</span> <span class="st">"İlçe"</span>, <span class="at">y =</span> <span class="st">"Miktar"</span>, <span class="at">color =</span> <span class="st">"Tüketim Türü"</span>) <span class="sc">+</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Doğalgaz Tüketimi"</span> <span class="ot">=</span> <span class="st">"skyblue"</span>, <span class="st">"Hanehalkı Büyüklüğü"</span> <span class="ot">=</span> <span class="st">"pink"</span>)) <span class="sc">+</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-10-2.png" class="img-fluid" width="672"></p>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Hanehalkı Büyüklüğü vs Kişi Başı Atık</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>scale_factor <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(proje_data, <span class="fu">aes</span>(<span class="fu">reorder</span>(İlçe, hanehalki_buyuklugu))) <span class="sc">+</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> kişi_başı_atık_miktarı, <span class="at">color =</span> <span class="st">"Kişi Başı Evsel Atık"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> hanehalki_buyuklugu<span class="sc">/</span>scale_factor, <span class="at">color =</span> <span class="st">"Hanehalkı Büyüklüğü"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Kişi Başı Evsel Atık ve Hanehalkı Büyüklüğü Karşılaştırması"</span>, <span class="at">x =</span> <span class="st">"İlçe"</span>, <span class="at">y =</span> <span class="st">"Miktar"</span>, <span class="at">color =</span> <span class="st">"Tüketim Türü"</span>) <span class="sc">+</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Kişi Başı Evsel Atık"</span> <span class="ot">=</span> <span class="st">"skyblue"</span>, <span class="st">"Hanehalkı Büyüklüğü"</span> <span class="ot">=</span> <span class="st">"pink"</span>)) <span class="sc">+</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-10-3.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Hane büyüklüğü ile atık ve tüketimler arasındaki ilişki verilmektedir.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>scale_factor <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>proje_data <span class="ot">&lt;-</span> proje_data[<span class="fu">order</span>(proje_data<span class="sc">$</span>hane_buyuklugu, <span class="at">decreasing =</span> <span class="cn">TRUE</span>), ]</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Hane Büyüklüğü vs Su Tüketimi</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(proje_data, <span class="fu">aes</span>(<span class="fu">reorder</span>(İlçe, hane_buyuklugu))) <span class="sc">+</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> kişi_başı_su_tüketim_miktarı, <span class="at">color =</span> <span class="st">"Su Tüketimi m^3"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> hane_buyuklugu<span class="sc">*</span>scale_factor, <span class="at">color =</span> <span class="st">"Hane Büyüklüğü"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Kişi Başı Su Tüketimi ve Hane Büyüklüğü Karşılaştırması"</span>, <span class="at">x =</span> <span class="st">"İlçe"</span>, <span class="at">y =</span> <span class="st">"Miktar"</span>, <span class="at">color =</span> <span class="st">"Tüketim Türü"</span>) <span class="sc">+</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Su Tüketimi m^3"</span> <span class="ot">=</span> <span class="st">"skyblue"</span>, <span class="st">"Hane Büyüklüğü"</span> <span class="ot">=</span> <span class="st">"pink"</span>)) <span class="sc">+</span></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Hane Büyüklüğü vs Doğalgaz Tüketimi</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>scale_factor <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(proje_data, <span class="fu">aes</span>(<span class="fu">reorder</span>(İlçe, hane_buyuklugu))) <span class="sc">+</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> kişi_başı_dogalgaz_tüketim_miktarı, <span class="at">color =</span> <span class="st">"Doğalgaz Tüketimi"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> hane_buyuklugu<span class="sc">*</span>scale_factor, <span class="at">color =</span> <span class="st">"Hane Büyüklüğü"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Kişi Başı Doğalgaz Tüketimi ve Hane Büyüklüğü Karşılaştırması"</span>, <span class="at">x =</span> <span class="st">"İlçe"</span>, <span class="at">y =</span> <span class="st">"Miktar"</span>, <span class="at">color =</span> <span class="st">"Tüketim Türü"</span>) <span class="sc">+</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Doğalgaz Tüketimi"</span> <span class="ot">=</span> <span class="st">"skyblue"</span>, <span class="st">"Hane Büyüklüğü"</span> <span class="ot">=</span> <span class="st">"pink"</span>)) <span class="sc">+</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-11-2.png" class="img-fluid" width="672"></p>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Hane Büyüklüğü vs Kişi Başı Atık</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>scale_factor <span class="ot">&lt;-</span> <span class="dv">75</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(proje_data, <span class="fu">aes</span>(<span class="fu">reorder</span>(İlçe, hane_buyuklugu))) <span class="sc">+</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> kişi_başı_atık_miktarı, <span class="at">color =</span> <span class="st">"Kişi Başı Evsel Atık"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> hane_buyuklugu<span class="sc">/</span>scale_factor, <span class="at">color =</span> <span class="st">"Hane Büyüklüğü"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Kişi Başı Evsel Atık ve Hane Büyüklüğü Karşılaştırması"</span>, <span class="at">x =</span> <span class="st">"İlçe"</span>, <span class="at">y =</span> <span class="st">"Miktar"</span>, <span class="at">color =</span> <span class="st">"Tüketim Türü"</span>) <span class="sc">+</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Kişi Başı Evsel Atık"</span> <span class="ot">=</span> <span class="st">"skyblue"</span>, <span class="st">"Hane Büyüklüğü"</span> <span class="ot">=</span> <span class="st">"pink"</span>)) <span class="sc">+</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-11-3.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Son olarak, araç sahiplik oranı ile atık ve tüketimler arasındaki ilişkiden bahsedilmektedir.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>scale_factor <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>proje_data <span class="ot">&lt;-</span> proje_data[<span class="fu">order</span>(proje_data<span class="sc">$</span>arac_sahiplik_oranı, <span class="at">decreasing =</span> <span class="cn">TRUE</span>), ]</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Hane Büyüklüğü vs Su Tüketimi</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(proje_data, <span class="fu">aes</span>(<span class="fu">reorder</span>(İlçe, arac_sahiplik_oranı))) <span class="sc">+</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> kişi_başı_su_tüketim_miktarı, <span class="at">color =</span> <span class="st">"Su Tüketimi m^3"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> arac_sahiplik_oranı<span class="sc">*</span>scale_factor, <span class="at">color =</span> <span class="st">"Araç Sahiplik Oranı"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Kişi Başı Su Tüketimi ve Araç Sahiplik Oranı Karşılaştırması"</span>, <span class="at">x =</span> <span class="st">"İlçe"</span>, <span class="at">y =</span> <span class="st">"Miktar"</span>, <span class="at">color =</span> <span class="st">"Tüketim Türü"</span>) <span class="sc">+</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Su Tüketimi m^3"</span> <span class="ot">=</span> <span class="st">"skyblue"</span>, <span class="st">"Araç Sahiplik Oranı"</span> <span class="ot">=</span> <span class="st">"pink"</span>)) <span class="sc">+</span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Hane Büyüklüğü vs Doğalgaz Tüketimi</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>scale_factor <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(proje_data, <span class="fu">aes</span>(<span class="fu">reorder</span>(İlçe, arac_sahiplik_oranı))) <span class="sc">+</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> kişi_başı_dogalgaz_tüketim_miktarı, <span class="at">color =</span> <span class="st">"Doğalgaz Tüketimi"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> arac_sahiplik_oranı<span class="sc">*</span>scale_factor, <span class="at">color =</span> <span class="st">"Araç Sahiplik Oranı"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Kişi Başı Doğalgaz Tüketimi ve Araç Sahiplik Oranı Karşılaştırması"</span>, <span class="at">x =</span> <span class="st">"İlçe"</span>, <span class="at">y =</span> <span class="st">"Miktar"</span>, <span class="at">color =</span> <span class="st">"Tüketim Türü"</span>) <span class="sc">+</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Doğalgaz Tüketimi"</span> <span class="ot">=</span> <span class="st">"skyblue"</span>, <span class="st">"Araç Sahiplik Oranı"</span> <span class="ot">=</span> <span class="st">"pink"</span>)) <span class="sc">+</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-12-2.png" class="img-fluid" width="672"></p>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Hane Büyüklüğü vs Kişi Başı Atık</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>scale_factor <span class="ot">&lt;-</span> <span class="dv">75</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(proje_data, <span class="fu">aes</span>(<span class="fu">reorder</span>(İlçe, arac_sahiplik_oranı))) <span class="sc">+</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> kişi_başı_atık_miktarı, <span class="at">color =</span> <span class="st">"Kişi Başı Evsel Atık"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> arac_sahiplik_oranı<span class="sc">/</span>scale_factor, <span class="at">color =</span> <span class="st">"Araç Sahiplik Oranı"</span>), <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Kişi Başı Evsel Atık ve Araç Sahiplik Oranı Karşılaştırması"</span>, <span class="at">x =</span> <span class="st">"İlçe"</span>, <span class="at">y =</span> <span class="st">"Miktar"</span>, <span class="at">color =</span> <span class="st">"Tüketim Türü"</span>) <span class="sc">+</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Kişi Başı Evsel Atık"</span> <span class="ot">=</span> <span class="st">"skyblue"</span>, <span class="st">"Araç Sahiplik Oranı"</span> <span class="ot">=</span> <span class="st">"pink"</span>)) <span class="sc">+</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-12-3.png" class="img-fluid" width="672"></p>
+</div>
 </div>
 </section>
 <section id="sonuçlar-ve-ana-çıkarımlar" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Sonuçlar ve Ana Çıkarımlar</h1>
-<p>xxxxxx</p>
+<p>Proje kapsamında elde edilen sonuçlar ve temel çıkarımlar aşağıdaki gibidir.</p>
+<ul>
+<li><strong>Su</strong> <strong>Tüketimi ve Doğalgaz Tüketimi:</strong></li>
+</ul>
+<p>İstanbul’un farklı ilçelerinde su ve doğalgaz tüketimi arasında belirli eğilimler olduğu görülmüştür. Yoğun nüfuslu ilçeler genellikle daha yüksek su ve doğalgaz tüketimine sahiptir.</p>
+<ul>
+<li><strong>Evsel Atık Üretimi:</strong></li>
+</ul>
+<p>Evsel atık üretimi, bir ilçenin nüfusu ve yaşam tarzıyla doğrudan ilişkilidir. Büyük ilçelerde daha fazla evsel atık üretilme eğilimi vardır.</p>
+<ul>
+<li><strong>Hanehalkı Büyüklüğü:</strong></li>
+</ul>
+<p>Hanehalkı büyüklüğü, bir ilçenin demografik yapısını ve yaşam tarzını yansıtır. Yoğun nüfuslu bölgelerde genellikle daha büyük hanehalkı büyüklüğü görülürken, daha varlıklı bölgelerde daha küçük hanehalkı büyüklükleri olabilir.</p>
+<ul>
+<li><strong>Okuma Yazma Oranı:</strong></li>
+</ul>
+<p>Okuma yazma oranı, bir ilçenin eğitim seviyesini yansıtır. Daha yüksek okuma yazma oranları genellikle daha iyi eğitim ve sosyo-ekonomik koşullarla ilişkilidir.</p>
+<ul>
+<li><strong>Teknolojik Cihazlara Erişim:</strong></li>
+</ul>
+<p>Teknolojik cihazlara erişim, bir ilçenin yaşam standardını ve teknolojik altyapısını yansıtır. Daha yüksek gelir düzeyine sahip ilçelerde genellikle daha fazla teknolojik cihaza erişim vardır.</p>
+<ul>
+<li><strong>Araç Kullanımı:</strong></li>
+</ul>
+<p>Araç kullanımı, bir ilçenin ulaşım altyapısını, trafik durumunu ve çevresel etkilerini yansıtır. Yoğun trafik bölgelerinde ve daha az ulaşım seçeneği olan yerlerde daha fazla araç kullanımı görülebilir.</p>
+<ul>
+<li><strong>Korelasyonlar:</strong></li>
+</ul>
+<p>Hanehalkı büyüklüğü ile evsel atık üretimi arasında pozitif bir korelasyon olabilir, çünkü daha büyük haneler genellikle daha fazla atık üretirler.</p>
+<p>Okuma yazma oranı ile teknolojik cihazlara erişim arasında da güçlü bir pozitif korelasyon olabilir, çünkü daha eğitimli insanlar genellikle daha fazla teknolojik cihaza sahiptirler.</p>
+<p>Sonuç olarak, İstanbul’un farklı ilçelerinin bu parametreler açısından farklılık göstereceği ve bu verilerin toplu olarak incelenmesi, şehir planlaması, kaynak yönetimi ve sosyal politika oluşturma gibi çeşitli alanlarda faydalı olabilir.</p>
 
 
 </section>
@@ -805,33 +1067,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         el.classList.add('notransition');
       }
-    }
-  }
-  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-    let newTheme = '';
-    if(darkModeDefault) {
-      newTheme = isAlternate ? baseTheme : alternateTheme;
-    } else {
-      newTheme = isAlternate ? alternateTheme : baseTheme;
-    }
-    const changeGiscusTheme = () => {
-      // From: https://github.com/giscus/giscus/issues/336
-      const sendMessage = (message) => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (!iframe) return;
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-      }
-      sendMessage({
-        setConfig: {
-          theme: newTheme
-        }
-      });
-    }
-    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-    if (isGiscussLoaded) {
-      changeGiscusTheme();
     }
   }
   const toggleColorMode = (alternate) => {
@@ -900,15 +1135,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  const darkModeDefault = false;
-  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  let localAlternateSentinel = 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
-    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -987,27 +1220,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+  function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
+      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1017,17 +1233,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start',
+      placement: 'bottom-start'
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1039,130 +1246,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
-          }
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
-        return container.innerHTML
-      } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
+      return note.innerHTML;
     });
   }
       let selectedAnnoteEl;
@@ -1206,7 +1290,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
-            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1232,32 +1315,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1323,15 +1380,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">
-<p>EMU Hacettepe MUY665 - 2023-2024 Bahar</p>
-</div>
+    <div class="nav-footer-center">EMU Hacettepe MUY665 - 2023-2024 Bahar</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
-
 
 
 

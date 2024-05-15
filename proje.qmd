@@ -10,9 +10,9 @@ code-fold: true
 
 ![](assets/images/proje_gorsel_2.jpg){fig-align="center" width="539"}
 
-# Veri Açma ve Ön İşleme
+# Veri Okuma ve Düzenleme
 
-Veri setlerindeki veriler excel dosyalarından çekilerek düzenlenmiş ve ilgilenilen parametrelerin sütunlarda, ilçelerin satırlarda yer aldığı tek bir veri çerçevesinde toplanmıştır.
+Veri analizi sürecinde, farklı Excel dosyalarından verileri okumak ve bu verileri tek bir düzenli veri çerçevesinde toplamak sağlıklı bir analiz süreci yürütmek açısından önemli bir adımdır. Bu proje kapsamında, veri setlerindeki veriler farklı Excel dosyalarından okunup düzenlenerek, tek bir veri çerçevesi oluşturulmuştur. Oluşturulan bu veri çerçevesinde, parametreler sütunlarda ve ilçeler satırlarda yer almaktadır
 
 ```{r output=FALSE}
 library(readxl)
@@ -169,20 +169,37 @@ proje_data <- left_join(proje_data, arac_sahiplik_data[, c("İlçe", "arac_sahip
 kable(head(proje_data, 10), caption="Data")
 ```
 
-Su ve doğalgaz tüketimi ile evsel atık miktarını görselleştirdik.
+Veri analizi sürecinde, su ve doğalgaz tüketimi ile evsel atık miktarını görselleştirerek anlamlı çıkarımlar elde edebilmek amaçlanmıştır. Bu görselleştirmelerle, çeşitli ilçelerdeki tüketim ve atık miktarlarını karşılaştırmak ve bu veriler arasındaki olası ilişkileri incelemek amaçlanmıştır.
 
-```{r}
+```{r warning=FALSE}
+
+#İlçeler ve nüfus ortalamaları
+proje_data_sorted <- proje_data[order(proje_data$nüfus_ortalaması, decreasing = TRUE), ]
+ggplot(proje_data_sorted, aes(x = reorder(İlçe, nüfus_ortalaması), y = nüfus_ortalaması/10^6)) +
+  geom_bar(stat = "identity", fill = "skyblue") +
+  labs(title = "İlçelere Göre Nüfus Ortalaması", x = "İlçe", y = "Nüfus Ortalaması (Milyon)") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+```
+
+```{r warning = FALSE}
 # İlçelere göre su ve doğalgaz kullanımı ve evsel atık
 ggplot(proje_data, aes(x = İlçe)) +
   geom_point(aes(y = kişi_başı_su_tüketim_miktarı, color = "Su Tüketimi (m^3)"), position = "dodge", size = 1) +
   geom_point(aes(y = kişi_başı_dogalgaz_tüketim_miktarı, color = "Doğalgaz Tüketimi (m^3)"), position = "dodge", size = 1) +geom_point(aes(y = kişi_başı_atık_miktarı*100, color = "Evsel Atık (10 kg)"), position = "dodge", size = 1)+
-  labs(title = "İlçelere Göre Kişi Başına Düşen Su ve Doğalgaz Tüketimi ve Evsel Atık Miktarı Karşılaştırması", x = "İlçe", y = "Kişi Başına Miktar", color = "Tüketim Türü") +
+  labs(title = "İlçelere Göre Kişi Başı Su ve Doğalgaz Tüketimi ve Evsel Atık Miktarı Karşılaştırması", x = "İlçe", y = "Kişi Başına Miktar", color = "Tüketim Türü") +
   scale_color_manual(values = c("Su Tüketimi (m^3)" = "blue", "Doğalgaz Tüketimi (m^3)" = "lightgreen", "Evsel Atık (10 kg)"="red")) +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 90, hjust = 1))
 ```
 
-Sonrasında, ilçe bazlı verilerin birbirleri ile doğrusal ilişkilerini görmek adına bir korelasyon matrisi çizdirdik.
+Korelasyon matrisi, bir veri setinde yer alan çok sayıda değişken arasındaki doğrusal ilişkileri gösteren bir tablodur. Korelasyon katsayısı, iki değişken arasındaki doğrusal ilişkiyi ölçer ve genellikle Pearson korelasyon katsayısı kullanılmaktadır.
+
+-   +1 değeri, iki değişken arasında mükemmel pozitif doğrusal ilişki olduğunu gösterir.
+-   -1 değeri, iki değişken arasında mükemmel negatif doğrusal ilişki olduğunu gösterir.
+-   0 değeri, iki değişken arasında doğrusal ilişki olmadığını gösterir.
+
+Ayrıca, ilçeler bazında verilerin birbirleri ile doğrusal ilişkilerini anlamak için korelasyon matrisi de oluşturabiliriz.
 
 ```{r}
 #korelasyon matrisi çizdirme
@@ -193,18 +210,62 @@ library(corrplot)
 c1 <- corrplot(corr_matrix, method = "circle")
 ```
 
-Korelasyon matrisi üzerinde evsel atık miktarı, su ve doğalgaz tüketimi ile diğer verilerin ilişkilerini yorumlamak için, bu üç parametre ile diğer parametreleri görselleştirdik. İlk olarak okuma yazma oranının ilişkisini gözlemledik. Oranlar %99 civarında kümelendiği için veriyi normalize ederek kullandık.
+Korelasyon matrisi,değişkenler arasındaki ilişkileri inceleme, özellik seçimi ve çoklu doğrusal bağlantının etkilerini incelemek için faydalı bir araçtır.
 
-```{r}
-#okuma yazma oranı vs tüketimler kod gelcek
+Evsel atık miktarı, su ve doğalgaz tüketimi ile diğer verilerin ilişkilerini yorumlamak için, bu üç parametre ile diğer parametreler arasındaki ilişki ilçelere göre görsel hale getirilmiştir.
+
+Öncelikle, okuma yazma oranı ile atık ve tüketimler arasındaki ilişki gözlemlenmektedir. Oranlar %99 civarında kümelendiği için veri normalize edilerek kullanılmıştır.
+
+```{r warning=FALSE}
+
+# Okuma Yazma vs Su Tüketimi
+scale_factor <- 5000
+proje_data <- proje_data[order(proje_data$okuma_yazma_oranı_normalize, decreasing = TRUE), ]
+
+ggplot(proje_data, aes(reorder(İlçe, okuma_yazma_oranı_normalize))) +
+  geom_point(aes(y = kişi_başı_su_tüketim_miktarı, color = "Su Tüketimi m^3"), position = "dodge", size = 2) +
+  geom_point(aes(y = okuma_yazma_oranı_normalize*scale_factor, color = "Okuma Yazma Oranı"), position = "dodge", size = 2) +
+  labs(title = "Kişi Başı Su Tüketimi ve Okuma Yazma Oranı Karşılaştırması", x = "İlçe", y = "Miktar", color = "Tüketim Türü") +
+  scale_color_manual(values = c("Su Tüketimi m^3" = "skyblue", "Okuma Yazma Oranı" = "pink")) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+
+# Okuma Yazma vs Doğalgaz Tüketimi
+scale_factor <- 5000
+proje_data <- proje_data[order(proje_data$okuma_yazma_oranı_normalize, decreasing = TRUE), ]
+
+ggplot(proje_data, aes(reorder(İlçe, okuma_yazma_oranı_normalize))) +
+  geom_point(aes(y = kişi_başı_dogalgaz_tüketim_miktarı, color = "Doğalgaz Tüketimi"), position = "dodge", size = 2) +
+  geom_point(aes(y = okuma_yazma_oranı_normalize*scale_factor, color = "Okuma Yazma Oranı"), position = "dodge", size = 2) +
+  labs(title = "Kişi Başı Doğalgaz Tüketimi ve Okuma Yazma Oranı Karşılaştırması", x = "İlçe", y = "Miktar", color = "Tüketim Türü") +
+  scale_color_manual(values = c("Doğalgaz Tüketimi" = "skyblue", "Okuma Yazma Oranı" = "pink")) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+
+# Okuma Yazma vs Evsel Atık
+scale_factor <- 10
+proje_data <- proje_data[order(proje_data$okuma_yazma_oranı_normalize, decreasing = TRUE), ]
+
+ggplot(proje_data, aes(reorder(İlçe, okuma_yazma_oranı_normalize))) +
+  geom_point(aes(y = kişi_başı_atık_miktarı, color = "Kişi Başı Evsel Atık"), position = "dodge", size = 2) +
+  geom_point(aes(y = okuma_yazma_oranı_normalize*scale_factor, color = "Okuma Yazma Oranı"), position = "dodge", size = 2) +
+  labs(title = "Kişi Başı Evsel Atık ve Okuma Yazma Oranı Karşılaştırması", x = "İlçe", y = "Miktar", color = "Tüketim Türü") +
+  scale_color_manual(values = c("Kişi Başı Evsel Atık" = "skyblue", "Okuma Yazma Oranı" = "pink")) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+
 ```
 
-Devamında teknolojik ürün sahipliği ile olan tüketim ilişkilerini gözlemledik.
+Ardından, teknolojik ürün sahipliği ile atık ve tüketimler arasındaki ilişki görülmektedir.
 
-```{r}
+```{r warning=FALSE}
 scale_factor <- 300
 proje_data <- proje_data[order(proje_data$teknolojik_erisim_degeri_normalize, decreasing = TRUE), ]
 
+# Teknolojik Erişim vs Su Tüketimi
 ggplot(proje_data, aes(reorder(İlçe, teknolojik_erisim_degeri_normalize))) +
   geom_point(aes(y = kişi_başı_su_tüketim_miktarı, color = "Su Tüketimi m^3"), position = "dodge", size = 2) +
   geom_point(aes(y = teknolojik_erisim_degeri_normalize*scale_factor, color = "Teknolojik Ürün Erişimi"), position = "dodge", size = 2) +
@@ -215,7 +276,7 @@ ggplot(proje_data, aes(reorder(İlçe, teknolojik_erisim_degeri_normalize))) +
 
 
 
-
+# Teknolojik Erişim vs Doğalgaz Tüketimi
 ggplot(proje_data, aes(reorder(İlçe, teknolojik_erisim_degeri_normalize))) +
   geom_point(aes(y = kişi_başı_dogalgaz_tüketim_miktarı, color = "Doğalgaz Tüketimi m^3"), position = "dodge", size = 2) +
   geom_point(aes(y = teknolojik_erisim_degeri_normalize*scale_factor, color = "Teknolojik Ürün Erişimi"), position = "dodge", size = 2) +
@@ -225,48 +286,249 @@ ggplot(proje_data, aes(reorder(İlçe, teknolojik_erisim_degeri_normalize))) +
   theme(axis.text.x = element_text(angle = 90, hjust = 1))
 
 
-
+# Teknolojik Erişim vs Kişi Başı Atık
 scale_factor <- 10
 ggplot(proje_data, aes(reorder(İlçe, teknolojik_erisim_degeri_normalize))) +
-  geom_point(aes(y = kişi_başı_atık_miktarı, color = "Su Tüketimi"), position = "dodge", size = 2) +
+  geom_point(aes(y = kişi_başı_atık_miktarı, color = "Kişi Başı Evsel Atık"), position = "dodge", size = 2) +
   geom_point(aes(y = teknolojik_erisim_degeri_normalize*scale_factor, color = "Teknolojik Ürün Erişimi"), position = "dodge", size = 2) +
   labs(title = "Kişi Başı Evsel Atık ve Teknolojik Ürün Erişimi Karşılaştırması", x = "İlçe", y = "Miktar", color = "Tüketim Türü") +
-  scale_color_manual(values = c("Su Tüketimi" = "skyblue", "Teknolojik Ürün Erişimi" = "pink")) +
+  scale_color_manual(values = c("Kişi Başı Evsel Atık" = "skyblue", "Teknolojik Ürün Erişimi" = "pink")) +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 90, hjust = 1))
 
 ```
 
-Sonrasında ev sahiplik oranı ile olan tüketim ilişkilerini gözlemledik.
+Sonrasında, ev sahiplik oranı ile atık ve tüketimler arasındaki ilişki incelenmektedir.
 
-```{r}
-#ev sahiplik vs tüketimler kod gelecek
+```{r warning=FALSE}
+
+scale_factor <- 1
+proje_data <- proje_data[order(proje_data$ev_sahiplik_oranı, decreasing = TRUE), ]
+
+# Ev Sahiplik Oranı vs Su Tüketimi
+ggplot(proje_data, aes(reorder(İlçe, ev_sahiplik_oranı))) +
+  geom_point(aes(y = kişi_başı_su_tüketim_miktarı, color = "Su Tüketimi m^3"), position = "dodge", size = 2) +
+  geom_point(aes(y = ev_sahiplik_oranı*scale_factor, color = "Ev Sahiplik Oranı"), position = "dodge", size = 2) +
+  labs(title = "Kişi Başı Su Tüketimi ve Ev Sahiplik Oranı Karşılaştırması", x = "İlçe", y = "Miktar", color = "Tüketim Türü") +
+  scale_color_manual(values = c("Su Tüketimi m^3" = "skyblue", "Ev Sahiplik Oranı" = "pink")) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+# Ev Sahiplik Oranı vs Doğalgaz Tüketimi
+scale_factor <- 4
+ggplot(proje_data, aes(reorder(İlçe, ev_sahiplik_oranı))) +
+  geom_point(aes(y = kişi_başı_dogalgaz_tüketim_miktarı, color = "Doğalgaz Tüketimi"), position = "dodge", size = 2) +
+  geom_point(aes(y = ev_sahiplik_oranı*scale_factor, color = "Ev Sahiplik Oranı"), position = "dodge", size = 2) +
+  labs(title = "Kişi Başı Doğalgaz Tüketimi ve Ev Sahiplik Oranı Karşılaştırması", x = "İlçe", y = "Miktar", color = "Tüketim Türü") +
+  scale_color_manual(values = c("Doğalgaz Tüketimi" = "skyblue", "Ev Sahiplik Oranı" = "pink")) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+
+# Ev Sahiplik Oranı vs Kişi Başı Atık
+scale_factor <- 50
+ggplot(proje_data, aes(reorder(İlçe, ev_sahiplik_oranı))) +
+  geom_point(aes(y = kişi_başı_atık_miktarı*scale_factor, color = "Kişi Başı Evsel Atık"), position = "dodge", size = 2) +
+  geom_point(aes(y = ev_sahiplik_oranı, color = "Ev Sahiplik Oranı"), position = "dodge", size = 2) +
+  labs(title = "Kişi Başı Evsel Atık ve Ev Sahiplik Oranı Karşılaştırması", x = "İlçe", y = "Miktar", color = "Tüketim Türü") +
+  scale_color_manual(values = c("Kişi Başı Evsel Atık" = "skyblue", "Ev Sahiplik Oranı" = "pink")) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+
 ```
 
-Akabinde hanede ortalama ikamet süresi ile olan tüketim ilişkilerini gözlemledik.
+Akabinde, hanede ortalama ikamet süresi ile atık ve tüketimler arasındaki ilişki belirtilmektedir.
 
-```{r}
-#hanede ortalama ikamet süresi vs tüketimler kod gelecek
+```{r warning=FALSE}
+
+scale_factor <- 1
+proje_data <- proje_data[order(proje_data$ortalama_ikamet_suresi, decreasing = TRUE), ]
+
+# Ortalama İkamet Süresi vs Su Tüketimi
+ggplot(proje_data, aes(reorder(İlçe, ortalama_ikamet_suresi))) +
+  geom_point(aes(y = kişi_başı_su_tüketim_miktarı, color = "Su Tüketimi m^3"), position = "dodge", size = 2) +
+  geom_point(aes(y = ortalama_ikamet_suresi*scale_factor, color = "Ortalama İkamet Süresi"), position = "dodge", size = 2) +
+  labs(title = "Kişi Başı Su Tüketimi ve Ortalama İkamet Süresi Karşılaştırması", x = "İlçe", y = "Miktar", color = "Tüketim Türü") +
+  scale_color_manual(values = c("Su Tüketimi m^3" = "skyblue", "Ortalama İkamet Süresi" = "pink")) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+# Ortalama İkamet Süresi vs Doğalgaz Tüketimi
+scale_factor <- 25
+ggplot(proje_data, aes(reorder(İlçe, ortalama_ikamet_suresi))) +
+  geom_point(aes(y = kişi_başı_dogalgaz_tüketim_miktarı, color = "Doğalgaz Tüketimi"), position = "dodge", size = 2) +
+  geom_point(aes(y = ortalama_ikamet_suresi*scale_factor, color = "Ortalama İkamet Süresi"), position = "dodge", size = 2) +
+  labs(title = "Kişi Başı Doğalgaz Tüketimi ve Ortalama İkamet Süresi Karşılaştırması", x = "İlçe", y = "Miktar", color = "Tüketim Türü") +
+  scale_color_manual(values = c("Doğalgaz Tüketimi" = "skyblue", "Ortalama İkamet Süresi" = "pink")) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+
+# Ortalama İkamet Süresi vs Kişi Başı Atık
+scale_factor <- 60
+ggplot(proje_data, aes(reorder(İlçe, ortalama_ikamet_suresi))) +
+  geom_point(aes(y = kişi_başı_atık_miktarı*scale_factor, color = "Kişi Başı Evsel Atık"), position = "dodge", size = 2) +
+  geom_point(aes(y = ortalama_ikamet_suresi, color = "Ortalama İkamet Süresi"), position = "dodge", size = 2) +
+  labs(title = "Kişi Başı Evsel Atık ve Ortalama İkamet Süresi Karşılaştırması", x = "İlçe", y = "Miktar", color = "Tüketim Türü") +
+  scale_color_manual(values = c("Kişi Başı Evsel Atık" = "skyblue", "Ortalama İkamet Süresi" = "pink")) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+
 ```
 
-Hanehalkı büyüklüğü ile olan tüketim ilişkilerini gözlemleyerek devam ettik.
+Hanehalkı büyüklüğü ile atık ve tüketimler arasındaki ilişki incelenmektedir.
 
-```{r}
-#Hanehalkı büyüklüğü vs tüketimler kod gelecek
+```{r warning=FALSE}
+
+scale_factor <- 2
+proje_data <- proje_data[order(proje_data$hanehalki_buyuklugu, decreasing = TRUE), ]
+
+# Hanehalkı Büyüklüğü vs Su Tüketimi
+ggplot(proje_data, aes(reorder(İlçe, hanehalki_buyuklugu))) +
+  geom_point(aes(y = kişi_başı_su_tüketim_miktarı, color = "Su Tüketimi m^3"), position = "dodge", size = 2) +
+  geom_point(aes(y = hanehalki_buyuklugu*scale_factor, color = "Hanehalkı Büyüklüğü"), position = "dodge", size = 2) +
+  labs(title = "Kişi Başı Su Tüketimi ve Hanehalkı Büyüklüğü Karşılaştırması", x = "İlçe", y = "Miktar", color = "Tüketim Türü") +
+  scale_color_manual(values = c("Su Tüketimi m^3" = "skyblue", "Hanehalkı Büyüklüğü" = "pink")) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+# Hanehalkı Büyüklüğü vs Doğalgaz Tüketimi
+scale_factor <- 100
+ggplot(proje_data, aes(reorder(İlçe, hanehalki_buyuklugu))) +
+  geom_point(aes(y = kişi_başı_dogalgaz_tüketim_miktarı, color = "Doğalgaz Tüketimi"), position = "dodge", size = 2) +
+  geom_point(aes(y = hanehalki_buyuklugu*scale_factor, color = "Hanehalkı Büyüklüğü"), position = "dodge", size = 2) +
+  labs(title = "Kişi Başı Doğalgaz Tüketimi ve Hanehalkı Büyüklüğü Karşılaştırması", x = "İlçe", y = "Miktar", color = "Tüketim Türü") +
+  scale_color_manual(values = c("Doğalgaz Tüketimi" = "skyblue", "Hanehalkı Büyüklüğü" = "pink")) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+
+# Hanehalkı Büyüklüğü vs Kişi Başı Atık
+scale_factor <- 5
+ggplot(proje_data, aes(reorder(İlçe, hanehalki_buyuklugu))) +
+  geom_point(aes(y = kişi_başı_atık_miktarı, color = "Kişi Başı Evsel Atık"), position = "dodge", size = 2) +
+  geom_point(aes(y = hanehalki_buyuklugu/scale_factor, color = "Hanehalkı Büyüklüğü"), position = "dodge", size = 2) +
+  labs(title = "Kişi Başı Evsel Atık ve Hanehalkı Büyüklüğü Karşılaştırması", x = "İlçe", y = "Miktar", color = "Tüketim Türü") +
+  scale_color_manual(values = c("Kişi Başı Evsel Atık" = "skyblue", "Hanehalkı Büyüklüğü" = "pink")) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+
 ```
 
-Hane büyüklüğünün tüketim ile olan ilişkilerini gözlemledik.
+Hane büyüklüğü ile atık ve tüketimler arasındaki ilişki verilmektedir.
 
-```{r}
-#Hane büyüklüğü vs tüketimler kod gelecek
+```{r warning=FALSE}
+
+scale_factor <- 2
+proje_data <- proje_data[order(proje_data$hane_buyuklugu, decreasing = TRUE), ]
+
+# Hane Büyüklüğü vs Su Tüketimi
+ggplot(proje_data, aes(reorder(İlçe, hane_buyuklugu))) +
+  geom_point(aes(y = kişi_başı_su_tüketim_miktarı, color = "Su Tüketimi m^3"), position = "dodge", size = 2) +
+  geom_point(aes(y = hane_buyuklugu*scale_factor, color = "Hane Büyüklüğü"), position = "dodge", size = 2) +
+  labs(title = "Kişi Başı Su Tüketimi ve Hane Büyüklüğü Karşılaştırması", x = "İlçe", y = "Miktar", color = "Tüketim Türü") +
+  scale_color_manual(values = c("Su Tüketimi m^3" = "skyblue", "Hane Büyüklüğü" = "pink")) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+# Hane Büyüklüğü vs Doğalgaz Tüketimi
+scale_factor <- 10
+ggplot(proje_data, aes(reorder(İlçe, hane_buyuklugu))) +
+  geom_point(aes(y = kişi_başı_dogalgaz_tüketim_miktarı, color = "Doğalgaz Tüketimi"), position = "dodge", size = 2) +
+  geom_point(aes(y = hane_buyuklugu*scale_factor, color = "Hane Büyüklüğü"), position = "dodge", size = 2) +
+  labs(title = "Kişi Başı Doğalgaz Tüketimi ve Hane Büyüklüğü Karşılaştırması", x = "İlçe", y = "Miktar", color = "Tüketim Türü") +
+  scale_color_manual(values = c("Doğalgaz Tüketimi" = "skyblue", "Hane Büyüklüğü" = "pink")) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+# Hane Büyüklüğü vs Kişi Başı Atık
+scale_factor <- 75
+ggplot(proje_data, aes(reorder(İlçe, hane_buyuklugu))) +
+  geom_point(aes(y = kişi_başı_atık_miktarı, color = "Kişi Başı Evsel Atık"), position = "dodge", size = 2) +
+  geom_point(aes(y = hane_buyuklugu/scale_factor, color = "Hane Büyüklüğü"), position = "dodge", size = 2) +
+  labs(title = "Kişi Başı Evsel Atık ve Hane Büyüklüğü Karşılaştırması", x = "İlçe", y = "Miktar", color = "Tüketim Türü") +
+  scale_color_manual(values = c("Kişi Başı Evsel Atık" = "skyblue", "Hane Büyüklüğü" = "pink")) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
 ```
 
-Nihayetinde son verimiz olan araç sahiplik durumunun tüketim ilişkilerini gözlemledik.
+Son olarak, araç sahiplik oranı ile atık ve tüketimler arasındaki ilişkiden bahsedilmektedir.
 
-```{r}
-#araç sahiplik durumu vs tüketimler kod gelecek
+
+```{r warning=FALSE}
+
+scale_factor <- 2
+proje_data <- proje_data[order(proje_data$arac_sahiplik_oranı, decreasing = TRUE), ]
+
+# Hane Büyüklüğü vs Su Tüketimi
+ggplot(proje_data, aes(reorder(İlçe, arac_sahiplik_oranı))) +
+  geom_point(aes(y = kişi_başı_su_tüketim_miktarı, color = "Su Tüketimi m^3"), position = "dodge", size = 2) +
+  geom_point(aes(y = arac_sahiplik_oranı*scale_factor, color = "Araç Sahiplik Oranı"), position = "dodge", size = 2) +
+  labs(title = "Kişi Başı Su Tüketimi ve Araç Sahiplik Oranı Karşılaştırması", x = "İlçe", y = "Miktar", color = "Tüketim Türü") +
+  scale_color_manual(values = c("Su Tüketimi m^3" = "skyblue", "Araç Sahiplik Oranı" = "pink")) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+# Hane Büyüklüğü vs Doğalgaz Tüketimi
+scale_factor <- 10
+ggplot(proje_data, aes(reorder(İlçe, arac_sahiplik_oranı))) +
+  geom_point(aes(y = kişi_başı_dogalgaz_tüketim_miktarı, color = "Doğalgaz Tüketimi"), position = "dodge", size = 2) +
+  geom_point(aes(y = arac_sahiplik_oranı*scale_factor, color = "Araç Sahiplik Oranı"), position = "dodge", size = 2) +
+  labs(title = "Kişi Başı Doğalgaz Tüketimi ve Araç Sahiplik Oranı Karşılaştırması", x = "İlçe", y = "Miktar", color = "Tüketim Türü") +
+  scale_color_manual(values = c("Doğalgaz Tüketimi" = "skyblue", "Araç Sahiplik Oranı" = "pink")) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+# Hane Büyüklüğü vs Kişi Başı Atık
+scale_factor <- 75
+ggplot(proje_data, aes(reorder(İlçe, arac_sahiplik_oranı))) +
+  geom_point(aes(y = kişi_başı_atık_miktarı, color = "Kişi Başı Evsel Atık"), position = "dodge", size = 2) +
+  geom_point(aes(y = arac_sahiplik_oranı/scale_factor, color = "Araç Sahiplik Oranı"), position = "dodge", size = 2) +
+  labs(title = "Kişi Başı Evsel Atık ve Araç Sahiplik Oranı Karşılaştırması", x = "İlçe", y = "Miktar", color = "Tüketim Türü") +
+  scale_color_manual(values = c("Kişi Başı Evsel Atık" = "skyblue", "Araç Sahiplik Oranı" = "pink")) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+
 ```
 
 # Sonuçlar ve Ana Çıkarımlar
 
-xxxxxx
+Proje kapsamında elde edilen sonuçlar ve temel çıkarımlar aşağıdaki gibidir.
+
+-   **Su** **Tüketimi ve Doğalgaz Tüketimi:**
+
+İstanbul'un farklı ilçelerinde su ve doğalgaz tüketimi arasında belirli eğilimler olduğu görülmüştür. Yoğun nüfuslu ilçeler genellikle daha yüksek su ve doğalgaz tüketimine sahiptir.
+
+
+-   **Evsel Atık Üretimi:**
+
+Evsel atık üretimi, bir ilçenin nüfusu ve yaşam tarzıyla doğrudan ilişkilidir. Büyük ilçelerde daha fazla evsel atık üretilme eğilimi vardır.
+
+-   **Hanehalkı Büyüklüğü:**
+
+Hanehalkı büyüklüğü, bir ilçenin demografik yapısını ve yaşam tarzını yansıtır. Yoğun nüfuslu bölgelerde genellikle daha büyük hanehalkı büyüklüğü görülürken, daha varlıklı bölgelerde daha küçük hanehalkı büyüklükleri olabilir.
+
+-   **Okuma Yazma Oranı:**
+
+Okuma yazma oranı, bir ilçenin eğitim seviyesini yansıtır. Daha yüksek okuma yazma oranları genellikle daha iyi eğitim ve sosyo-ekonomik koşullarla ilişkilidir.
+
+-   **Teknolojik Cihazlara Erişim:**
+
+Teknolojik cihazlara erişim, bir ilçenin yaşam standardını ve teknolojik altyapısını yansıtır. Daha yüksek gelir düzeyine sahip ilçelerde genellikle daha fazla teknolojik cihaza erişim vardır.
+
+-   **Araç Kullanımı:**
+
+Araç kullanımı, bir ilçenin ulaşım altyapısını, trafik durumunu ve çevresel etkilerini yansıtır. Yoğun trafik bölgelerinde ve daha az ulaşım seçeneği olan yerlerde daha fazla araç kullanımı görülebilir.
+
+-   **Korelasyonlar:**
+
+Hanehalkı büyüklüğü ile evsel atık üretimi arasında pozitif bir korelasyon olabilir, çünkü daha büyük haneler genellikle daha fazla atık üretirler.
+
+Okuma yazma oranı ile teknolojik cihazlara erişim arasında da güçlü bir pozitif korelasyon olabilir, çünkü daha eğitimli insanlar genellikle daha fazla teknolojik cihaza sahiptirler.
+
+Sonuç olarak, İstanbul'un farklı ilçelerinin bu parametreler açısından farklılık göstereceği ve bu verilerin toplu olarak incelenmesi, şehir planlaması, kaynak yönetimi ve sosyal politika oluşturma gibi çeşitli alanlarda faydalı olabilir.
