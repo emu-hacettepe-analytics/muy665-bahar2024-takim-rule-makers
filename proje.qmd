@@ -211,10 +211,7 @@ library(corrplot)
 c1 <- corrplot(corr_matrix, method = "circle")
 ```
 
-Korelasyon matrisi,değişkenler arasındaki ilişkileri inceleme, özellik seçimi ve çoklu doğrusal bağlantının etkilerini incelemek için faydalı bir araçtır. Örneğin, su tüketimi ile evsel atık miktarı arasında yüksek bir pozitif korelasyon bulunmuştur(korelasyon katsayısı 0.8).
-Doğalgaz tüketimi ile evsel atık miktarı arasında ise daha düşük bir korelasyon gözlemlenmiştir (korelasyon katsayısı 0.6).
-Bu durum, su tüketiminin artmasıyla evsel atık miktarının arttığını, ancak doğalgaz tüketimi ile evsel atık miktarı arasındaki ilişkinin daha zayıf olduğunu göstermektedir.
-
+Korelasyon matrisi,değişkenler arasındaki ilişkileri inceleme, özellik seçimi ve çoklu doğrusal bağlantının etkilerini incelemek için faydalı bir araçtır. Örneğin, su tüketimi ile evsel atık miktarı arasında yüksek bir pozitif korelasyon bulunmuştur(korelasyon katsayısı 0.8). Doğalgaz tüketimi ile evsel atık miktarı arasında ise daha düşük bir korelasyon gözlemlenmiştir (korelasyon katsayısı 0.6). Bu durum, su tüketiminin artmasıyla evsel atık miktarının arttığını, ancak doğalgaz tüketimi ile evsel atık miktarı arasındaki ilişkinin daha zayıf olduğunu göstermektedir.
 
 Evsel atık miktarı, su ve doğalgaz tüketimi ile diğer verilerin ilişkilerini yorumlamak için, bu üç parametre ile diğer parametreler arasındaki ilişki ilçelere göre görsel hale getirilmiştir.
 
@@ -520,6 +517,7 @@ ggplot(proje_data, aes(x = reorder(İlçe, nüfus_ortalaması), y = su_tüketim_
 
 
 ```
+
 ```{r warning=FALSE}
 
 
@@ -568,9 +566,10 @@ ggplot(proje_data, aes(x = reorder(İlçe, nüfus_ortalaması), y = hanehalki_bu
   facet_wrap(~ ifelse(as.numeric(reorder(proje_data$İlçe, proje_data$nüfus_ortalaması)) <= length(proje_data$nüfus_ortalaması)/2, "Az Yoğun Nüfus", "Yoğun Nüfus"), scales = "free_x")
 
 ```
+
 -   **Okuma Yazma Oranı ve Teknolojik Cihazlara Erişim:**
 
-Okuma yazma oranı, bir ilçenin eğitim seviyesini yansıtır. Daha yüksek okuma yazma oranları genellikle daha iyi eğitim ve sosyo-ekonomik koşullarla ilişkilidir. Eknolojik cihazlara erişim, bir ilçenin yaşam standardını ve teknolojik altyapısını yansıtır. Daha yüksek gelir düzeyine sahip ilçelerde genellikle daha fazla teknolojik cihaza erişim vardır. Bu sebeple okuma yazma oranı ile teknolojik erişim arasında popzitif yönlü bir ilişki vardır.
+Okuma yazma oranı, bir ilçenin eğitim seviyesini yansıtır. Daha yüksek okuma yazma oranları genellikle daha iyi eğitim ve sosyo-ekonomik koşullarla ilişkilidir. Eknolojik cihazlara erişim, bir ilçenin yaşam standardını ve teknolojik altyapısını yansıtır. Daha yüksek gelir düzeyine sahip ilçelerde genellikle daha fazla teknolojik cihaza erişim vardır. Bu sebeple okuma yazma oranı ile teknolojik erişim arasında pozitif yönlü bir ilişki vardır.
 
 ```{r warning=FALSE}
 # Okuma Yazma vs Teknolojik Erişim
@@ -586,6 +585,7 @@ ggplot(proje_data, aes(x = okuma_yazma_oranı_normalize, y = teknolojik_erisim_d
 
 
 ```
+
 -   **Evsel Atık Miktarı ve Hanehalkı Büyüklüğü:**
 
 Hanehalkı büyüklüğünün artması ile evsel atık miktarının da artması beklenmektedir.
@@ -594,9 +594,9 @@ Hanehalkı büyüklüğünün artması ile evsel atık miktarının da artması 
 
 # Evsel Atık ve Hanehalkı Büyüklüğü
 
-model <- lm(hane_buyuklugu ~ evsel_atık_ortalaması, data = proje_data)
+model <- lm(hane_buyuklugu ~ kişi_başı_atık_miktarı, data = proje_data)
 
-ggplot(proje_data, aes(x = hane_buyuklugu, y = evsel_atık_ortalaması/10^6)) +
+ggplot(proje_data, aes(x = hane_buyuklugu, y = kişi_başı_atık_miktarı)) +
   geom_point(color = "lightgreen", size = 2) +
   geom_smooth(method = "auto", se = TRUE, color = "pink") +
   labs(title = "Evsel Atık Miktarı ve Hanehalkı Büyüklüğü İlişkisi", x = "Hanehalkı Büyüklüğü", y = "Evsel Atık") +
@@ -608,7 +608,7 @@ ggplot(proje_data, aes(x = hane_buyuklugu, y = evsel_atık_ortalaması/10^6)) +
 
 -   **Araç Kullanımı:**
 
-Araç kullanımı, bir ilçenin ulaşım altyapısını, trafik durumunu ve çevresel etkilerini yansıtır. Yoğun nüfuslu bölgelerde toplu taşıma  kullanımının fazla olması beklenmekte olup bireysel araç kullanımı oranının az olacağı öngörülmektedir.
+Araç kullanımı, bir ilçenin ulaşım altyapısını, trafik durumunu ve çevresel etkilerini yansıtır. Yoğun nüfuslu bölgelerde toplu taşıma kullanımının fazla olması beklenmekte olup bireysel araç kullanımı oranının az olacağı öngörülmektedir.
 
 ```{r warning=FALSE}
 # İlçelere Göre Nüfus ve Araç Kullanımı
@@ -623,9 +623,9 @@ ggplot(proje_data, aes(x = reorder(İlçe, nüfus_ortalaması), y = arac_sahipli
 
 -   **Korelasyonlar:**
 
-Hanehalkı büyüklüğü ile evsel atık üretimi arasında pozitif bir korelasyon olabilir, çünkü daha büyük haneler genellikle daha fazla atık üretirler.
+Hanehalkı büyüklüğü ile kişi başı evsel atık üretimi arasında negatif bir korelasyon olabilir, çünkü daha büyük haneler genellikle daha fazla atık üretirler.
 
-Okuma yazma oranı ile teknolojik cihazlara erişim arasında da güçlü bir pozitif korelasyon olabilir, çünkü daha eğitimli insanlar genellikle daha fazla teknolojik cihaza sahiptirler.
+Okuma yazma oranı ile teknolojik cihazlara erişim arasında da korelasyon olabilir, çünkü daha eğitimli insanlar genellikle daha fazla teknolojik cihaza sahiptirler.
 
 Okuma yazma oranı ile hane büyüklüğü arasında pozitif bir ilişki mevcuttur, çünkü daha eğitimli insanlar genellikle daha büyük evlere sahiptirler.
 
